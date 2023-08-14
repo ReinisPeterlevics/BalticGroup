@@ -1,0 +1,8 @@
+body{
+    background-color: rgb(236, 221, 199);
+    font-family: Helvetica, sans-serif;
+}
+header{
+    display: inline-block;
+    background-color: rgb(172, 172, 172);
+}
