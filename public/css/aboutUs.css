@@ -1,9 +1,7 @@
 
 body{
     margin:0;
-
 }
-
 .about-page-container{
     display:flex;
     flex-direction: column;
@@ -50,14 +48,12 @@ h2{
     border-bottom: 1px solid #FFA384;
     width:100%;
 }
-
 .why-book-boxes{
     display:flex;
     flex-wrap: wrap;
     width:100%;
     justify-content: space-between;
     gap:5px;
-
 }
 .small-why-container{
     width: 200px;
@@ -70,11 +66,9 @@ h2{
 .small-why-container>img{
     height:50px;
     width:50px;
-
     position:relative;
     transition: transform 0.5s ease-in-out;
 }
-
 .small-why-container>img:hover {
     animation: shake 0.4s ease-in-out infinite;
 }
@@ -96,7 +90,6 @@ h2{
     display:flex;
     flex-direction: column;
     width:80%;
-
 }
 .our-team-boxes{
     display:flex;
