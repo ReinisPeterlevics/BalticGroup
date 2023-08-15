@@ -7,38 +7,8 @@ body{
     padding: 0;
 }
 
-/* .header {
-    background-color: #74BDCB;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-}
-
-.navbar {
-    overflow: hidden;
-}
-
-.navbar a {
-    float: left;
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-.navbar a:hover {
-    color: white;
-}
-
-.navbar ul li a:hover {
-    background-color: #FFA384;
-    color: white;
-    border-radius: 3px;
-    padding: 10px;
-} */
-
-.header {
+/* header */
+header {
     background-color: #74BDCB;
     color: white;
     text-align: center;
@@ -55,6 +25,7 @@ body{
     color: white;
     text-decoration: none;
     font-size: 1.5rem;
+    margin-left: 20px;
 }
 
 .navbar-collapse {
@@ -64,9 +35,8 @@ body{
 .navbar-nav {
     list-style: none;
     display: flex;
+    align-items: center;
     gap: 1rem;
-    margin: 0;
-    padding: 0;
 }
 
 .nav-item {
@@ -76,36 +46,19 @@ body{
 .nav-link {
     color: white;
     text-decoration: none;
-    padding: 14px 16px;
-    transition: background-color 0.3s, color 0.3s;
+    margin-right: 20px;
+    border-bottom: 2px solid transparent;
+    transition: background-color 0.3s;
 }
 
 .nav-link:hover {
-    background-color: #FFA384;
+    /* background-color: #FFA384; */
+    border-bottom: 2px solid #FFA384;
     color: white;
     border-radius: 3px;
-    padding: 10px;
 }
 
-/* .footer {
-    background-color: #EFE7BC;
-    padding: 1rem;
-    text-align: left;
-    color: #333;
-    display: flex;
-    padding-left: 70px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.footer a {
-    color: #333;
-    text-decoration: none;
-}
-.footer a:hover {
-    font-size: 17px;
-} */
-
+/* footer */
 .footer {
     background-color: #EFE7BC;
     padding: 1rem;
@@ -120,8 +73,8 @@ body{
     flex: 1;
 }
 
-.footer h5 {
-    margin-top: 0;
+.footer p {
+    text-align: left;
 }
 
 .footer a {
@@ -132,3 +85,4 @@ body{
 .footer a:hover {
     font-size: 17px;
 }
+

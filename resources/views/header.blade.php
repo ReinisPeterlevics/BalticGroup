@@ -11,7 +11,7 @@
     <body> -->
 
 <header>
-    <div class="header">
+    <div >
         <div class="cont">
             <a class="navbar-brand" href="{{route('home')}}">LOGO</a>
             <div class="navbar-collapse">
@@ -20,7 +20,7 @@
                         <a class="nav-link" href="{{route('about')}}">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Cart</a>
+                        <a class="nav-link" href="#"><img src="/images/book4.png" alt="Money icon"></a>
                     </li>
                 </ul>
             </div>

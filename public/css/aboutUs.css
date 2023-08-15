@@ -25,9 +25,9 @@ h1{
     width:100%;
 }
 
-/* p{
+p{
     text-align: center;
-} */
+}
 .about-us-container{
     display:flex;
     flex-direction: column;
