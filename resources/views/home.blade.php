@@ -12,6 +12,18 @@
             <h2>Welcome to travel app</h2>
             <p>Travel around the world across multiple destintations!</p>
         </div>
+
+        <div class="map-container">
+
+        </div>
+
         @include('footer')
     </body>
 </html>
+
+
+
+
+
+
+

@@ -6,10 +6,9 @@
     <link rel="stylesheet" href="css/blog.css">
     <title>Travel Blog</title>
 </head>
-<body background="images/ocean.jpg.image_extension">
+<body>
 
     <h1>Blog</h1>
-    <img sty src="" alt="">
 
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur omnis aut aperiam eveniet! Nostrum excepturi placeat libero, nam enim nulla modi dolor non eius esse in obcaecati iusto totam.
          Assumenda autem harum officiis sapiente temporibus reprehenderit dicta nulla perspiciatis fugiat sunt eius ratione laborum, aut ipsam, sequi modi magni obcaecati.
@@ -25,12 +24,11 @@
     </div>
 
 
-
     <div class="row">
         <div class="column">
             <div class="container">
-                <div class="row row-bottom-padded-md">
-                    <div class="col-lg-4 col-md-4 col-sm-6">
+                <!-- <div class="row row-bottom-padded-md"> -->
+                    <div class="col-sm-4">
                         <a href=""><img class="img-responsive" width="293" height="260" src="images/vacation.jpeg" alt="vacation image"></a>
                         <div class="blog-text">
                             <div class="prod-title">
@@ -45,14 +43,14 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                <!-- </div> -->
             </div>
         </div>
 
         <div class="column">
             <div class="container">
-                <div class="row row-bottom-padded-md">
-                    <div class="col-lg-4 col-md-4 col-sm-6">
+                <!-- <div class="row row-bottom-padded-md"> -->
+                    <div class="col-sm-4">
                         <a href=""><img class="img-responsive" width="293" height="260" src="images/vacation.jpeg" alt="vacation image"></a>
                         <div class="blog-text">
                             <div class="prod-title">
@@ -67,14 +65,14 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                <!-- </div> -->
             </div>
         </div>
 
         <div class="column">
             <div class="container">
-                <div class="row row-bottom-padded-md">
-                    <div class="col-lg-4 col-md-4 col-sm-6">
+                <!-- <div class="row row-bottom-padded-md"> -->
+                    <div class="col-sm-4">
                         <a href=""><img class="img-responsive" width="293" height="260" src="images/vacation.jpeg" alt="vacation image"></a>
                         <div class="blog-text">
                             <div class="prod-title">
@@ -89,11 +87,36 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                <!-- </div> -->
             </div>
         </div>
 
     </div>
+
+
+    <div class="pages">
+        <nav aria-label="...">
+            <ul class="pagination" style="display: flex;">
+                <li class="page-item disabled">
+                    <span class="page-link">Previous</span>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item active">
+                    <span class="page-link">
+                        2
+                    <span class="sr-only">(current)</span>
+                    </span>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+
+
 
 
 
