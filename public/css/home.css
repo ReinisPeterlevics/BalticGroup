@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url("../images/home-page-background.jpg");
+    background: url("../images/page-background.jpg");
     background-size: cover;
     height: 100%;
 }
