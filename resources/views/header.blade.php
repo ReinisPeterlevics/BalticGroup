@@ -1,7 +1,7 @@
 <header>
-    <div class="logo">LOGO</div>
     <nav>
-        <a href="#">About us</a>
+        <a href="{{route('home')}}"><div class="logo">LOGO</div></a>
+        <a href="{{route('about')}}">About us</a>
         <div class="cart">CART</div>
     </nav>
 </header>

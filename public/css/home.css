@@ -1,0 +1,122 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url("../images/page-background.jpg");
+    background-size: cover;
+    height: 100%;
+}
+.search{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 700px;
+    background-image: linear-gradient(rgba(231, 242, 248, 0.8), rgba(231, 242, 248, 1));
+    border-radius: 15px;
+    padding: 30px 40px;
+    margin: 100px 20px;
+}
+.search-header{
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #FFA384;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.search-header h2{
+    color: rgb(46, 46, 46);
+    margin-block-end: 5px;
+    margin-block-start: 0px;
+}
+.row{
+    display: flex;
+    align-items: center;
+}
+.row h3{
+    color: rgb(46, 46, 46);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.input-group{
+    display: flex;
+    flex:1;
+    flex-direction: column;
+    gap: 5px;
+}
+.input-group label{
+    color: rgb(50, 50, 50);
+}
+.input-group input
+,select{
+    font-size: 18px;
+    height: 34px;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: rgb(90, 90, 90);
+    border: 1px solid white;
+    border-radius: 4px;
+    background: white;
+    outline: none;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+.input-group input:focus
+,select:focus{
+    border: 1px solid #FFA384;
+}
+.button-group{
+    display: flex;
+    justify-content: flex-end;
+    flex:1;
+    gap: 5px;
+}
+.button-group button{
+    font-size: 18px;
+    height: 34px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+    border: 0;
+    background-color: #FFA384;
+    border-radius: 4px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+.button-group button:hover{
+    background-color: #fcb7a1;
+}
+.button-group button:focus{
+    background-color: #e98462;
+}
+.button-group #random{
+    background-color: #74BDCB;
+}
+.button-group #random:hover{
+    background-color: #88ccda;
+}
+.button-group #random:focus{
+    background-color: #56a2b1;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+}
+@media (max-width: 660px) {
+    .search{
+        margin: 40px 20px;
+    }
+    .row {
+      flex-direction: column;
+      gap: 20px;
+    }
+    .input-group {
+        width: 100%;
+    }
+    .row h3 {
+        display: none;
+    }
+  }
