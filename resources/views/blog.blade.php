@@ -24,73 +24,77 @@
     </div>
 
 
-    <div class="row">
-        <div class="column">
-            <div class="container">
-                <!-- <div class="row row-bottom-padded-md"> -->
-                    <div class="col-sm-4">
-                        <a href=""><img class="img-responsive" width="293" height="260" src="images/vacation.jpeg" alt="vacation image"></a>
-                        <div class="blog-text">
-                            <div class="prod-title">
-                                <h3>Planning for Vacation</h3>
-                                <span class="posted_by">Aug. 15th</span>
-                                <span class="comment">"21" <i class="icon-bubble2"></i></span>
-                                <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente doloribus at itaque quibusdam commodi quia.
-                                    Temporibus iure dicta reiciendis odio!
-                                </p>
-                                <p>Learn more....</p>
 
+    <div class="blog">
+        <div class="row">
+            <div class="column">
+                <div class="container">
+                    <div class="row row-bottom-padded-md">
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <a href=""><img class="img-responsive" width="293" height="260" src="images/vacation.jpeg" alt="vacation image"></a>
+                            <div class="blog-text">
+                                <div class="prod-title">
+                                    <h3>Planning for Vacation</h3>
+                                    <span class="posted_by">Aug. 15th</span>
+                                    <span class="comment">"21" <i class="icon-bubble2"></i></span>
+                                    <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente doloribus at itaque quibusdam commodi quia.
+                                        Temporibus iure dicta reiciendis odio!
+                                    </p>
+                                    <p>Learn more....</p>
+
+                                </div>
                             </div>
                         </div>
                     </div>
-                <!-- </div> -->
+                </div>
             </div>
-        </div>
 
-        <div class="column">
-            <div class="container">
-                <!-- <div class="row row-bottom-padded-md"> -->
-                    <div class="col-sm-4">
-                        <a href=""><img class="img-responsive" width="293" height="260" src="images/vacation.jpeg" alt="vacation image"></a>
-                        <div class="blog-text">
-                            <div class="prod-title">
-                                <h3>Planning for Vacation</h3>
-                                <span class="posted_by">Aug. 15th</span>
-                                <span class="comment">"21" <i class="icon-bubble2"></i></span>
-                                <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente doloribus at itaque quibusdam commodi quia.
-                                    Temporibus iure dicta reiciendis odio!
-                                </p>
-                                <p>Learn more....</p>
+            <div class="column">
+                <div class="container">
+                    <div class="row row-bottom-padded-md">
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <a href=""><img class="img-responsive" width="293" height="260" src="images/vacation.jpeg" alt="vacation image"></a>
+                            <div class="blog-text">
+                                <div class="prod-title">
+                                    <h3>Planning for Vacation</h3>
+                                    <span class="posted_by">Aug. 15th</span>
+                                    <span class="comment">"21" <i class="icon-bubble2"></i></span>
+                                    <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente doloribus at itaque quibusdam commodi quia.
+                                        Temporibus iure dicta reiciendis odio!
+                                    </p>
+                                    <p>Learn more....</p>
 
+                                </div>
                             </div>
                         </div>
                     </div>
-                <!-- </div> -->
+                </div>
             </div>
-        </div>
 
-        <div class="column">
-            <div class="container">
-                <!-- <div class="row row-bottom-padded-md"> -->
-                    <div class="col-sm-4">
-                        <a href=""><img class="img-responsive" width="293" height="260" src="images/vacation.jpeg" alt="vacation image"></a>
-                        <div class="blog-text">
-                            <div class="prod-title">
-                                <h3>Planning for Vacation</h3>
-                                <span class="posted_by">Aug. 15th</span>
-                                <span class="comment">"21" <i class="icon-bubble2"></i></span>
-                                <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente doloribus at itaque quibusdam commodi quia.
-                                    Temporibus iure dicta reiciendis odio!
-                                </p>
-                                <p>Learn more....</p>
+            <div class="column">
+                <div class="container">
+                    <div class="row row-bottom-padded-md">
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <a href=""><img class="img-responsive" width="293" height="260" src="images/vacation.jpeg" alt="vacation image"></a>
+                            <div class="blog-text">
+                                <div class="prod-title">
+                                    <h3>Planning for Vacation</h3>
+                                    <span class="posted_by">Aug. 15th</span>
+                                    <span class="comment">"21" <i class="icon-bubble2"></i></span>
+                                    <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente doloribus at itaque quibusdam commodi quia.
+                                        Temporibus iure dicta reiciendis odio!
+                                    </p>
+                                    <p>Learn more....</p>
 
+                                </div>
                             </div>
                         </div>
                     </div>
-                <!-- </div> -->
+                </div>
             </div>
-        </div>
 
+
+        </div>
     </div>
 
 
