@@ -14,7 +14,7 @@
                 <div class="search-header">
                     <h2>What will be your next destination?</h2>
                 </div>
-                <form>
+                <form class="search-form">
                     <div class="row">
                         <div class="input-group">
                             <label for="season">At what season?</label>
@@ -27,9 +27,17 @@
                         </div>
                         <h3>Or</h3>
                         <div class="input-group">
-                            <label for="date">When would you want to go?</label>
-                            <input type="date" name="date-from" id="date-from">
-                            <input type="date" name="date-until" id="date-until">
+                            <label>When would you want to go?</label>
+                            <div class="date-picker">
+                                <div>
+                                    <label for="date-from">From:</label>
+                                    <input type="date" name="date-from" id="date-from">
+                                </div>
+                                <div>
+                                    <label for="date-to">Till:</label>
+                                    <input type="date" name="date-to" id="date-to">
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="row">

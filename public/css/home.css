@@ -13,7 +13,7 @@
     justify-content: center;
     flex-direction: column;
     max-width: 700px;
-    background-image: linear-gradient(rgba(231, 242, 248, 0.8), rgba(231, 242, 248, 1));
+    background-image: linear-gradient(var(--color-baby-blue-transparent), var(--color-baby-blue));
     border-radius: 15px;
     padding: 30px 40px;
     margin: 100px 20px;
@@ -21,12 +21,12 @@
 .search-header{
     display: flex;
     justify-content: center;
-    border-bottom: 1px solid #FFA384;
+    border-bottom: 1px solid var(--color-salmon);
     width: 100%;
     margin-bottom: 20px;
 }
 .search-header h2{
-    color: rgb(46, 46, 46);
+    color: var(--color-text-black-dark);
     margin-block-end: 5px;
     margin-block-start: 0px;
 }
@@ -35,7 +35,7 @@
     align-items: center;
 }
 .row h3{
-    color: rgb(46, 46, 46);
+    color: var(--color-text-black-dark);
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -46,7 +46,7 @@
     gap: 5px;
 }
 .input-group label{
-    color: rgb(50, 50, 50);
+    color: var(--color-text-black);
 }
 .input-group input
 ,select{
@@ -54,7 +54,7 @@
     height: 34px;
     padding-left: 5px;
     padding-right: 5px;
-    color: rgb(90, 90, 90);
+    color: var(--color-text-black-light);
     border: 1px solid white;
     border-radius: 4px;
     background: white;
@@ -64,7 +64,7 @@
 }
 .input-group input:focus
 ,select:focus{
-    border: 1px solid #FFA384;
+    border: 1px solid var(--color-salmon);
 }
 .button-group{
     display: flex;
@@ -79,31 +79,36 @@
     padding-right: 10px;
     color: white;
     border: 0;
-    background-color: #FFA384;
+    background-color: var(--color-salmon);
     border-radius: 4px;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
 }
 .button-group button:hover{
-    background-color: #fcb7a1;
+    background-color: var(--color-salmon-light);
 }
 .button-group button:focus{
-    background-color: #e98462;
+    background-color: var(--color-salmon-dark);
 }
 .button-group #random{
-    background-color: #74BDCB;
+    background-color: var(--color-aquamarine);
 }
 .button-group #random:hover{
-    background-color: #88ccda;
+    background-color: var(--color-aquamarine-light);
 }
 .button-group #random:focus{
-    background-color: #56a2b1;
+    background-color: var(--color-aquamarine-dark);
 }
-form{
+.search-form{
     display: flex;
     flex-direction: column;
     width: 100%;
     gap: 20px;
+}
+.date-picker{
+    display: flex;
+    gap: 5px;
+    justify-content: space-between;
 }
 @media (max-width: 660px) {
     .search{
@@ -118,5 +123,8 @@ form{
     }
     .row h3 {
         display: none;
+    }
+    .date-picker{
+        flex-direction: row;
     }
   }
