@@ -1,7 +1,4 @@
 
-body{
-    margin:0;
-}
 .about-page-container{
     display:flex;
     flex-direction: column;
@@ -29,6 +26,7 @@ h1{
     border-bottom: 1px solid #FFA384;
     width:100%;
 }
+
 p{
     text-align: center;
 }
