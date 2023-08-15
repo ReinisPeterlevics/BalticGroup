@@ -13,7 +13,7 @@
             <div class="about-page-content">
             <div class="about-us-container">
             <h1>About Us</h1>
-            <p class="about-cs-p">At Wanderlust Adventures, we believe that travel is not just a journey, but a gateway to enriching experiences,
+            <p class="about-cs-p">At Magebit Travel, we believe that travel is not just a journey, but a gateway to enriching experiences,
                 unforgettable memories, and personal growth. Established with a passion for exploration and a commitment to
                 exceptional service, our travel agency is your trusted partner in creating remarkable journeys around the world.</p>
             </div>
@@ -42,6 +42,28 @@
                 </div>
             </div>
                 </div>
+                <div class="our-partners">
+                    <h2>Our Partners</h2>
+                    <div class="recomendation-card-container">
+                    <div class="recomendation-cards">
+                        <a href="https://www.airbaltic.com/lv-LV/index" class="recomendation-link" target="_blank"><img src="/images/airBalticLogo.png" alt="AirBaltic logo" ></a>
+                    </div>
+                    <div class="recomendation-cards">
+                        <a href="https://www.turkishairlines.com/" class="recomendation-link" target="_blank"><img src="/images/turkishAirLines.png" alt="AirBaltic logo"></a>
+                    </div>
+                    <div class="recomendation-cards">
+                        <a href="https://www.ncl.com/fr/en/" class="recomendation-link" target="_blank"><img src="/images/norvegianCruiseLine.png" alt="AirBaltic logo"></a>
+                    </div>
+                    <div class="recomendation-cards">
+                        <a href="https://www.finnair.com/lv-en" class="recomendation-link" target="_blank"><img src="/images/finnAir.png" alt="AirBaltic logo"></a>
+                    </div>
+                    <div class="recomendation-cards">
+                        <a href="https://www.uzairways.com/en" class="recomendation-link" target="_blank"><img src="/images/uzbekistanAirways.png" alt="AirBaltic logo"></a>
+                    </div>
+                    </div>
+
+                </div>
+
             <div class="our-team-container">
                 <h2>Our Team</h2>
                 <div class="our-team-boxes">
@@ -73,6 +95,7 @@
             </div>
             </div>
         </div>
+</div>
         @include('footer')
     </body>
 </html>
