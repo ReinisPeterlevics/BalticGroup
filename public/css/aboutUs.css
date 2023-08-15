@@ -1,0 +1,111 @@
+
+body{
+    margin:0;
+}
+.about-page-container{
+    display:flex;
+    flex-direction: column;
+    width:100%;
+    margin:0;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../images/background.jpg");
+}
+.about-page-content{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgba(231,242,248, 0.8), rgba(231,242,248, 1));
+    max-width:1200px;
+    border-radius: 15px;
+    padding: 30px 40px;
+    margin:20px;
+}
+h1{
+    text-align: center;
+    border-bottom: 1px solid #FFA384;
+    width:100%;
+}
+p{
+    text-align: center;
+}
+.about-us-container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 80%;
+}
+.why-book-container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width:80%;
+}
+h2{
+    text-align: center;
+    border-bottom: 1px solid #FFA384;
+    width:100%;
+}
+.why-book-boxes{
+    display:flex;
+    flex-wrap: wrap;
+    width:100%;
+    justify-content: space-between;
+    gap:5px;
+}
+.small-why-container{
+    width: 200px;
+    height: 200px;
+    text-align: center;
+}
+.small-why-container>h3{
+    font-size: 18px;
+}
+.small-why-container>img{
+    height:50px;
+    width:50px;
+    position:relative;
+    transition: transform 0.5s ease-in-out;
+}
+.small-why-container>img:hover {
+    animation: shake 0.4s ease-in-out infinite;
+}
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-1px);
+    }
+    50% {
+        transform: translateX(1px);
+    }
+    75% {
+        transform: translateX(-1px);
+    }
+}
+.our-team-container{
+    display:flex;
+    flex-direction: column;
+    width:80%;
+}
+.our-team-boxes{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap:5px;
+}
+.small-team-container{
+    width:150px;
+    height:auto;
+}
+.small-team-container>h3{
+    text-align: center;
+    font-size: 18px;
+    margin: 0;
+}
+.small-team-container>p{
+    text-align: center;
+}
