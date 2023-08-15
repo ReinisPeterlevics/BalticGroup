@@ -9,7 +9,7 @@ body{
     margin:0;
     justify-content: center;
     align-items: center;
-    background-image: url("../images/background.jpg");
+    background-image: url("../images/page-background.jpg");
 }
 .about-page-content{
     display:flex;
@@ -20,7 +20,7 @@ body{
     max-width:1200px;
     border-radius: 15px;
     padding: 30px 40px;
-    margin:20px;
+    margin: 100px 20px;
 }
 h1{
     text-align: center;
@@ -108,4 +108,19 @@ h2{
 }
 .small-team-container>p{
     text-align: center;
+}
+@media (max-width: 660px) {
+    .why-book-boxes {
+        flex-direction: column;
+        align-items: center;
+
+    }
+    .our-team-boxes{
+
+        flex-direction: column;
+        align-items: center;
+    }
+    .about-page-content{
+        margin: 40px 20px;
+    }
 }
