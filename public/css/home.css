@@ -33,11 +33,7 @@
 .row{
     display: flex;
     align-items: center;
-}
-.row h3{
-    color: var(--color-text-black-dark);
-    padding-left: 10px;
-    padding-right: 10px;
+    gap: 30px;
 }
 .input-group{
     display: flex;
@@ -184,9 +180,6 @@ select:focus{
     }
     .input-group {
         width: 100%;
-    }
-    .row h3 {
-        display: none;
     }
     .date-picker{
         flex-direction: row;

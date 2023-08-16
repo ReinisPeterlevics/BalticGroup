@@ -21,13 +21,13 @@
                         <div class="input-group">
                             <label for="season">At what season?</label>
                             <select name="season" id="season">
+                                <option value="" disabled selected hidden></option>
                                 <option value="spring">Spring</option>
                                 <option value="summer">Summer</option>
                                 <option value="fall">Fall</option>
                                 <option value="winter">Winter</option>
                             </select>
                         </div>
-                        <h3>Or</h3>
                         <div class="input-group">
                             <label class="visible-desktop">When would you want to go?</label>
                             <label class="visible-mobile">Or when would you want to go?</label>
@@ -47,15 +47,23 @@
                         <div class="input-group">
                             <label for="country">Where do you want to go?</label>
                             <select name="country" id="country">
+                                <option value="" disabled selected hidden></option>
                                 <option value="usa">United States</option>
                                 <option value="canada">Canada</option>
                             </select>
                         </div>
-                    </div>
-                    <div class="row">
                         <div class="input-group">
                             <label for="activity">What do you want to do?</label>
-                            <input type="text" id="activity" name="activity">
+                            <select name="activity" id="activity">
+                                <option value="" disabled selected hidden></option>
+                                <option value="hiking">Hiking</option>
+                                <option value="skiing">Skiing</option>
+                                <option value="swimming">Swimming</option>
+                                <option value="fishing">Fishing</option>
+                                <option value="climbing">Climbing</option>
+                                <option value="running">Running</option>
+                                <option value="cycling">Cycling</option>
+                            </select>
                         </div>
                     </div>
                     <div class="row">
@@ -66,7 +74,6 @@
                                 <label for="budget" id="budgetLabel">200</label>
                             </div>
                         </div>
-                        <h3>And</h3>
                         <div class="input-group">
                             <label for="persons">How many persons will be travelling?</label>
                             <div class="range-picker">
