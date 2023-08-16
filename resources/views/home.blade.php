@@ -6,6 +6,7 @@
         <title>Travel app</title>
         <link href="css/app.css" rel="stylesheet" >
         <link href="css/home.css" rel="stylesheet">
+        <script src="js/home.js"></script>
     </head>
     <body>
         @include('header')
@@ -28,13 +29,14 @@
                         </div>
                         <h3>Or</h3>
                         <div class="input-group">
-                            <label>When would you want to go?</label>
+                            <label class="visible-desktop">When would you want to go?</label>
+                            <label class="visible-mobile">Or when would you want to go?</label>
                             <div class="date-picker">
-                                <div>
+                                <div class="date-picker-item">
                                     <label for="date-from">From:</label>
                                     <input type="date" name="date-from" id="date-from">
                                 </div>
-                                <div>
+                                <div class="date-picker-item">
                                     <label for="date-to">Till:</label>
                                     <input type="date" name="date-to" id="date-to">
                                 </div>
@@ -59,18 +61,25 @@
                     <div class="row">
                         <div class="input-group">
                             <label for="budget">How much do you want to spend?</label>
-                            <input type="text" id="budget" name="budget">
+                            <div class="range-picker">
+                                <input type="range" id="budget" name="budget" min="200" max="5000" step="100" value="200" onchange="rangeInputHandler(this)">
+                                <label for="budget" id="budgetLabel">200</label>
+                            </div>
                         </div>
                         <h3>And</h3>
                         <div class="input-group">
                             <label for="persons">How many persons will be travelling?</label>
-                            <input type="number" id="persons" name="persons">
+                            <div class="range-picker">
+                                <input type="range" id="persons" name="persons" min="1" max="50" step="1" value="1" onchange="rangeInputHandler(this)">
+                                <label for="persons" id="personsLabel">1</label>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="button-group">
-                            <button id="random" type="submit">I am feeling lucky!</button>
                             <button id="search" type="submit">Search</button>
+                            <button id="random" type="submit">I am feeling lucky!</button>
+                            <button id="showAll" type="submit">Just show me all you have!</button>
                         </div>
                     </div>
                     </div>
