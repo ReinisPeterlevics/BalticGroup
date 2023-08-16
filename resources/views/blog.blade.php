@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="css/app.css">
     <title>Travel Blog</title>
 </head>
 <body>
@@ -99,21 +100,21 @@
 
 
     <div class="pagination">
-    <button class="page-button"><a href="#"></a>Previous</button>
-    <button class="page-button">1</button>
-    <button class="page-button">2</button>
-    <button class="page-button">3</button>
-    <button class="page-button"><a href="#"></a>Next</button>
+        <button class="page-button"><a href="#"></a>Previous</button>
+        <button class="page-button">1</button>
+        <button class="page-button">2</button>
+        <button class="page-button">3</button>
+        <button class="page-button"><a href="#"></a>Next</button>
 
     <!-- Add more buttons as needed -->
-  </div>
+    </div>
 
 
 
 
 
 
-  @include('footer')
+    @include('footer')
 
 
 </body>
