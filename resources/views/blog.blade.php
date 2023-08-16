@@ -24,14 +24,13 @@
     </div>
 
 
-
     <div class="blog">
         <div class="row">
             <div class="column">
                 <div class="container">
                     <div class="row row-bottom-padded-md">
                         <div class="col-lg-4 col-md-4 col-sm-6">
-                            <a href=""><img class="img-responsive" width="293" height="260" src="images/vacation.jpeg" alt="vacation image"></a>
+                            <a href="https://magebit.com/"><img class="img-responsive" width="293" height="260" src="images/vacation.jpeg" alt="vacation image"></a>
                             <div class="blog-text">
                                 <div class="prod-title">
                                     <h3>Planning for Vacation</h3>
@@ -53,7 +52,7 @@
                 <div class="container">
                     <div class="row row-bottom-padded-md">
                         <div class="col-lg-4 col-md-4 col-sm-6">
-                            <a href=""><img class="img-responsive" width="293" height="260" src="images/vacation.jpeg" alt="vacation image"></a>
+                            <a href="https://magebit.com/"><img class="img-responsive" width="293" height="260" src="images/vacation.jpeg" alt="vacation image"></a>
                             <div class="blog-text">
                                 <div class="prod-title">
                                     <h3>Planning for Vacation</h3>
@@ -75,7 +74,7 @@
                 <div class="container">
                     <div class="row row-bottom-padded-md">
                         <div class="col-lg-4 col-md-4 col-sm-6">
-                            <a href=""><img class="img-responsive" width="293" height="260" src="images/vacation.jpeg" alt="vacation image"></a>
+                            <a href="https://magebit.com/"><img class="img-responsive" width="293" height="260" src="images/vacation.jpeg" alt="vacation image"></a>
                             <div class="blog-text">
                                 <div class="prod-title">
                                     <h3>Planning for Vacation</h3>
@@ -98,28 +97,15 @@
     </div>
 
 
-    <div class="pages">
-        <nav aria-label="...">
-            <ul class="pagination" style="display: flex;">
-                <li class="page-item disabled">
-                    <span class="page-link">Previous</span>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item active">
-                    <span class="page-link">
-                        2
-                    <span class="sr-only">(current)</span>
-                    </span>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+    <div class="pagination">
+    <button class="page-button"><a href="#"></a>Previous</button>
+    <button class="page-button">1</button>
+    <button class="page-button">2</button>
+    <button class="page-button">3</button>
+    <button class="page-button"><a href="#"></a>Next</button>
 
-
+    <!-- Add more buttons as needed -->
+  </div>
 
 
 
