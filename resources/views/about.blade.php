@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -61,8 +61,16 @@
                         <a href="https://www.uzairways.com/en" class="recomendation-link" target="_blank"><img src="/images/uzbekistanAirways.png" alt="AirBaltic logo"></a>
                     </div>
                     </div>
+            </div>
 
-                </div>
+            <div class="carousel">
+  <div class="carousel-inner">
+    <img src="/images/airBalticLogo.png" alt="Image 1">
+    <img src="/images/airBalticLogo.png" alt="Image 2">
+    <img src="/images/airBalticLogo.png" alt="Image 3">
+  </div>
+</div>
+
 
             <div class="our-team-container">
                 <h2>Our Team</h2>
@@ -96,6 +104,8 @@
             </div>
         </div>
 </div>
+
+<script src="js/aboutUs.js"></script>
         @include('footer')
     </body>
 </html>
