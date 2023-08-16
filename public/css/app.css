@@ -1,12 +1,34 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+html{
+    font-family: 'Roboto', sans-serif;
+}
 body{
-    background-color: #E7F2F8;
-    font-family: "Roboto", sans-serif;
     margin: 0;
     padding: 0;
-}
+    height: 100%;
+    background-color: #E7F2F8;
 
+    --color-baby-blue: #E7F2F8;
+    --color-baby-blue-transparent: rgba(231, 242, 248, 0.8);
+
+    --color-aquamarine: #74BDCB;
+    --color-aquamarine-light: #8dc8d4;
+    --color-aquamarine: #59a8b8;
+
+    --color-salmon: #FFA384;
+    --color-salmon-transparent: rgba(255, 163, 132, 0.8);
+    --color-salmon-light: #fdb39a;
+    --color-salmon-dark: #ff8f6a;
+
+    --color-freesia: #EFE7BC;
+    --color-freesia: #faf4d3;
+    --color-freesia: #e7dda1;
+
+    --color-text-black: rgb(59, 59, 59);
+    --color-text-black-light: rgb(107, 107, 107);
+    --color-text-black-dark: rgb(49, 49, 49);
+}
 /* header */
 header {
     background-color: #74BDCB;
@@ -14,35 +36,29 @@ header {
     text-align: center;
     padding: 1rem;
 }
-
 .cont {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
 .navbar-brand {
     color: white;
     text-decoration: none;
     font-size: 1.5rem;
     margin-left: 20px;
 }
-
 .navbar-collapse {
     display: flex;
 }
-
 .navbar-nav {
     list-style: none;
     display: flex;
     align-items: center;
     gap: 1rem;
 }
-
 .nav-item {
     display: flex;
 }
-
 .nav-link {
     color: white;
     text-decoration: none;
@@ -50,14 +66,12 @@ header {
     border-bottom: 2px solid transparent;
     transition: background-color 0.3s;
 }
-
 .nav-link:hover {
     /* background-color: #FFA384; */
     border-bottom: 2px solid #FFA384;
     color: white;
     border-radius: 3px;
 }
-
 /* footer */
 .footer {
     background-color: #EFE7BC;
@@ -65,24 +79,19 @@ header {
     display: flex;
     justify-content: center;
 }
-
 .footer-section {
     margin: 0 20px;
     text-align: left;
     color: #333;
     flex: 1;
 }
-
 .footer p {
     text-align: left;
 }
-
 .footer a {
     color: #333;
     text-decoration: none;
 }
-
 .footer a:hover {
     font-size: 17px;
 }
-
