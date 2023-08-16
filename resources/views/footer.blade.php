@@ -1,5 +1,8 @@
 <footer>
     <div class="footer">
+        <div>
+            <a href="{{route('home')}}"><img class="logoF" src="/images/smallDarkLogo.png" alt="Magebit logo"></a>
+        </div>
         <div class="footer-section">
             <h3>Contact Us</h3>
             <p><strong>Email</strong>: info@magebit.com</p>

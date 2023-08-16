@@ -38,7 +38,6 @@ header {
     background-color: #74BDCB;
     color: white;
     text-align: center;
-    padding: 1rem;
 }
 .cont {
     display: flex;
@@ -49,10 +48,11 @@ header {
     color: white;
     text-decoration: none;
     font-size: 1.5rem;
-    margin-left: 20px;
+
 }
 .navbar-collapse {
     display: flex;
+    margin-right: 1rem;
 }
 .navbar-nav {
     list-style: none;
@@ -97,6 +97,21 @@ header {
 .footer a:hover {
     font-size: 17px;
 }
+
+.logoH {
+    height: 50%;
+    width: 70%;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+
+}
+
+.logoF {
+    height: 50%;
+    width: 60%;
+    padding-top: 1rem;
+    padding-left: 2rem;
+}
 .range-picker{
     display: flex;
     align-items: center;
@@ -127,14 +142,14 @@ header {
     border-radius: 50%;
     background: var(--color-salmon);
     cursor: pointer;
-  }
+}
 .range-picker input::-moz-range-thumb {
     width: 25px;
     height: 25px;
     border-radius: 50%;
     background: var(--color-salmon);
     cursor: pointer;
-  }
+}
 .range-picker label{
     margin: 5px;
     background-color: var(--color-baby-blue-dark);
