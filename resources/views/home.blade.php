@@ -14,6 +14,7 @@
                 <div class="search-header">
                     <h2>What will be your next destination?</h2>
                 </div>
+                <p class="form-notes">And don't you worry, you don't need to fill out all fields, we will do our best to find you the perfect destination from whatever how little you provide!</p>
                 <form class="search-form">
                     <div class="row">
                         <div class="input-group">

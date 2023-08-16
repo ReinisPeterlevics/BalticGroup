@@ -110,6 +110,14 @@
     gap: 5px;
     justify-content: space-between;
 }
+.form-notes{
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    background-color: var(--color-salmon-transparent);
+    border-radius: 15px;
+    padding: 15px;
+}
 @media (max-width: 660px) {
     .search{
         margin: 40px 20px;
@@ -126,5 +134,8 @@
     }
     .date-picker{
         flex-direction: row;
+    }
+    .form-notes {
+        text-align: left;
     }
   }

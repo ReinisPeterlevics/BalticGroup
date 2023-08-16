@@ -17,6 +17,7 @@ body{
     --color-aquamarine: #59a8b8;
 
     --color-salmon: #FFA384;
+    --color-salmon-transparent: rgba(255, 163, 132, 0.8);
     --color-salmon-light: #fdb39a;
     --color-salmon-dark: #ff8f6a;
 
