@@ -36,3 +36,7 @@ Route::get('/location-description', function () {
 Route::get('/location', function () {
     return view('location');
 })->name('location');
+
+Route::get('/cart', function () {
+    return view('cart');
+})->name('cart');

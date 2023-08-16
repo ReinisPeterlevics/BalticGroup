@@ -4,12 +4,16 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Location Description</title>
+    <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/location-description.css">
 </head>
 <body>
     @include('header')
     <div class="container">
         <div class="description-container">
+        <div destination-photo>
+                    <img class="destination-image" src="images/Batu_cave.jpg" alt="destination-image">
+                </div>
             <div class="description">
                 <div class="description-header">
                     <h2>Tour Details</h2>
@@ -24,13 +28,10 @@
                     <input class="add-to-cart-button" type="submit" name="add-to-cart" value="Add to Cart">
                 </div>
             </div>
-                <div destination-photo>
-                    <img class="destination-image" src="images/Batu_cave.jpg" alt="destination-image">
-                </div>
-                <div class="description-buttons-media">
-                    <a href="#" class="back-button add-to-cart-button">Back</a>
-                    <input class="add-to-cart-button" type="submit" name="add-to-cart" value="Add to Cart">
-                </div>
+            <div class="description-buttons-media">
+                <a href="#" class="back-button add-to-cart-button">Back</a>
+                <input class="add-to-cart-button" type="submit" name="add-to-cart" value="Add to Cart">
+            </div>
         </div>
     </div>
     @include('footer')
