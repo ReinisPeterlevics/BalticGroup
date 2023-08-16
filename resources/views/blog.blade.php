@@ -7,6 +7,7 @@
     <title>Travel Blog</title>
 </head>
 <body>
+    @include('header')
 
     <h1>Blog</h1>
 
@@ -112,6 +113,7 @@
 
 
 
+  @include('footer')
 
 
 </body>
