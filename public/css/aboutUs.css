@@ -15,22 +15,29 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(rgba(231,242,248, 0.8), rgba(231,242,248, 1));
+    background-image: linear-gradient(var(--color-baby-blue-transparent), var(--color-baby-blue));
     max-width:1200px;
     border-radius: 15px;
     padding: 30px 40px;
     margin: 100px 20px;
 }
-h1{
+h1, h2{
     text-align: center;
-    border-bottom: 1px solid #FFA384;
+    border-bottom: 1px solid var(--color-salmon);
     width:100%;
+}
+h1, h2{
+
+    color: var(--color-text-black-dark);
+}
+h3, p{
+    color: var(--color-text-black);
 }
 
 p{
     text-align: center;
 }
-.about-us-container{
+.about-us-container, .why-book-container{
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -42,19 +49,6 @@ p{
     flex-direction: column;
     align-items: center;
     width:80%;
-}
-h2{
-    text-align: center;
-    border-bottom: 1px solid #FFA384;
-    width:100%;
-}
-.why-book-boxes{
-    display:flex;
-    flex-wrap: wrap;
-    width:100%;
-    justify-content: space-between;
-    gap:5px;
-    margin-top:40px;
 }
 .small-why-container{
     width: 200px;
@@ -92,11 +86,11 @@ h2{
     flex-direction: column;
     width:80%;
 }
-.our-team-boxes{
+.our-team-boxes, .recomendation-card-container, .why-book-boxes{
+    width:100%;
     display:flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap:5px;
     margin-top:40px;
 }
 .small-team-container{
@@ -116,20 +110,22 @@ h2{
     flex-direction: column;
     width:80%;
 }
-.recomendation-card-container{
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin:40px 0px;;
-}
+
 .recomendation-link>img{
     max-height:30px;
     width:100px;
     padding: 20px;
+    transition: transform 0.5s;
+}
+.recomendation-link>img:hover{
+    transform: scale(1.1);
 }
 h1,h2{
     padding-bottom: 20px;
 }
+
+
+
 
 @media (max-width: 660px) {
     .why-book-boxes {
@@ -143,10 +139,42 @@ h1,h2{
         align-items: center;
     }
     .about-page-content{
-        margin: 40px 20px;
+        margin: 0;
+        border-radius: 0px;
+        padding: 30px 15px;
     }
     .recomendation-card-container{
         flex-direction: column;
         align-items: center;
     }
+}
+
+
+
+.carousel {
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;}
+.carousel-inner {
+    display: flex;
+
+    transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);}
+@keyframes continuousLoop {
+    0% {
+transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-100% * 3)); /* Adjust based on your number of slides */
+    }}
+
+.carousel-inner img {
+    width: 100%;
+    height: auto;
+}
+
+.prev-button,
+.next-button {
+    margin-top: 10px;
+    cursor: pointer;
 }
