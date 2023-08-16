@@ -6,7 +6,7 @@
         <title>Travel app</title>
         <link href="css/app.css" rel="stylesheet" >
         <link href="css/home.css" rel="stylesheet">
-        <script src="js/home.js"></script>
+        <script src="js/app.js"></script>
     </head>
     <body>
         @include('header')
