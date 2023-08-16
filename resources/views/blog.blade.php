@@ -22,7 +22,7 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Blanditiis soluta modi vel quaerat magni ipsa animi nemo libero odio enim iusto, qui, expedita adipisci numquam? Quam sed ut odio ipsum?
             </p>
-        <div>
+        </div>
     </div>
 
 
@@ -93,8 +93,6 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
     </div>
 

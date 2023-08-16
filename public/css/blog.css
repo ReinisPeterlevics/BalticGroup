@@ -18,31 +18,22 @@ body {
 
 .row {
     display: flex;
-    justify-content: center;
-    align-items: center; /* Vertically center items */
-    flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
-}
+  }
 
   /* Original styles for the columns */
-.column {
-    width: 33.33%;
+  .column {
+    flex: 1; /* Allow columns to take equal width */
     padding: 10px;
     box-sizing: border-box; /* Include padding in the width */
-}
+  }
 
-  /* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-.column {
-    width: 100%;
+  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .row {
+      flex-direction: column; /* Stack columns vertically on smaller screens */
     }
-}
+  }
+
 
 
 .blog {
@@ -55,6 +46,7 @@ body {
     border-radius: 15px;
     padding: 30px 40px;
     margin:20px;
+    height: 50vh;
 }
 
 
@@ -62,7 +54,7 @@ body {
 .pagination {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin: 20px 50px;
 }
 
 .page-button {
