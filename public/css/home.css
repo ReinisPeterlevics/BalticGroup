@@ -48,7 +48,7 @@
 .input-group label{
     color: var(--color-text-black);
 }
-.input-group input
+.input-group input:not([type="range"])
 ,select{
     font-size: 18px;
     height: 34px;
