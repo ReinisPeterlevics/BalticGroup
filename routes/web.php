@@ -28,3 +28,11 @@ Route::get('/search/{query}', function (string $query) {
 Route::get('/destination/{id}', function (string $id) {
     return view('destination', ['id' => $id])->name('destination');
 })->name('destination');
+
+Route::get('/location-description', function () {
+    return view('location-description');
+})->name('location-description');
+
+Route::get('/location', function () {
+    return view('location');
+})->name('location');
