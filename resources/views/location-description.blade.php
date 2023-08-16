@@ -11,9 +11,7 @@
 <body>
     <div class="app">
         <div class="app-container">
-            <div class="row header">
                 @include('header')
-            </div>
             <div class="row content">
                 <div class="description-container">
                     <div destination-photo>
@@ -47,9 +45,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row footer">
                 @include('footer')
-            </div>
         </div>
     </div>
 </body>
