@@ -7,6 +7,8 @@
     justify-content: center;
     align-items: center;
     background-image: url("../images/page-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .about-page-content{
     display:flex;
@@ -52,6 +54,7 @@ h2{
     width:100%;
     justify-content: space-between;
     gap:5px;
+    margin-top:40px;
 }
 .small-why-container{
     width: 200px;
@@ -94,6 +97,7 @@ h2{
     flex-wrap: wrap;
     justify-content: space-between;
     gap:5px;
+    margin-top:40px;
 }
 .small-team-container{
     width:150px;
@@ -107,6 +111,26 @@ h2{
 .small-team-container>p{
     text-align: center;
 }
+.our-partners{
+    display:flex;
+    flex-direction: column;
+    width:80%;
+}
+.recomendation-card-container{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin:40px 0px;;
+}
+.recomendation-link>img{
+    max-height:30px;
+    width:100px;
+    padding: 20px;
+}
+h1,h2{
+    padding-bottom: 20px;
+}
+
 @media (max-width: 660px) {
     .why-book-boxes {
         flex-direction: column;
@@ -120,5 +144,9 @@ h2{
     }
     .about-page-content{
         margin: 40px 20px;
+    }
+    .recomendation-card-container{
+        flex-direction: column;
+        align-items: center;
     }
 }
