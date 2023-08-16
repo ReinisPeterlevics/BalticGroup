@@ -33,6 +33,6 @@ Route::get('/location-description', function () {
     return view('location-description');
 })->name('location-description');
 
-Route::get('/location', function () {
-    return view('location');
-})->name('location');
+Route::get('/location-list', function () {
+    return view('location-list');
+})->name('location-list');
