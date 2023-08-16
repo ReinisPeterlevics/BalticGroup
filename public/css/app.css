@@ -142,14 +142,14 @@ header {
     border-radius: 50%;
     background: var(--color-salmon);
     cursor: pointer;
-  }
+}
 .range-picker input::-moz-range-thumb {
     width: 25px;
     height: 25px;
     border-radius: 50%;
     background: var(--color-salmon);
     cursor: pointer;
-  }
+}
 .range-picker label{
     margin: 5px;
     background-color: var(--color-baby-blue-dark);
