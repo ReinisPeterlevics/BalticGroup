@@ -42,34 +42,33 @@
                 </div>
             </div>
                 </div>
+
                 <div class="our-partners">
                     <h2>Our Partners</h2>
-                    <div class="recomendation-card-container">
-                    <div class="recomendation-cards">
+                    <div class="carousel-container">
+                    <div class="carousel">
+                    <div class="carousel-inner">
+                    <a href="https://www.airbaltic.com/lv-LV/index" class="recomendation-link" target="_blank"><img src="/images/airBalticLogo.png" alt="AirBaltic logo" ></a>
+                    <a href="https://www.turkishairlines.com/" class="recomendation-link" target="_blank"><img src="/images/turkishAirLines.png" alt="AirBaltic logo"></a>
+                    <a href="https://www.ncl.com/fr/en/" class="recomendation-link" target="_blank"><img src="/images/norvegianCruiseLine.png" alt="AirBaltic logo"></a>
+                    <a href="https://www.finnair.com/lv-en" class="recomendation-link" target="_blank"><img src="/images/finnAir.png" alt="AirBaltic logo"></a>
+                    <a href="https://www.uzairways.com/en" class="recomendation-link" target="_blank"><img src="/images/uzbekistanAirways.png" alt="AirBaltic logo"></a>
+
+
+                        <!-- Duplicates-->
                         <a href="https://www.airbaltic.com/lv-LV/index" class="recomendation-link" target="_blank"><img src="/images/airBalticLogo.png" alt="AirBaltic logo" ></a>
-                    </div>
-                    <div class="recomendation-cards">
                         <a href="https://www.turkishairlines.com/" class="recomendation-link" target="_blank"><img src="/images/turkishAirLines.png" alt="AirBaltic logo"></a>
-                    </div>
-                    <div class="recomendation-cards">
                         <a href="https://www.ncl.com/fr/en/" class="recomendation-link" target="_blank"><img src="/images/norvegianCruiseLine.png" alt="AirBaltic logo"></a>
-                    </div>
-                    <div class="recomendation-cards">
                         <a href="https://www.finnair.com/lv-en" class="recomendation-link" target="_blank"><img src="/images/finnAir.png" alt="AirBaltic logo"></a>
-                    </div>
-                    <div class="recomendation-cards">
                         <a href="https://www.uzairways.com/en" class="recomendation-link" target="_blank"><img src="/images/uzbekistanAirways.png" alt="AirBaltic logo"></a>
-                    </div>
-                    </div>
+
+
+</div>
+</div>
+    </div>
+
             </div>
 
-            <div class="carousel">
-  <div class="carousel-inner">
-    <img src="/images/airBalticLogo.png" alt="Image 1">
-    <img src="/images/airBalticLogo.png" alt="Image 2">
-    <img src="/images/airBalticLogo.png" alt="Image 3">
-  </div>
-</div>
 
 
             <div class="our-team-container">

@@ -147,34 +147,43 @@ h1,h2{
         flex-direction: column;
         align-items: center;
     }
+    .carousel-container{
+        max-width: 300px;
+    }
 }
+
+
+
 
 
 
 .carousel {
-    width: 80%;
+    flex:1;
+    max-width: 1200px;
     margin: 0 auto;
     overflow: hidden;
-    position: relative;}
-.carousel-inner {
-    display: flex;
-
-    transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);}
-@keyframes continuousLoop {
-    0% {
-transform: translateX(0);
-    }
-    100% {
-      transform: translateX(calc(-100% * 3)); /* Adjust based on your number of slides */
-    }}
-
-.carousel-inner img {
-    width: 100%;
-    height: auto;
+    max-width:fit-content;
 }
 
-.prev-button,
-.next-button {
-    margin-top: 10px;
-    cursor: pointer;
+.carousel-inner {
+    display: flex;
+    animation: loopCarousel 15s linear infinite;
+    width:100%;
+    box-sizing:border-box;
+}
+
+.carousel-inner a {
+    flex: 0 0 20%;
+}
+
+@keyframes loopCarousel {
+    0% {
+    transform: translateX(0%);
+    }
+    100% {
+    transform: translateX(-100%);
+    }
+}
+.carousel-inner:hover {
+animation-play-state: paused;
 }
