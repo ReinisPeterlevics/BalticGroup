@@ -21,6 +21,14 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
+Route::get('/blog', function () {
+    return view('blog');
+})->name('blog');
+
+Route::get('/login', function () {
+    return view('login');
+})->name('login');
+
 Route::get('/location', 'App\Http\Controllers\LocationController@index')->name('location');
 
 Route::get('/location-description', 'LocationController@show')->name('location-description');
