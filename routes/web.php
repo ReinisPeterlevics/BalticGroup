@@ -21,18 +21,18 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
-Route::get('/search/{query}', function (string $query) {
-    return view('search', ['query' => $query])->name('search');
-})->name('search');
-
-Route::get('/destination/{id}', function (string $id) {
-    return view('destination', ['id' => $id])->name('destination');
-})->name('destination');
+Route::get('/location', function () {
+    return view('location');
+})->name('location');
 
 Route::get('/location-description', function () {
     return view('location-description');
 })->name('location-description');
 
-Route::get('/location', function () {
-    return view('location');
-})->name('location');
+// Route::get('/search/{query}', function (string $query) {
+//     return view('search', ['query' => $query])->name('search');
+// })->name('search');
+
+// Route::get('/destination/{id}', function (string $id) {
+//     return view('destination', ['id' => $id])->name('destination');
+// })->name('destination');
