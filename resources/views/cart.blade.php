@@ -12,6 +12,10 @@
     @include('header')
     <div class="container">
 
+    <div class="cart-title">
+        <h3>Booking Cart<h3>
+    </div>
+
     <div class="cart-outter-container">
         <div class="cart-container">
             <div class="cart-item-img">
@@ -33,10 +37,11 @@
                 <div>
                     <p>Price per ticket: 1500 EUR</p>
                     <p>Persons</p>
-                    <div class="range-picker">
+                    <input type="number" id="quantity" name="quantity" min="1" max="50">
+                    <!-- <div class="range-picker">
                         <input type="range" id="persons" name="persons" min="1" max="50" step="1" value="1" onchange="rangeInputHandler(this)">
                         <label for="persons" id="personsLabel">1</label>
-                    </div>
+                    </div> -->
                     <p>Total price: 1500 EUR</p>
 
                 </div>
@@ -69,10 +74,11 @@
                 <div>
                     <p>Price per ticket: 1500 EUR</p>
                     <p>Persons</p>
-                    <div class="range-picker">
+                    <!-- <div class="range-picker">
                         <input type="range" id="persons" name="persons" min="1" max="50" step="1" value="1" onchange="rangeInputHandler(this)">
                         <label for="persons" id="personsLabel">1</label>
-                    </div>
+                    </div> -->
+                    <input type="number" id="quantity" name="quantity" min="1" max="50">
                     <p>Total price: 1500 EUR</p>
 
                 </div>
@@ -89,9 +95,6 @@
         <!-- <div class="close-button-container">
             <a href="#"></a>
         </div> -->
-
-        <div class="border">
-        </div>
 
         <div class="grand-total-container">
             <div class="grand-total">
