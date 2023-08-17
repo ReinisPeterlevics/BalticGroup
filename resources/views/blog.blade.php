@@ -10,9 +10,6 @@
 <body>
     @include('header')
 
-
-
-
     <div class="blog">
     <h1>Blog</h1>
 

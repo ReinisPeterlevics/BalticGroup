@@ -13,19 +13,21 @@ h3 {
 
 body {
     background: url("../images/page-background.jpg");
+
 }
 
 .blog {
-    display: flex;
+    display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(rgba(231, 242, 248, 0.8), rgba(231, 242, 248, 1));
-    max-width: 1200px;
+    background-image: linear-gradient(rgba(231,242,248, 0.8), rgba(231,242,248, 1));
+    /* max-width:1200px; */
     border-radius: 15px;
     padding: 30px 40px;
-    margin: 20px;
-    height: auto; /* Allow the height to adjust based on content */
+    margin: 100px 20px;
+    height: auto;
+
   }
 
   .row {
