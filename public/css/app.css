@@ -38,7 +38,6 @@ header {
     background-color: #74BDCB;
     color: white;
     text-align: center;
-    padding: 1rem;
 }
 .cont {
     display: flex;
@@ -49,10 +48,11 @@ header {
     color: white;
     text-decoration: none;
     font-size: 1.5rem;
-    margin-left: 20px;
+
 }
 .navbar-collapse {
     display: flex;
+    margin-right: 1rem;
 }
 .navbar-nav {
     list-style: none;
@@ -69,6 +69,7 @@ header {
     margin-right: 20px;
     border-bottom: 2px solid transparent;
     transition: 0.3s;
+    padding-left: 6px;
 }
 .nav-link:hover {
     border-bottom: 2px solid #FFA384;
@@ -96,6 +97,21 @@ header {
 }
 .footer a:hover {
     font-size: 17px;
+}
+.logoH {
+    height: 50%;
+    width: 70%;
+    padding-top: 1rem;
+    object-fit: contain;
+    padding-bottom: 0.5rem;
+
+}
+.logoF {
+    height: 50%;
+    width: 60%;
+    padding-top: 1rem;
+    padding-left: 2rem;
+    object-fit: contain;
 }
 .range-picker{
     display: flex;
@@ -127,14 +143,14 @@ header {
     border-radius: 50%;
     background: var(--color-salmon);
     cursor: pointer;
-  }
+}
 .range-picker input::-moz-range-thumb {
     width: 25px;
     height: 25px;
     border-radius: 50%;
     background: var(--color-salmon);
     cursor: pointer;
-  }
+}
 .range-picker label{
     margin: 5px;
     background-color: var(--color-baby-blue-dark);
@@ -155,5 +171,24 @@ header {
     }
     .footer div:last-child{
         min-width: 105px;
+    }
+    .navbar-brand{
+        text-align: left;
+        margin-left: 15px;
+    }
+    .navbar-collapse{
+        margin-right: 0;
+    }
+    .footer{
+        font-size: smaller;
+    }
+    .logoF{
+        padding-left: 15px;
+        width: 85%;
+    }
+}
+@media (max-width: 475px) {
+    .footer-image{
+        display: none;
     }
 }

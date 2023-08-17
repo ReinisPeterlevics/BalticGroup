@@ -1,22 +1,25 @@
 .container{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background: url("../images/page-background.jpg");
     background-size: cover;
     height: 100%;
+    width: 100%;
+    gap: 40px;
 }
 .search{
     display: flex;
-    flex: 1;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     max-width: 700px;
     background-image: linear-gradient(var(--color-baby-blue-transparent), var(--color-baby-blue));
     border-radius: 15px;
-    padding: 30px 40px;
-    margin: 100px 20px;
+    padding: 50px 40px;
+    margin: 0 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 .search-header{
     display: flex;
@@ -30,14 +33,10 @@
     margin-block-end: 5px;
     margin-block-start: 0px;
 }
-.row{
+.search-row{
     display: flex;
     align-items: center;
-}
-.row h3{
-    color: var(--color-text-black-dark);
-    padding-left: 10px;
-    padding-right: 10px;
+    gap: 30px;
 }
 .input-group{
     display: flex;
@@ -94,13 +93,13 @@ select:focus{
 .button-group button:focus{
     background-color: var(--color-salmon-dark);
 }
-.button-group #showAll{
+.button-group #showAll, #random{
     background-color: var(--color-aquamarine);
 }
-.button-group #showAll:hover{
+.button-group #showAll:hover, #random:hover{
     background-color: var(--color-aquamarine-light);
 }
-.button-group #showAll:focus{
+.button-group #showAll:focus, #random:focus{
     background-color: var(--color-aquamarine-dark);
 }
 .search-form{
@@ -123,24 +122,74 @@ select:focus{
     border-radius: 4px;
     padding: 10px;
 }
+.more-info{
+    display: flex;
+}
+.more-info a{
+    text-decoration: none;
+}
+.more-item{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--color-salmon);
+    border-radius: 15px;
+    margin: 0 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+.more-item:hover img{
+    transform: scale(1.1);
+}
+.more-item:hover h3{
+    transform: scale(1.1);
+}
+.more-image{
+    display: flex;
+    max-height: 300px;
+    max-width: 370px;
+    overflow: hidden;
+    border-radius: 15px 15px 0 0;
+}
+.more-image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: .3s ease-in-out;
+}
+.more-item h3{
+    text-align: center;
+    color: var(--color-text-black);
+    transition: .3s ease-in-out;
+}
 .visible-mobile{
     display: none;
 }
 @media (max-width: 660px) {
+    .container{
+        height: fit-content;
+        gap: 0;
+    }
     .search{
         margin: 0;
         border-radius: 0px;
-        padding: 30px 15px;
+        padding: 0 15px 0 15px;
+        height: fit-content;
+        box-shadow: none;
     }
-    .row {
+    .search-row {
         flex-direction: column;
         gap: 20px;
     }
+    .search-header{
+        padding-top: 35px;
+    }
+    .search-form{
+        padding-bottom: 35px;
+    }
     .input-group {
         width: 100%;
-    }
-    .row h3 {
-        display: none;
     }
     .date-picker{
         flex-direction: row;
@@ -151,6 +200,35 @@ select:focus{
     }
     .button-group {
         justify-content: center;
+    }
+    .more-info{
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .more-item{
+        margin: 0;
+        border-radius: 0px;
+        padding: 0 15px 0 15px;
+        height: fit-content;
+        width: 100%;
+        background-color: var(--color-baby-blue);
+        padding-bottom: 30px;
+        box-shadow: none;
+    }
+    .more-image{
+        width: 100%;
+        height: 100%;
+        max-width: 660px;
+        max-height: 200px;
+        overflow: hidden;
+        border-radius: 0 0 0 0;
+    }
+    .more-item h3{
+        width: 100%;
+        background-color: var(--color-salmon);
+        padding: 10px 0 10px 0;
+        margin: 0;
     }
     .visible-desktop{
         display: none;
