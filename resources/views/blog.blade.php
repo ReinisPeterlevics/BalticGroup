@@ -35,7 +35,7 @@
                                 <div class="prod-title">
                                     <h3>Planning for Vacation</h3>
                                     <span class="posted_by">Aug. 15th</span>
-                                    <span class="comment">"21" <i class="icon-bubble2"></i></span>
+                                    <span class="comment"><i class="fas fa-comment"></i> 23 comments</span>
                                     <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente doloribus at itaque quibusdam commodi quia.
                                         Temporibus iure dicta reiciendis odio!
                                     </p>
@@ -57,8 +57,7 @@
                                 <div class="prod-title">
                                     <h3>Planning for Vacation</h3>
                                     <span class="posted_by">Aug. 15th</span>
-                                    <span class="comment">"21" <i class="icon-bubble2"></i></span>
-                                    <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente doloribus at itaque quibusdam commodi quia.
+                                    <span class="comment"><i class="fas fa-comment"></i> 23 comments</span>                                    <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente doloribus at itaque quibusdam commodi quia.
                                         Temporibus iure dicta reiciendis odio!
                                     </p>
                                     <p>Learn more....</p>
@@ -79,8 +78,7 @@
                                 <div class="prod-title">
                                     <h3>Planning for Vacation</h3>
                                     <span class="posted_by">Aug. 15th</span>
-                                    <span class="comment">"21" <i class="icon-bubble2"></i></span>
-                                    <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente doloribus at itaque quibusdam commodi quia.
+                                    <span class="comment"><i class="fas fa-comment"></i> 23 comments</span>                                    <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente doloribus at itaque quibusdam commodi quia.
                                         Temporibus iure dicta reiciendis odio!
                                     </p>
                                     <p>Learn more....</p>
