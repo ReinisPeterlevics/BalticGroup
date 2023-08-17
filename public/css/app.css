@@ -69,6 +69,7 @@ header {
     margin-right: 20px;
     border-bottom: 2px solid transparent;
     transition: 0.3s;
+    padding-left: 6px;
 }
 .nav-link:hover {
     border-bottom: 2px solid #FFA384;
@@ -97,20 +98,20 @@ header {
 .footer a:hover {
     font-size: 17px;
 }
-
 .logoH {
     height: 50%;
     width: 70%;
     padding-top: 1rem;
+    object-fit: contain;
     padding-bottom: 0.5rem;
 
 }
-
 .logoF {
     height: 50%;
     width: 60%;
     padding-top: 1rem;
     padding-left: 2rem;
+    object-fit: contain;
 }
 .range-picker{
     display: flex;
@@ -170,5 +171,24 @@ header {
     }
     .footer div:last-child{
         min-width: 105px;
+    }
+    .navbar-brand{
+        text-align: left;
+        margin-left: 15px;
+    }
+    .navbar-collapse{
+        margin-right: 0;
+    }
+    .footer{
+        font-size: smaller;
+    }
+    .logoF{
+        padding-left: 15px;
+        width: 85%;
+    }
+}
+@media (max-width: 475px) {
+    .footer-image{
+        display: none;
     }
 }

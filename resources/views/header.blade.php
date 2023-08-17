@@ -5,9 +5,6 @@
             <div class="navbar-collapse">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('about')}}">About Us</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="#"><img src="/images/book4.png" alt="Travel Booking"></a>
                     </li>
                 </ul>
