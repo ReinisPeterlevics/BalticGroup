@@ -4,13 +4,22 @@ body {
 
 .cart-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr 1fr 30px;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    /* grid-template-rows: auto; */
     gap: 20px;
     border-radius: 15px;
     margin: 20px 10%;
     background-color: white;
+    width: 70%;
 }
+
+/* .remove-button::after {
+    content:'X';
+    color: var(--color-salmon);
+    text-decoration: none;
+    cursor: pointer;
+} */
 
 img {
     height: 200px;
@@ -31,10 +40,18 @@ img {
 }
 
 .cart-item-action {
-    padding-top: 10px;
+    padding-top: 5px;
 }
 
-.cart-remove-button, .cart-back-button, .cart-checkout-button {
+.range {
+    width: 75%;
+}
+
+.close-button-container {
+    width: 70%;
+}
+
+.cart-back-button, .cart-checkout-button {
     font-size: 18px;
     height: 34px;
     padding-left: 10px;
@@ -53,6 +70,97 @@ img {
 
 .grand-total-container {
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 80%;
+}
+
+.cart-item-action {
+    display: flex;
+    position: relative;
+}
+
+.close-button {
+    display: flex;
+    color: var(--color-salmon);
+    text-decoration: none;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+    border-radius: 15px;
+    padding: 0px 8px;
+    transition: 0.3s ease-in-out;
+    /* position: absolute;
+    display: inline; */
+    right: 3px;
+    top: 3px;
+}
+
+
+.border {
+    /* width: 70%; */
+    border-bottom: 1px solid var(--color-salmon);
+
+    /* margin-left: 155px; */
+
+}
+
+.close-button:hover {
+    color: var(--color-aquamarine);
+    /* background-color: aliceblue;
+    color: black; */
+}
+
+.range-picker input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: var(--color-salmon);
+    cursor: pointer;
+}
+
+.range-picker input::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: var(--color-salmon);
+    cursor: pointer;
+}
+
+@media (max-width: 660px) {
+    .cart-container {
+        grid-template-columns: 1fr;
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .grand-total-container {
+        width: 95%;
+    }
+
+    .cart-item-action, cart-item-info {
+        padding-left: 20px;
+    }
+
+    .close-button {
+        right: 3px;
+        bottom: 3px;
+    }
+
+    .tour-info{
+        padding-left: 10px;
+    }
+
+    .tour-title {
+        padding-left: 20px;
+    }
+
+    .close-button-container{
+        right: 3px;
+        bottom: 3px;
+    }
+
 }
