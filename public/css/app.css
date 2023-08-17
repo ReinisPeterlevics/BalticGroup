@@ -33,9 +33,10 @@ body{
 
     --color-gray: rgb(133, 133, 133);
 }
+
 /* header */
 header {
-    background-color: #74BDCB;
+    background-color: var(--color-aquamarine);
     color: white;
     text-align: center;
 }
@@ -71,12 +72,13 @@ header {
     transition: 0.3s;
 }
 .nav-link:hover {
-    border-bottom: 2px solid #FFA384;
+    border-bottom: 2px solid var(--color-salmon);
     color: white;
 }
+
 /* footer */
 .footer {
-    background-color: #EFE7BC;
+    background-color: VAR(--color-freesia);
     padding: 1rem;
     display: flex;
     justify-content: center;
@@ -84,20 +86,21 @@ header {
 .footer-section {
     margin: 0 20px;
     text-align: left;
-    color: #333;
+    color: var(--color-text-black);
     flex: 1;
 }
 .footer p {
     text-align: left;
 }
 .footer a {
-    color: #333;
+    color: var(--color-text-black);
     text-decoration: none;
 }
 .footer a:hover {
     font-size: 17px;
 }
 
+/* Logo */
 .logoH {
     height: 50%;
     width: 70%;
@@ -105,13 +108,14 @@ header {
     padding-bottom: 0.5rem;
 
 }
-
 .logoF {
     height: 50%;
     width: 60%;
     padding-top: 1rem;
     padding-left: 2rem;
 }
+
+/*  */
 .range-picker{
     display: flex;
     align-items: center;
