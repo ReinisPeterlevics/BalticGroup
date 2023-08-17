@@ -1,3 +1,7 @@
+!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!As login and sign up page was created we need tables for that information and maybe profile page? What do you all think?
+!!!!!!!!!!!!!!!!!!!!!!
+
 //Reinis I dont thik we need this field or table -> (-)
 
 Countries table: 
@@ -53,7 +57,6 @@ Flight table: ??????????????????????????????? (-) //Kate okay
     departure
     return
 
-
 Tour_activities table:
     tour_activity_id
     tour_id
@@ -77,4 +80,3 @@ Bookings table
 Customer table
 
 Payments table
-
