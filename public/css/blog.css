@@ -15,39 +15,34 @@ body {
     background: url("../images/page-background.jpg");
 }
 
-
-.row {
+.blog {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgba(231, 242, 248, 0.8), rgba(231, 242, 248, 1));
+    max-width: 1200px;
+    border-radius: 15px;
+    padding: 30px 40px;
+    margin: 20px;
+    height: auto; /* Allow the height to adjust based on content */
+  }
+
+  .row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
   }
 
   /* Original styles for the columns */
   .column {
-    flex: 1; /* Allow columns to take equal width */
-    padding: 10px;
+    flex: 0 0 calc(33.33% - 20px); /* Adjust margins and width as needed */
+    margin: 10px;
+    padding: 20px;
     box-sizing: border-box; /* Include padding in the width */
+    background-color: #f2f2f2;
   }
 
-  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 600px) {
-    .row {
-      flex-direction: column; /* Stack columns vertically on smaller screens */
-    }
-  }
-
-
-
-.blog {
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-image: linear-gradient(rgba(231,242,248, 0.8), rgba(231,242,248, 1));
-    max-width:1200px;
-    border-radius: 15px;
-    padding: 30px 40px;
-    margin:20px;
-    height: 50vh;
-}
 
 
 
