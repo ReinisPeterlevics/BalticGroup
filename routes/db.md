@@ -29,8 +29,8 @@ Activities table:
     image varchar(255) not null (-) we wont use this field
     duration (in minutes) varchar(100) not null (-) we wont use this field
 
-Tours table:
-    tour_id serial primary key not null
+Locations table:
+    location_id serial primary key not null
     name varchar(100) not null
     description text not null
     country_id foreign key not null
@@ -54,14 +54,14 @@ Flight table: ??????????????????????????????? (-)
     return
 
 
-Tour_activities table:
-    tour_activity_id
-    tour_id
+Location_activities table:
+    location_activity_id
+    location_id
     activity_id
 
 Orders table:
     order_id
-    tour_id
+    location_id
     customer_name
     customer_email
     customer_phone
