@@ -19,22 +19,17 @@
     max-width:1200px;
     width:100%;
     border-radius: 15px;
-    /* padding: 30px 40px; */
     margin: 100px 20px;
 }
 h1, h2{
     text-align: center;
     border-bottom: 1px solid var(--color-salmon);
     width:100%;
-}
-h1, h2{
-
     color: var(--color-text-black-dark);
 }
 h3, p{
     color: var(--color-text-black);
 }
-
 p{
     text-align: center;
 }
@@ -111,7 +106,33 @@ p{
     flex-direction: column;
     width:80%;
 }
-
+.partner-carousel {
+    flex:1;
+    width:100%;
+    margin: 0 auto;
+    overflow: hidden;
+    max-width:fit-content;
+}
+.partner-carousel-inner {
+    display: flex;
+    animation: loopCarousel 15s linear infinite;
+    width:100%;
+    box-sizing:border-box;
+}
+.partner-carousel-inner a {
+    flex: 0 0 20%;
+}
+@keyframes loopCarousel {
+    0% {
+    transform: translateX(0%);
+    }
+    100% {
+    transform: translateX(-100%);
+    }
+}
+.partner-carousel-inner:hover {
+animation-play-state: paused;
+}
 .recomendation-link>img{
     max-height:30px;
     width:100px;
@@ -124,64 +145,20 @@ p{
 h1,h2{
     padding-bottom: 20px;
 }
-
-
-
-
 @media (max-width: 660px) {
-    .why-book-boxes {
+    .why-book-boxes, .our-team-boxes, .recomendation-card-container {
         flex-direction: column;
         align-items: center;
 
-    }
-    .our-team-boxes{
-
-        flex-direction: column;
-        align-items: center;
     }
     .about-page-content{
         margin: 0;
         border-radius: 0px;
         padding: 30px 15px;
     }
-    .recomendation-card-container{
-        flex-direction: column;
-        align-items: center;
-    }
 }
 
 
 
 
 
-
-.carousel {
-    flex:1;
-    width:100%;
-    margin: 0 auto;
-    overflow: hidden;
-    max-width:fit-content;
-}
-
-.carousel-inner {
-    display: flex;
-    animation: loopCarousel 15s linear infinite;
-    width:100%;
-    box-sizing:border-box;
-}
-
-.carousel-inner a {
-    flex: 0 0 20%;
-}
-
-@keyframes loopCarousel {
-    0% {
-    transform: translateX(0%);
-    }
-    100% {
-    transform: translateX(-100%);
-    }
-}
-.carousel-inner:hover {
-animation-play-state: paused;
-}
