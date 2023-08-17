@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/blog.css">
     <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/location-description.css">
     <title>Travel Blog</title>
 </head>
 <body>
     @include('header')
 
+    <div class="app">
+        <div class="app-container">
     <div class="blog">
     <h1>Blog</h1>
 
@@ -91,6 +94,9 @@
             </div>
         </div>
     </div>
+</div>
+</div>
+
 
 
     <div class="pagination">
