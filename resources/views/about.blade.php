@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Travel app</title>
         <link href="css/app.css" rel="stylesheet" >
         <link href="css/aboutUs.css" rel="stylesheet" >
+        <script src="js/aboutUs.js"></script>
     </head>
     <body>
         @include('header')
@@ -44,26 +45,22 @@
                 </div>
                 <div class="our-partners">
                     <h2>Our Partners</h2>
-                    <div class="recomendation-card-container">
-                    <div class="recomendation-cards">
+                    <div class="partner-carousel">
+                        <div class="partner-carousel-inner">
                         <a href="https://www.airbaltic.com/lv-LV/index" class="recomendation-link" target="_blank"><img src="/images/airBalticLogo.png" alt="AirBaltic logo" ></a>
-                    </div>
-                    <div class="recomendation-cards">
                         <a href="https://www.turkishairlines.com/" class="recomendation-link" target="_blank"><img src="/images/turkishAirLines.png" alt="AirBaltic logo"></a>
-                    </div>
-                    <div class="recomendation-cards">
                         <a href="https://www.ncl.com/fr/en/" class="recomendation-link" target="_blank"><img src="/images/norvegianCruiseLine.png" alt="AirBaltic logo"></a>
-                    </div>
-                    <div class="recomendation-cards">
                         <a href="https://www.finnair.com/lv-en" class="recomendation-link" target="_blank"><img src="/images/finnAir.png" alt="AirBaltic logo"></a>
-                    </div>
-                    <div class="recomendation-cards">
                         <a href="https://www.uzairways.com/en" class="recomendation-link" target="_blank"><img src="/images/uzbekistanAirways.png" alt="AirBaltic logo"></a>
+                        <!-- Duplicates-->
+                        <a href="https://www.airbaltic.com/lv-LV/index" class="recomendation-link" target="_blank"><img src="/images/airBalticLogo.png" alt="AirBaltic logo" ></a>
+                        <a href="https://www.turkishairlines.com/" class="recomendation-link" target="_blank"><img src="/images/turkishAirLines.png" alt="AirBaltic logo"></a>
+                        <a href="https://www.ncl.com/fr/en/" class="recomendation-link" target="_blank"><img src="/images/norvegianCruiseLine.png" alt="AirBaltic logo"></a>
+                        <a href="https://www.finnair.com/lv-en" class="recomendation-link" target="_blank"><img src="/images/finnAir.png" alt="AirBaltic logo"></a>
+                        <a href="https://www.uzairways.com/en" class="recomendation-link" target="_blank"><img src="/images/uzbekistanAirways.png" alt="AirBaltic logo"></a>
+                        </div>
                     </div>
-                    </div>
-
                 </div>
-
             <div class="our-team-container">
                 <h2>Our Team</h2>
                 <div class="our-team-boxes">

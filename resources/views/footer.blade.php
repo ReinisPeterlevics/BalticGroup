@@ -1,6 +1,6 @@
 <footer>
     <div class="footer">
-        <div>
+        <div class="footer-image">
             <a href="{{route('home')}}"><img class="logoF" src="/images/smallDarkLogo.png" alt="Magebit logo"></a>
         </div>
         <div class="footer-section">
