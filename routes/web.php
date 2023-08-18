@@ -21,6 +21,14 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
+Route::get('/blog', function () {
+    return view('blog');
+})->name('blog');
+
+Route::get('/login', function () {
+    return view('login');
+})->name('login');
+
 Route::get('/checkout', function () {
     return view('checkout');
 })->name('checkout');
