@@ -1,10 +1,11 @@
 Controllers: --php artisan make:controller CartController
-    HomeController
+    HomeController -> index dropdowns
     AboutUsController (not sure)
     BlogController (not sure)
     LocationController: functions 
-                                -> list tours
-                                -> view tours
+                                -> index list all tours
+                                -> show tour
+                                -> filter tours
     CartController: 
                     -> list chosen tour info (how chosen? transmit this data, as well as data about the amount of people going on a tour)
     CheckoutController:
@@ -33,10 +34,10 @@ Routes for Controllers:
 
 Models: --php artisan make:model CartItem
 model for each table!!!!
-countries, seasons, activities, tours, tourActivities, orders
+countries, seasons, activities, locations, tourActivities, orders
 maybe users
 Do not forget relationships!!!!
-    User.php
+    <!-- User.php
         -> This model can represent the registered users of your website.
         -> It might have attributes like name, email, password, etc.
         -> You can use Laravel's built-in authentication system to handle user registration and login.
@@ -52,7 +53,7 @@ Do not forget relationships!!!!
         -> It might have attributes like title, content, author, image, etc.
     Order.php
         -> This model could represent the orders placed by users during the checkout process.
-        -> It might have attributes like user_id, total_amount, status, etc.
+        -> It might have attributes like user_id, total_amount, status, etc. -->
 
 
 HomeController
