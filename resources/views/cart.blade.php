@@ -6,106 +6,59 @@
     <title>Cart</title>
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/location-description.css">
     <script src="js/home.js"></script>
 </head>
 <body>
-    @include('header')
-    <div class="container">
-
-    <div class="cart-title">
-        <h3>Booking Cart<h3>
-    </div>
-
-    <div class="cart-outter-container">
+    <div class="cart-wrapper">
         <div class="cart-container">
-            <div class="cart-item-img">
-                <img class="cart-image" src="images/paragliding.jpg" alt="">
-            </div>
-
-            <div class="cart-item-info">
-                <div class="tour-title">
-                    <h3>Tour title</h3>
-                </div>
-                <div class="tour-info">
-                    <p class="tour-info">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet.</p>
-                </div>
-            </div>
-
-            <div class="cart-item-action">
-                <!-- <label for="quantity">Quantity</label>
-                <input type="number" min="1" max="50"> -->
+            <div class="cart-header">
+                <h1>Your Travel Cart</h1>
                 <div>
-                    <p>Price per ticket: 1500 EUR</p>
-                    <p>Persons</p>
-                    <input type="number" id="quantity" name="quantity" min="1" max="50">
-                    <!-- <div class="range-picker">
-                        <input type="range" id="persons" name="persons" min="1" max="50" step="1" value="1" onchange="rangeInputHandler(this)">
-                        <label for="persons" id="personsLabel">1</label>
-                    </div> -->
-                    <p>Total price: 1500 EUR</p>
-
-                </div>
-                <!-- <div class="remove-button">
-                    <a href="#" class="close-button"></a>
-                </div> -->
-            </div>
-            <div class="close-button-container">
-                <button class="close-button">&times</button>
-            </div>
-        </div>
-
-        <div class="cart-container">
-            <div class="cart-item-img">
-                <img class="cart-image" src="images/paragliding.jpg" alt="">
-            </div>
-
-            <div class="cart-item-info">
-                <div class="tour-title">
-                    <h3>Tour title</h3>
-                </div>
-                <div class="tour-info">
-                    <p class="tour-info">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga, amet.</p>
+                    <button class="close-button">&times</button>
                 </div>
             </div>
-
-            <div class="cart-item-action">
-                <!-- <label for="quantity">Quantity</label>
-                <input type="number" min="1" max="50"> -->
-                <div>
-                    <p>Price per ticket: 1500 EUR</p>
-                    <p>Persons</p>
-                    <!-- <div class="range-picker">
-                        <input type="range" id="persons" name="persons" min="1" max="50" step="1" value="1" onchange="rangeInputHandler(this)">
-                        <label for="persons" id="personsLabel">1</label>
-                    </div> -->
-                    <input type="number" id="quantity" name="quantity" min="1" max="50">
-                    <p>Total price: 1500 EUR</p>
-
+            <ul class="cart-items">
+                <li class="cart-item">
+                    <img src="images/paragliding.jpg" alt="mountains" class="cart-item-image">
+                    <div class="cart-item-info">
+                        <div class="cart-item-details">
+                            <h3 class="cart-item-title">Swiss Tour Package</h3>
+                            <p class="cart-item-country">Switzerland</p>
+                            <p class="cart-item-price">$500</p>
+                        </div>
+                        <div class="cart-item-quantity">
+                            <button class="minus-button">-</button>
+                            <input type="number" value="1" min="1" max="10">
+                            <button class="plus-button">+</button>
+                        </div>
+                    </div>
+                </li>
+                <li class="cart-item">
+                    <img src="images/Batu_cave.jpg" alt="Batu" class="cart-item-image">
+                    <div class="cart-item-info">
+                        <div class="cart-item-details">
+                            <h3 class="cart-item-title">Malaysia Tour Package</h3>
+                            <p>Malaysia</p>
+                            <p class="cart-item-price">$600</p>
+                        </div>
+                        <div class="cart-item-quantity">
+                            <button class="minus-button">-</button>
+                            <input type="number" value="2" min="1" max="10">
+                            <button class="plus-button">+</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="cart-summary">
+                <div class="cart-summary-title">
+                    <h2>Total : $1700</h2>
                 </div>
-                <!-- <div class="remove-button">
-                    <a href="#" class="close-button"></a>
-                </div> -->
-            </div>
-            <div class="close-button-container">
-                <button class="close-button">&times</button>
-            </div>
-        </div>
-
-    </div>
-        <!-- <div class="close-button-container">
-            <a href="#"></a>
-        </div> -->
-
-        <div class="grand-total-container">
-            <div class="grand-total">
-                <h3>Total: 1500 EUR</h3>
-            </div>
-            <div class="cart-button">
-                <a href=""><button class="cart-back-button">Back</button></a>
-                <a href=""><button class="cart-checkout-button">Checkout</button></a>
+                <div class="checkout-button">
+                    <button><a href="#">Checkout</a></button>
+                </div>
             </div>
         </div>
     </div>
-    @include('footer')
 </body>
 </html>
