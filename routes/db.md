@@ -11,7 +11,7 @@ Countries table:
     description text not null (-) we wont use this field //Kate agree
     image varchar(255) not null (-) we wont use this field //Kate thought we could add an image carousel to detail page and include it there as snapshot of what customer need to be ready for //Reinis we can add this for activities as we will be able to have more photos
 
-Cities table: (-) because its an uncenecessary extra table to have //Kate so people will travel to country without knowing where? //Reinis where would you use this data?
+Cities table: (-) because its an uncenecessary extra table to have //Kate so people will travel to country without knowing where? //Reinis where would you use this data? //Kate not really use but display as most web pages:) but okay, for now
     city_id serial primary key not null
     name varchar(100) not null
     description text not null
