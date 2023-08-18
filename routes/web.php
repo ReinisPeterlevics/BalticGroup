@@ -33,18 +33,6 @@ Route::get('/checkout', function () {
     return view('checkout');
 })->name('checkout');
 
-Route::get('/search/{query}', function (string $query) {
-    return view('search', ['query' => $query])->name('search');
-})->name('search');
+Route::get('/location-list', 'App\Http\Controllers\LocationController@index')->name('location');
 
-Route::get('/destination/{id}', function (string $id) {
-    return view('destination', ['id' => $id])->name('destination');
-})->name('destination');
-
-Route::get('/location-description', function () {
-    return view('location-description');
-})->name('location-description');
-
-Route::get('/location', function () {
-    return view('location');
-})->name('location');
+Route::get('/location', 'App\Http\Controllers\LocationController@show')->name('location-description');
