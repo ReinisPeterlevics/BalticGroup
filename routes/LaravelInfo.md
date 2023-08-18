@@ -24,8 +24,8 @@ Routes for Controllers:
         Route::get('/', [HomeController::class, 'index'])->name('home');
             Route::get('/about', [AboutUsController::class, 'index'])->name('about'); OR simple using function
             Route::get('/blog', [BlogController::class, 'index'])->name('blog'); OR simple using function
-        Route::get('/locations', [LocationController::class, 'index'])->name('location'); //index or list --we will see //rename location to location-list
-        Route::get('/locations/{id}', [LocationController::class, 'show'])->name('location-description'); //show or view --we will see //rename location-description to location-details
+        Route::get('/locations', [LocationController::class, 'index'])->name('location-list'); //index or list --we will see //rename location to location-list
+        Route::get('/locations/{id}', [LocationController::class, 'show'])->name('location'); //show or view --we will see //rename location-description to location-details
         Route::get('/cart', [CartController::class, 'index'])->name('cart'); // --we will see about the name
         Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout'); // --we will see about the name
 
@@ -55,6 +55,30 @@ Do not forget relationships!!!!
         -> It might have attributes like user_id, total_amount, status, etc.
 
 
+HomeController
+    <?php 
+    
+    namespace App\Http\Controllers;
+
+    use Illuminate\Http\Request;
+    use App\Models\Countries;
+    use App\Models\Seasons;
+    use App\Models\Activities;
+
+    class HomeController extends Controller
+    {
+        public function index()
+        {
+            $countries = Countries::pluck('name', 'country_id');
+            $seasons = Seasons::pluck('name', 'season_id');
+            $activities = Activities::pluck('name', 'activity_id');
+
+            return view('home', ['countries' => $countries, 'seasons' => $seasons]);
+        }
+    }
+    
+    ?>
+
 
 LocationController
     <?php
@@ -62,30 +86,141 @@ LocationController
     namespace App\Http\Controllers;
  
     use App\Http\Controllers\Controller;
-    use App\Models\Location;
+    use App\Models\Locations;
+    use Illuminate\Http\Request;
 
-    class LocationController extends Controller
+    class LocationsController extends Controller
     {
-        public function list()
+        public function index()
         {
-            $tours = Location::all();
+            $tours = Locations::all();
 
-            return view('location', ['tours' => $tours];
+            return view('location-list', ['tours' => $tours]);
+        }
+
+        public function show($id) 
+        {
+            $tour = Locations::findOrFail($id);
+
+            return view('location', ['tour' => $tour]);
+        }
+
+        public function filter(Request $request) ///how do we deferentiate for php when to use index and when filter? by request? parametrs? variables?
+        {
+            $query = Locations::query();
+
+            ///finish
+
+            if ($request->has('season')) {
+                $query->where('season_id', $request->input('name'));
+            }
+
+            if ($request->has('from')) {
+                $query->where('', $request->input('name'));
+            }
+
+            if ($request->has('till')) {
+                $query->where('', $request->input('name'));
+            }
+
+            if ($request->has('activity')) {
+                $query->where('activity_id', $request->input('name'));
+            }
+
+            if ($request->has('budget')) {
+                $query->where('', '<=', $request->input('price'));
+            }
+
+            if ($request->has('spots_left')) {
+                $query->where('', '>=', $request->input('spots_left'));
+            }
+
+            ///understanding
+
+            $filteredTours = $query->get();
+
+            return view('locations.filtered-home', ['filteredTours' => $filteredTours]);
         }
     }
     ?>
-
+    //index location-list
      @foreach ($tours as $tour)
             <li>
                 <h3>{{ $tour->name }}</h3>
                 <p>{{ $tour->description }}</p>
                 <p>Country: {{ $tour->country->name }}</p>
-                <p>Season: {{ $tour->season->name }}</p>
                 <p>Hotel: {{ $tour->hotel }}</p>
                 <p>Price: ${{ $tour->price }}</p>
                 <p>Spots Left: {{ $tour->spots_left }}</p>
                 <p>Start Date: {{ $tour->start_date }}</p>
                 <p>End Date: {{ $tour->end_date }}</p>
                 <p>Duration: {{ $tour->duration }} days</p>
+                <a href="{{ route('location', ['id' => $tour->id]) }}">View Details</a>
+
             </li>
     @endforeach
+
+    //show location-detail
+    <div class="container">
+        <h2>Tour Details</h2>
+        <h3>{{ $tour->name }}</h3>
+        <p>{{ $tour->description }}</p>
+        <p>Country: {{ $tour->country->name }}</p>
+        <p>Season: {{ $tour->season->name }} </p>
+        <p>Hotel: {{ $tour->hotel }}</p>
+        <p>Price: ${{ $tour->price }}</p>
+        <p>Spots Left: {{ $tour->spots_left }}</p>
+        <p>Start Date: {{ $tour->start_date }}</p>
+        <p>End Date: {{ $tour->end_date }}</p>
+        <p>Duration: {{ $tour->duration }} days</p>
+    </div>
+
+    //filter location-list
+    <div class="container">
+        <h2>Filtered Tours</h2>
+        <ul>
+            @foreach ($filteredTours as $tour) ///if for the html part
+                <li>
+                    <h3>{{ $tour->name }}</h3>
+                    <p>{{ $tour->description }}</p>
+                    <p>Country: {{ $tour->country->name }}</p>
+                    <p>Season: {{ $tour->season->name }}</p>
+                    <p>Hotel: {{ $tour->hotel }}</p>
+                    <p>Price: ${{ $tour->price }}</p>
+                    <p>Spots Left: {{ $tour->spots_left }}</p>
+                    <p>Start Date: {{ $tour->start_date }}</p>
+                    <p>End Date: {{ $tour->end_date }}</p>
+                    <p>Duration: {{ $tour->duration }} days</p>
+                    <!-- You can add more details here as needed -->
+                </li>
+            @endforeach
+        </ul>
+    </div>
+
+        //homepage
+    <div class="container">
+        <h2>Filter Tours</h2>
+        <form action="{{ route('locations.filter-home') }}" method="get">
+            <label for="country">Country:</label>
+            <select name="country">
+                <option value="">Select Country</option>
+                @foreach ($countries as $country)
+                    <option value="{{ $country->id }}">{{ $country->name }}</option>
+                @endforeach
+            </select>
+
+            <label for="spots_left">Spots Left:</label>
+            <input type="number" name="spots_left" min="0">
+
+            <label for="season">Season:</label>
+            <select name="season">
+                <option value="">Select Season</option>
+                @foreach ($seasons as $seasonId => $seasonName)
+                    <option value="{{ $seasonId }}">{{ $seasonName }}</option>
+                @endforeach
+            </select>
+
+            <button type="submit">Apply Filters</button>
+        </form>
+    </div>
+
