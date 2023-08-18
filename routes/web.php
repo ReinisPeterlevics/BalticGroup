@@ -33,10 +33,6 @@ Route::get('/checkout', function () {
     return view('checkout');
 })->name('checkout');
 
-Route::get('/checkout', function () {
-    return view('checkout');
-})->name('checkout');
-
 Route::get('/location-list', 'App\Http\Controllers\LocationController@index')->name('location');
 
-Route::get('/location', 'LocationController@show')->name('location-description');
+Route::get('/location', 'App\Http\Controllers\LocationController@show')->name('location-description');
