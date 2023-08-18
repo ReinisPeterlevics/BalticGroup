@@ -29,6 +29,14 @@ Route::get('/login', function () {
     return view('login');
 })->name('login');
 
+Route::get('/checkout', function () {
+    return view('checkout');
+})->name('checkout');
+
+Route::get('/checkout', function () {
+    return view('checkout');
+})->name('checkout');
+
 Route::get('/location-list', 'App\Http\Controllers\LocationController@index')->name('location');
 
 Route::get('/location', 'LocationController@show')->name('location-description');
