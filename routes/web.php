@@ -29,6 +29,6 @@ Route::get('/login', function () {
     return view('login');
 })->name('login');
 
-Route::get('/location', 'App\Http\Controllers\LocationController@index')->name('location');
+Route::get('/location-list', 'App\Http\Controllers\LocationController@index')->name('location');
 
-Route::get('/location-description', 'LocationController@show')->name('location-description');
+Route::get('/location', 'LocationController@show')->name('location-description');
