@@ -21,6 +21,10 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
+Route::get('/checkout', function () {
+    return view('checkout');
+})->name('checkout');
+
 Route::get('/search/{query}', function (string $query) {
     return view('search', ['query' => $query])->name('search');
 })->name('search');
