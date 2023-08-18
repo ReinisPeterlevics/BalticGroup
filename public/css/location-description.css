@@ -44,6 +44,12 @@ html{
     padding: 20px 20px 20px 40px;
     align-items: flex-start;
     justify-content: center;
+    /* background-color: white;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden; */
+
 }
 .destination-photo {
     display: flex;

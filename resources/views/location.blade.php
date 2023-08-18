@@ -10,30 +10,86 @@
     </head>
     <body>
     <div class="app">
-        <div class="app-container">
             @include('header')
-            <div class="row content">
-                @foreach($locations as $location)
+            <!-- from here -->
+            <div class="row">
                 <div class="loc">
-                    <div class="row">
-                        <div class="col-md-4 mb-4">
-                            <div class="card">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg" class="card-img-top">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{$location['name']}}</h5>
-                                    <p class="card-text">{{$location['description']}}</p>
-                                    <a href="{{route('about')}}" class="search-button">More</a>
-                                </div>
-                            </div>
+                    <div class="card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Tour name</h5>
+                            <p class="card-subtitle">Counry, City</p>
+                            <p class="sub">Hotel</p>
+                            <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi, rerum odio deleniti eos possimus quos! Animi molestiae, eaque earum vero, est vel harum quis placeat enim ipsa quos corrupti dolore.</p>
+                            <!-- <div class="right-button"> -->
+                                <a href="{{route('location-description')}}" class="more-button">More</a>
+                            <!-- </div> -->
                         </div>
                     </div>
                 </div>
-                @endforeach
+                <div class="loc">
+                    <div class="card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Tour name</h5>
+                            <p class="card-subtitle">Counry, City</p>
+                            <p class="sub">Hotel</p>
+                            <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi, rerum odio deleniti eos possimus quos! Animi molestiae, eaque earum vero, est vel harum quis placeat enim ipsa quos corrupti dolore.</p>
+                            <!-- <div class="right-button"> -->
+                                <a href="{{route('location-description')}}" class="more-button">More</a>
+                            <!-- </div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="loc">
+                    <div class="card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Tour name</h5>
+                            <p class="card-subtitle">Counry, City</p>
+                            <p class="sub">Hotel</p>
+                            <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi, rerum odio deleniti eos possimus quos! Animi molestiae, eaque earum vero, est vel harum quis placeat enim ipsa quos corrupti dolore.</p>
+                            <!-- <div class="right-button"> -->
+                                <a href="{{route('location-description')}}" class="more-button">More</a>
+                            <!-- </div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="loc">
+                    <div class="card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Tour name</h5>
+                            <p class="card-subtitle">Counry, City</p>
+                            <p class="sub">Hotel</p>
+                            <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi, rerum odio deleniti eos possimus quos! Animi molestiae, eaque earum vero, est vel harum quis placeat enim ipsa quos corrupti dolore.</p>
+                            <!-- <div class="right-button"> -->
+                                <a href="{{route('location-description')}}" class="more-button">More</a>
+                            <!-- </div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="loc">
+                    <div class="card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Tour name</h5>
+                            <p class="card-subtitle">Counry, City</p>
+                            <p class="sub">Hotel</p>
+                            <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi, rerum odio deleniti eos possimus quos! Animi molestiae, eaque earum vero, est vel harum quis placeat enim ipsa quos corrupti dolore.</p>
+                            <!-- <div class="right-button"> -->
+                                <a href="{{route('location-description')}}" class="more-button">More</a>
+                            <!-- </div> -->
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
+            <!-- to here -->
             @include('footer')
-        </div>
-        </div>
-    </body>
+    </div>
+</body>
 </html>
 
 
