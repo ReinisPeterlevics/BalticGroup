@@ -225,3 +225,26 @@ LocationController
         </form>
     </div>
 
+
+migrations
+    Schema::create('countries', function (Blueprint $table) {
+        $table->id('country_id');
+        $table->string('name', 100);
+        $table->string('image', 255);
+        $table->timestamps();
+    });
+
+
+Models:
+    
+    Location:
+        namespace App\Models;
+
+        use Illuminate\Database\Eloquent\Model;
+
+        protected $table = 'locations';
+        protected $fillable = [];
+
+        public function 
+     
+    
