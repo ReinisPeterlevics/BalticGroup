@@ -238,13 +238,30 @@ migrations
 Models:
     
     Location:
-        namespace App\Models;
-
         use Illuminate\Database\Eloquent\Model;
 
-        protected $table = 'locations';
-        protected $fillable = [];
+class Location extends Model
+{
+    protected $table = 'locations';
+    protected $primaryKey = 'location_id'
+    
+    public function countries()
+    {
+        return $this->belongsTo(Country::class);
+    }
 
-        public function 
+    public function season()
+    {
+        return $this->belongsTo(Season::class);
+    }
+
+    public function activities()
+    {
+        return $this->belongsToMany(Activity::class, 'locations_activities', 'location_id', 'activity_id');
+    }
+
+    // ...
+}
+
      
     
