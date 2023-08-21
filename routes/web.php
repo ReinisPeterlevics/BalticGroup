@@ -35,4 +35,4 @@ Route::get('/checkout', function () {
 
 Route::get('/location-list', 'App\Http\Controllers\LocationController@index')->name('location');
 
-Route::get('/location', 'App\Http\Controllers\LocationController@show')->name('location-description');
+Route::get('/location/{id}', 'App\Http\Controllers\LocationController@show')->name('location-description');

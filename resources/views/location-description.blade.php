@@ -4,9 +4,13 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Travel app</title>
-        <link href="css/app.css" rel="stylesheet" >
-        <link href="css/location-description.css" rel="stylesheet" >
-        <script src="js/location-description.js"></script>
+        <link href="{{asset('/css/app.css')}}" rel="stylesheet" >
+        <link href="{{asset('/css/location-description.css')}}" rel="stylesheet" >
+        <script src="{{asset('/js/location-description.js')}}"></script>
+
+        <!-- <link href="/css/app.css" rel="stylesheet" > -->
+        <!-- <link href="/css/location-description.css" rel="stylesheet" > -->
+        <!-- <script src="/js/location-description.js"></script> -->
 </head>
 <body>
     <div class="app">
