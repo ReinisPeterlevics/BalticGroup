@@ -105,7 +105,7 @@
                             </a>
                         </div>
                         <div class="more-item">
-                            <a href="{{route('home')}}">
+                            <a href="{{route('blog')}}">
                                 <div class="more-image">
                                     <img src="images/home/blog-photo.png" alt="blog">
                                 </div>

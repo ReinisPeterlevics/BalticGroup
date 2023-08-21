@@ -11,27 +11,31 @@
     <body>
     <div class="app">
         <div class="app-container">
-            @include('header')
+        @include('header')
             <div class="row content">
-                <div class="loc">
-                    <div class="row">
-                        <div class="col-md-4 mb-4">
-                            <div class="card">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg" class="card-img-top">
-                                <div class="card-body">
-                                    <h5 class="card-title">Mountain</h5>
-                                    <p class="card-text">Mountain from Wikipedia</p>
-                                    <a href="{{route('about')}}" class="search-button">More</a>
-                                </div>
+                <div class="row">
+                    @foreach($locations as $location)
+                    <div class="loc">
+                        <div class="card">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">{{$location->name}}</h5>
+                                <p class="card-subtitle">{{$location->countryname}} in {{$location->seasonname}}</p>
+                                <p class="sub">{{$location->hotel}}</p>
+                                <p class="card-text">{{$location->description}}</p>
+                                <!-- <div class="right-button"> -->
+                                    <a href="{{route('location-description')}}" class="more-button">More</a>
+                                <!-- </div> -->
                             </div>
                         </div>
                     </div>
+                    @endforeach
                 </div>
             </div>
-            @include('footer')
+        @include('footer')
         </div>
-        </div>
-    </body>
+    </div>
+</body>
 </html>
 
 

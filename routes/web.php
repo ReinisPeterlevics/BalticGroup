@@ -22,21 +22,21 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
-Route::get('/search/{query}', function (string $query) {
-    return view('search', ['query' => $query])->name('search');
-})->name('search');
+Route::get('/blog', function () {
+    return view('blog');
+})->name('blog');
 
-Route::get('/destination/{id}', function (string $id) {
-    return view('destination', ['id' => $id])->name('destination');
-})->name('destination');
+Route::get('/login', function () {
+    return view('login');
+})->name('login');
 
-Route::get('/location-description', function () {
-    return view('location-description');
-})->name('location-description');
+Route::get('/checkout', function () {
+    return view('checkout');
+})->name('checkout');
 
-Route::get('/location', function () {
-    return view('location');
-})->name('location');
+Route::get('/location-list', 'App\Http\Controllers\LocationController@index')->name('location');
+
+Route::get('/location', 'App\Http\Controllers\LocationController@show')->name('location-description');
 
 Route::get('/cart', function () {
     return view('cart');

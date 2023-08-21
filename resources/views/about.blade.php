@@ -3,10 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Travel app</title>
+        <title>About</title>
         <link href="css/app.css" rel="stylesheet" >
-        <link href="css/aboutUs.css" rel="stylesheet" >
-        <script src="js/aboutUs.js"></script>
+        <link href="css/about.css" rel="stylesheet" >
     </head>
     <body>
         @include('header')

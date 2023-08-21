@@ -1,18 +1,14 @@
 .loc {
-    margin: 2rem auto;
+    margin: auto;
     padding: 2rem;
-    width: 80%;
+    width: fit-content;
 }
 
 .row {
     display: flex;
-    justify-content: center;
-}
-
-.col-md-4 {
-    flex: 0 0 33.33%;
-    max-width: 33.33%;
-    padding: 0 1rem;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .card {
@@ -21,6 +17,8 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     overflow: hidden;
+    width: 540px;
+    height: fit-content;  /* change with data */
 }
 
 .card-img-top {
@@ -37,16 +35,31 @@
 .card-title {
     margin: 0;
     font-size: 1.25rem;
-}
 
+}
+.card-subtitle {
+    font-size: 1rem;
+    color: var(--color-gray);
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
+}
+.sub {
+    font-size: 1rem;
+    color: var(--color-gray);
+    margin-top: 0.1rem;
+    margin-bottom: 0.5rem;
+}
 .card-text {
-    margin-top: 0.5rem;
-    color: #555;
+    margin-top: 0.3rem;
+    color: var(--color-text-black-dark);
 }
 
-.search-button {
+/* .right-button {
+    justify-content: right;
+} */
+.more-button {
     display: inline-block;
-    background-color: #FFA384;
+    background-color: var(--color-salmon);
     color: white;
     border: none;
     border-radius: 5px;
@@ -56,6 +69,13 @@
     transition: background-color 0.3s, color 0.3s;
 }
 
-.search-button:hover {
-    background-color: #FF8C63;
+.more-button:hover {
+    background-color: var(--color-salmon-dark);
+}
+
+body {
+    background: url('../images/plane8.png'), var(--color-baby-blue-light);
+    /* background: url('../images/plane2.png'), var(--color-baby-blue-light); */
+    background-repeat: repeat;
+    background-size: 90px 90px;
 }

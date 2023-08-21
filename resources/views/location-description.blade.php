@@ -35,7 +35,7 @@
                             <p id="total-cost">Price in total: 1500 EUR</p>
                         </div>
                         <div class="description-buttons">
-                            <a href="#" class="back-button add-to-cart-button">Back</a>
+                            <a href="{{route('location')}}" class="back-button add-to-cart-button">Back</a>
                             <input class="add-to-cart-button" type="submit" name="add-to-cart" value="Add to Cart">
                         </div>
                     </div>
