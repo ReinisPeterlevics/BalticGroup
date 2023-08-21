@@ -72,3 +72,10 @@
 .more-button:hover {
     background-color: var(--color-salmon-dark);
 }
+
+body {
+    background: url('../images/plane8.png'), var(--color-baby-blue-light);
+    /* background: url('../images/plane2.png'), var(--color-baby-blue-light); */
+    background-repeat: repeat;
+    background-size: 90px 90px;
+}
