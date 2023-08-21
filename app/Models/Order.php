@@ -16,14 +16,17 @@ class Order extends Model
     protected $primaryKey = 'order_id';
 
     protected $fillable = [
-        'user_id',
+        'customer_first_name',
+        'customer_last_name',
+        'customer_email',
+        'customer_phone_number',
         'payment_type_id',
         'total_cost',
     ];
 
-    public function user():BelongsTo{
-        return $this->belongsTo(User::class);
-    }
+    // public function user():BelongsTo{
+    //     return $this->belongsTo(User::class);
+    // }
 
     public function payment_type():BelongsTo{
         return $this->belongsTo(PaymentType::class);
