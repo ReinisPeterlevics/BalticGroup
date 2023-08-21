@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/blog.css">
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/location-description.css">
-    <title>Travel Blog</title>
+    <title>Magebit Travel - Blog</title>
 </head>
 <body>
 
