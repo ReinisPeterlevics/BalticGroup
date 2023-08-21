@@ -26,9 +26,17 @@ Route::get('/blog', function () {
     return view('blog');
 })->name('blog');
 
+Route::get('/login1', function () {
+    return view('login1');
+})->name('login1');
+
 Route::get('/login', function () {
     return view('login');
 })->name('login');
+
+Route::get('/register', function () {
+    return view('register');
+})->name('register');
 
 Route::get('/checkout', function () {
     return view('checkout');
