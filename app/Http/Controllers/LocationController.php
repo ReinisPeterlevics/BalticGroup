@@ -3,18 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Location;
+use Illuminate\Support\Facades\DB;
 
 class LocationController extends Controller
 {
     public function index(){
-
-        //Just for testing purposes
-        $locations = [
-            ['name' => 'Islands', 'price' => '50', 'free_spots' => '10', 'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit'],
-            ['name' => 'Mountains', 'price' => '100', 'free_spots' => '20', 'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit'],
-            ['name' => 'Caves', 'price' => '200', 'free_spots' => '30', 'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit']
-        ];
-
+        $locations = DB::table('locations')->join('seasons', 'locations.season_id', '=','seasons.season_id')->join('countries', 'locations.country_id', '=', 'countries.country_id')->select('seasons.name as seasonname', 'countries.name as countryname', 'locations.*')->get();
         return view('location', ['locations' => $locations]);
     }
     public function show($id){
