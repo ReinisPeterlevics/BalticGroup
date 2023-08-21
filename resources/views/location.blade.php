@@ -19,10 +19,10 @@
                         <div class="card">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg" class="card-img-top">
                             <div class="card-body">
-                                <h5 class="card-title">{{$location['name']}}</h5>
-                                <p class="card-subtitle">Counry, City</p>
-                                <p class="sub">Hotel</p>
-                                <p class="card-text">{{$location['description']}}</p>
+                                <h5 class="card-title">{{$location->name}}</h5>
+                                <p class="card-subtitle">{{$location->countryname}} in {{$location->seasonname}}</p>
+                                <p class="sub">{{$location->hotel}}</p>
+                                <p class="card-text">{{$location->description}}</p>
                                 <!-- <div class="right-button"> -->
                                     <a href="{{route('location-description')}}" class="more-button">More</a>
                                 <!-- </div> -->
