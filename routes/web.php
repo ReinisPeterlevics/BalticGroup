@@ -36,3 +36,7 @@ Route::get('/checkout', function () {
 Route::get('/location-list', 'App\Http\Controllers\LocationController@index')->name('location');
 
 Route::get('/location', 'App\Http\Controllers\LocationController@show')->name('location-description');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
