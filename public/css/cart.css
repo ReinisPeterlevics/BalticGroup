@@ -49,9 +49,7 @@
     height: 34px;
     padding-left: 10px;
     padding-right: 10px;
-    color: white;
     border: 0;
-    background-color: var(--color-salmon);
     border-radius: 4px;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
@@ -83,6 +81,8 @@
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid #ccc;
+    margin: 10px 0;
+    padding-bottom: 10px;
 }
 
 .cart-item-image {
@@ -90,17 +90,22 @@
     height: 120px;
     object-fit: cover;
     margin-left: 20px;
+    border-radius: 10px;
 }
 
 .cart-item-info {
     flex: 1;
-    flex-direction: column;
+    display: flex;
     margin-left: 10px;
+    justify-content: space-between;
+
 }
 
+
 .cart-item-title {
+    display: flex;
     font-size: 18px;
-    padding-top: 10px;
+    line-height: 1.5;
 }
 
 .cart-item-details {
@@ -108,6 +113,7 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+    margin-right: 10px;
 }
 
 .cart-item-price {
@@ -116,7 +122,13 @@
 
 .cart-item-quantity {
     display: flex;
+    flex-direction: column;
     justify-content: flex-end;
+    justify-content: flex-end;
+}
+
+.buttons {
+    min-width: 125px;
 }
 
 .cart-item-quantity button {
@@ -127,7 +139,9 @@
     color: #333;
     font-weight: bold;
     margin-bottom: 20px;
+    border-radius: 4px;
 }
+
 
 .cart-item-quantity .plus-button {
     margin-right: 20px;
@@ -178,10 +192,21 @@
     margin-bottom: 10px;
 }
 
+@media(max-width:660px) {
+    .cart-header h1, .cart-summary h2 {
+        font-size: 20px;
+    }
+
+    .cart-header button, .cart-summary button {
+        font-size: 17px;
+    }
+
+    .cart-item-title {
+        font-size: 17px;
+    }
+}
+
 @media(max-width: 475px) {
-    /* .cart-header {
-        flex-direction: column;
-    } */
 
     .cart-header h1, .cart-summary h2 {
         font-size: 18px;
@@ -215,7 +240,6 @@
 
     .cart-item-quantity {
         justify-content: center;
-        margin: 10px 0;
     }
 
     .cart-item-details {
@@ -226,7 +250,6 @@
 
     .cart-item img{
         width: 50%;
-        margin-bottom: 10px;
     }
 
     .cart-item-details p {
@@ -235,6 +258,11 @@
 
     .cart-item-quantity .plus-button {
         margin-right: 0;
+    }
+
+    .cart-item-info {
+        flex-direction: column;
+        text-align: center;
     }
 
 }

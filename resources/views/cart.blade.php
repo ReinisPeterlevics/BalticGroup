@@ -25,12 +25,14 @@
                         <div class="cart-item-details">
                             <h3 class="cart-item-title">Swiss Tour Package</h3>
                             <p class="cart-item-country">Switzerland</p>
-                            <p class="cart-item-price">$500</p>
                         </div>
                         <div class="cart-item-quantity">
-                            <button class="minus-button">-</button>
-                            <input type="number" value="1" min="1" max="10">
-                            <button class="plus-button">+</button>
+                            <p class="cart-item-price">$600</p>
+                            <div class="buttons">
+                                <button class="minus-button">-</button>
+                                <input type="number" value="1" min="1" max="10">
+                                <button class="plus-button">+</button>
+                            </div>
                         </div>
                     </div>
                 </li>
@@ -40,12 +42,14 @@
                         <div class="cart-item-details">
                             <h3 class="cart-item-title">Malaysia Tour Package</h3>
                             <p>Malaysia</p>
-                            <p class="cart-item-price">$600</p>
                         </div>
                         <div class="cart-item-quantity">
-                            <button class="minus-button">-</button>
-                            <input type="number" value="2" min="1" max="10">
-                            <button class="plus-button">+</button>
+                            <p class="cart-item-price">$1500</p>
+                            <div class="buttons">
+                                <button class="minus-button">-</button>
+                                <input type="number" value="1" min="1" max="10">
+                                <button class="plus-button">+</button>
+                            </div>
                         </div>
                     </div>
                 </li>
