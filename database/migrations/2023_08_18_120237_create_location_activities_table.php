@@ -15,8 +15,11 @@ class CreateLocationActivitiesTable extends Migration
     {
         Schema::create('location_activities', function (Blueprint $table) {
             $table->id('location_activity_id');
-            $table->foreignId('location_id')->constrained('locations');
-            $table->foreignId('activity_id')->constrained('activities');
+            $table->unsignedBigInteger('location_id');
+            $table->foreign('location_id')->references('location_id')->on('locations');
+            $table->unsignedBigInteger('activity_id');
+            $table->foreign('activity_id')->references('activity_id')->on('activities');
+            $table->timestamps();
         });
     }
 
