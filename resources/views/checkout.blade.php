@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/app.css" rel="stylesheet" >
     <link href="css/checkout.css" rel="stylesheet" >
-    <title>Checkout</title>
+    <title>Magebit Travel - Checkout</title>
 </head>
 <body>
 @include('header')

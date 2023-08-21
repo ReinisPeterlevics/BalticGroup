@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/location-description.css">
-    <title>Travel app</title>
+    <title>Magebit Travel - Login</title>
 </head>
 <body>
     @include('header')

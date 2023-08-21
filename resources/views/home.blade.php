@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Travel app</title>
+        <title>Magebit Travel</title>
         <link href="css/app.css" rel="stylesheet" >
         <link href="css/home.css" rel="stylesheet">
         <link href="css/location-description.css" rel="stylesheet">
@@ -20,7 +20,7 @@
                             <h2>What will be your next destination?</h2>
                         </div>
                         <p class="form-notes">And don't you worry, you don't need to fill out all fields, we will do our best to find you the perfect destination from whatever how little you provide!</p>
-                        <form class="search-form">
+                        <form class="search-form" >
                             <div class="search-row">
                                 <div class="input-group">
                                     <label for="season">At what season?</label>
@@ -88,9 +88,9 @@
                             </div>
                             <div class="search-row">
                                 <div class="button-group">
-                                    <button id="random" type="submit">I am feeling lucky!</button>
-                                    <button id="showAll" type="submit">Just show me all you have!</button>
-                                    <button id="search" type="submit">Search</button>
+                                    <button id="random" type="button" onclick="window.location='{{route("location-random")}}'">I am feeling lucky!</button>
+                                    <button id="showAll" type="button" onclick="window.location='{{route("location")}}'">Just show me all you have!</button>
+                                    <button id="search" type="button">Search</button>
                                 </div>
                             </div>
                         </form>
