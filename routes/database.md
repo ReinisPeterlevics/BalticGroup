@@ -45,13 +45,17 @@ Order_locations table:
 
 Orders table:
     order_id serial primary key not null
-    customer_name
-    customer_email                  //maybe future user table
-    customer_phone
+    customer_first_name
+    customer_last_name
+    customer_phone_number              
+    customer_email
     payment_type_id foreign key not null
     total_cost decimal(10,2) not null
         //Kate order_statuss? paid/pending/canceled
         //Kate order_date?
+        
+User table:
+    
 
 Payment_type table:
     payment_type_id serial primary key not null
