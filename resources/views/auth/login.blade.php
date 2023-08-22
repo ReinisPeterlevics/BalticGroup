@@ -33,7 +33,7 @@
                                     </span>
                             @enderror
                             <input type="password" name="password" placeholder="Password" required="">
-                            <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                            <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Confirm password">
                             <button type="submit">Sign up</button>
                         </form>
                     </div>

@@ -8,9 +8,13 @@
                         <a class="nav-link" href="#" onclick="showCart()"><img src="/images/book4.png" alt="Travel Booking"></a>
                     </li>
 
-                    @auth
-
-
+                    @guest
+                            @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                            @endif
+                        @else
                     <li class="nav-item dropdown">
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('logout') }}"
@@ -24,7 +28,7 @@
                             </form>
                         </div>
                     </li>
-                    @endauth
+                    @endguest
                 </ul>
             </div>
         </div>
