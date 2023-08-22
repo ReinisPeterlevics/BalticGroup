@@ -6,7 +6,7 @@ h1 {
     text-align: center;
 }
 
-h3 {
+.blog-h3{
     text-align: center;
 }
 
@@ -59,10 +59,11 @@ body {
 }
 
   /* Original styles for the columns */
-.column {
+.blog-column {
     flex: 0 0 calc(33.33% - 20px); /* Adjust margins and width as needed */
     margin: 10px;
     padding: 20px;
+    min-width: 300px;
     box-sizing: border-box; /* Include padding in the width */
     background-color: #f2f2f2;
 
