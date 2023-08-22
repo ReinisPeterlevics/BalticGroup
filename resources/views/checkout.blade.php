@@ -26,25 +26,25 @@
                 <div class="input-row">
                     <div class="input-group">
                         <label for="fullname">Full name</label>
-                        <input class="checkout-input" type="text" name="firstname" id="firstname" value="{{$user->name }}" disabled>
+                        <input class="checkout-input" type="text" name="name" value="{{$user->name }}" disabled>
                     </div>
                 </div>
                 <div class="input-row">
                 <div class="input-group">
                     <label for="email">Email</label>
-                    <input class="checkout-input"  type="email" name="email" id="email"  value="{{$user->email }}" diabled>
+                    <input class="checkout-input"  type="email" name="email" value="{{$user->email }}" diabled>
                 </div>
                 </div>
                 <div class="input-row">
                 <div class="input-group">
                     <label for="phone">Phone number</label>
-                    <input class="checkout-input"  type="tel" name="phone" id="phone">
+                    <input class="checkout-input"  type="tel" name="phone-number">
                 </div>
                 </div>
                 <div class="input-row">
                 <div class="input-group">
                     <label for="notes">Order notes(optional)</label>
-                    <textarea name="notes" id="notes" placeholder="Notes about your order..."></textarea>
+                    <textarea name="notes" placeholder="Notes about your order..."></textarea>
                 </div>
                 </div>
             </form>
@@ -89,7 +89,7 @@
                 <div class="accordion">
                     <div class="accordion-item" data-payment-method="1">
                         <button type="button" class="accordion-header">
-                            <div>Card</div>
+                            <div class="payment-name">Card</div>
                                 <div class="payment-logo-container">
                                     <img class="payment-logo" src="/images/mastercard.png" alt="mastercard-logo">
                                     <img class="payment-logo" src="/images/visa.png" alt="visa-logo">
@@ -147,7 +147,7 @@
                     </div>
                     <div class="accordion-item"  data-payment-method="2">
                         <button type="button"  class="accordion-header">
-                        <div>PayPal</div>
+                        <div class="payment-name">PayPal</div>
                                 <div class="payment-logo-container">
                                     <img class="payment-logo" src="/images/paypal.png" alt="paypal-logo">
                                 </div>
@@ -158,7 +158,7 @@
                     </div>
                     <div class="accordion-item"  data-payment-method="3">
                         <button  type="button" class="accordion-header">
-                        <div>Google Pay</div>
+                        <div class="payment-name">Google Pay</div>
                                 <div class="payment-logo-container">
                                     <img class="payment-logo" src="/images/googlepay.png" alt="googlepay-logo">
                                 </div>
@@ -169,7 +169,7 @@
                     </div>
                     <div class="accordion-item"  data-payment-method="4">
                         <button type="button"  class="accordion-header">
-                        <div>Apple Pay</div>
+                        <div class="payment-name">Apple Pay</div>
                                 <div class="payment-logo-container">
                                     <img class="payment-logo" src="/images/applepay.png" alt="applepay-logo">
                                 </div>

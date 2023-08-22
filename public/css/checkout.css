@@ -27,7 +27,7 @@
     padding-bottom:20px;
     margin:0px;
 }
-.checkout-form-container{
+.accordion, .checkout-form-container{
     display: flex;
     flex-direction: column;
 }
@@ -92,10 +92,7 @@ textarea:focus{
     width:100%;
 }
 .input-row{
-    display:flex;
-    gap:30px;
-    align-items: center;
-    width:100%;
+    padding:5px 0px;
 }
 .checkout-input, label {
     display:block;
@@ -103,10 +100,8 @@ textarea:focus{
 }
 .input-group{
     display: flex;
-    flex:1;
     flex-direction: column;
     gap: 5px;
-    width:100%;
 }
 .checkout-footer{
     width:100%;
@@ -146,16 +141,8 @@ textarea{
 .checkout-table tr:last-child td:last-child {
     text-align: center;
 }
-th{
+::placeholder, th{
     font-size: 14px;
-}
-::placeholder{
-    font-size: 14px;
-}
-
-.accordion {
-    display: flex;
-    flex-direction: column;
 }
 .accordion-item {
     border: 1px solid #ddd;
@@ -212,7 +199,6 @@ option[value=""][disabled] {
     height:20px;
     width:auto;
 }
-
 @media(min-width:661px) and (max-width:991px){
 .checkout-form-content{
         flex-direction: column;
@@ -223,6 +209,7 @@ option[value=""][disabled] {
         border-radius: 0px;
         margin:0px;
         width:100%;
+        padding: 50px 0px;
     }
     .checkout-form-content{
         flex-direction: column;
