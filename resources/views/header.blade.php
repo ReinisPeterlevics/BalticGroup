@@ -5,7 +5,7 @@
             <div class="navbar-collapse">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><img src="/images/book4.png" alt="Travel Booking"></a>
+                        <a class="nav-link" href="#" onclick="showCart()"><img src="/images/book4.png" alt="Travel Booking"></a>
                     </li>
 
                     @auth

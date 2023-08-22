@@ -42,7 +42,19 @@ Route::get('/checkout', function () {
     return view('checkout');
 })->name('checkout');
 
-Route::get('/location-list', 'App\Http\Controllers\LocationController@index')->name('location');
+Route::get('/location-list',
+    'App\Http\Controllers\LocationController@index'
+)->name('location');
+
+Route::get('/location/random',
+    'App\Http\Controllers\LocationController@random'
+)->name('location-random');
+
+Route::get('/location/{id}',
+    'App\Http\Controllers\LocationController@show'
+)->name('location-description');
+
+// Auth::routes();
 
 Route::get('/location', 'App\Http\Controllers\LocationController@show')->name('location-description');
 

@@ -3,16 +3,19 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Travel app</title>
-        <link href="css/app.css" rel="stylesheet" >
-        <link href="css/home.css" rel="stylesheet">
-        <link href="css/location-description.css" rel="stylesheet">
-        <script src="js/home.js"></script>
+        <title>Magebit Travel</title>
+        <link href="/css/app.css" rel="stylesheet" >
+        <link href="/css/home.css" rel="stylesheet">
+        <link href="/css/location-description.css" rel="stylesheet">
+        <link href="/css/cart.css" rel="stylesheet">
+        <script src="/js/home.js"></script>
+        <script src="/js/cart.js"></script>
     </head>
     <body>
     <div class="app">
         <div class="app-container">
             @include('header')
+            @include('cart')
             <div class="row content">
                 <div class="container">
                     <div class="search">
@@ -88,9 +91,9 @@
                             </div>
                             <div class="search-row">
                                 <div class="button-group">
-                                    <button id="random" type="submit">I am feeling lucky!</button>
-                                    <button id="showAll" type="submit">Just show me all you have!</button>
-                                    <button id="search" type="submit">Search</button>
+                                    <button id="random" type="button" onclick="window.location='{{route("location-random")}}'">I am feeling lucky!</button>
+                                    <button id="showAll" type="button" onclick="window.location='{{route("location")}}'">Just show me all you have!</button>
+                                    <button id="search" type="button">Search</button>
                                 </div>
                             </div>
                         </form>

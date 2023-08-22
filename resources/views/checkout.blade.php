@@ -10,6 +10,7 @@
 </head>
 <body>
 @include('header')
+@include('cart')
 <div class="checkout-container">
     <div class="checkout-content">
         <h1>Checkout</h1><div class="checkout-form-content">
