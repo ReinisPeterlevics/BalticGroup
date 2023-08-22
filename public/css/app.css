@@ -32,6 +32,7 @@ body{
     --color-text-black-dark: rgb(49, 49, 49);
 
     --color-gray: rgb(133, 133, 133);
+    --color-gray-transparent: rgb(133, 133, 133, 0.8);
 }
 
 /* header */
