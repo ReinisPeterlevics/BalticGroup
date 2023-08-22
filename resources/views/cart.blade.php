@@ -4,9 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cart</title>
-    <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="css/cart.css">
-    <link rel="stylesheet" href="css/location-description.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/cart.css">
+    <link rel="stylesheet" href="/css/location-description.css">
     <script src="js/home.js"></script>
 </head>
 <body>
@@ -18,45 +18,30 @@
                     <button class="close-button">&times</button>
                 </div>
             </div>
-            <ul class="cart-items">
-                <li class="cart-item">
-                    <img src="images/paragliding.jpg" alt="mountains" class="cart-item-image">
-                    <div class="cart-item-info">
-                        <div class="cart-item-details">
-                            <h3 class="cart-item-title">Swiss Tour Package</h3>
-                            <p class="cart-item-country">Switzerland</p>
-                        </div>
-                        <div class="cart-item-quantity">
-                            <p class="cart-item-price">$600</p>
-                            <div class="buttons">
-                                <button class="minus-button">-</button>
-                                <input type="number" value="1" min="1" max="10">
-                                <button class="plus-button">+</button>
+            @foreach($locations as $location)
+                <ul class="cart-items">
+                    <li class="cart-item">
+                        <img src="images/paragliding.jpg" alt="mountains" class="cart-item-image">
+                        <div class="cart-item-info">
+                            <div class="cart-item-details">
+                                <h3 class="cart-item-title">{{ $location->name }}</h3>
+                                <p class="cart-item-country">{{ $location->countryname }}</p>
+                            </div>
+                            <div class="cart-item-quantity">
+                                <p class="cart-item-price">$ {{ $location->price }}</p>
+                                <div class="buttons">
+                                    <button class="minus-button">-</button>
+                                    <input type="number" value="{{ $location->quantity }}" min="1" max="10">
+                                    <button class="plus-button">+</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </li>
-                <li class="cart-item">
-                    <img src="images/Batu_cave.jpg" alt="Batu" class="cart-item-image">
-                    <div class="cart-item-info">
-                        <div class="cart-item-details">
-                            <h3 class="cart-item-title">Malaysia Tour Package</h3>
-                            <p>Malaysia</p>
-                        </div>
-                        <div class="cart-item-quantity">
-                            <p class="cart-item-price">$1500</p>
-                            <div class="buttons">
-                                <button class="minus-button">-</button>
-                                <input type="number" value="1" min="1" max="10">
-                                <button class="plus-button">+</button>
-                            </div>
-                        </div>
-                    </div>
-                </li>
+                    </li>
+                @endforeach
             </ul>
             <div class="cart-summary">
                 <div class="cart-summary-title">
-                    <h2>Total : $1700</h2>
+                    <h2>Total: $ {{ $totalPrice }}</h2>
                 </div>
                 <div class="checkout-button">
                     <button><a href="#">Checkout</a></button>

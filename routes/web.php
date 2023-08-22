@@ -35,8 +35,8 @@ Route::get('/checkout', function () {
 })->name('checkout');
 
 Route::get('/location-list', 'App\Http\Controllers\LocationController@index')->name('location');
-
-Route::get('/location', 'App\Http\Controllers\LocationController@show')->name('location-description');
+Route::get('/location/random', 'App\Http\Controllers\LocationController@random')->name('location-random');
+Route::get('/location/{id}', 'App\Http\Controllers\LocationController@show')->name('location-description');
 
 Route::get('/cart', function () {
     return view('cart');
@@ -46,5 +46,10 @@ Route::get('/cart', function () {
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::post('/cart/add{location_id}', 'App\Http\Controllers\CartController@addToCart')->name('card.add');
-Route::get('/cart', 'App\Http\Controllers\CartController@showCart')->name('card.show');
+Route::post('/cart/add/{id}', 'App\Http\Controllers\CartController@addToCart')->name('cart.add');
+Route::get('/cart/displayCart', 'App\Http\Controllers\CartController@displayCart')->name('displayCart');
+Route::post('/cart/updateItemQuantity', 'App\Http\Controllers\CartController@showCart')->name('cart.updateItemQuantity');
+Route::get('/cart/deleteItem', 'App\Http\Controllers\CartController@showCart')->name('cart.deleteItem');
+
+
+

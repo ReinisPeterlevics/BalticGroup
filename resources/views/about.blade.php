@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>About</title>
+        <title>Magebit Travel - About</title>
         <link href="css/app.css" rel="stylesheet" >
         <link href="css/about.css" rel="stylesheet" >
     </head>
