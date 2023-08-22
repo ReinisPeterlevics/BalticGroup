@@ -17,7 +17,8 @@
         <div class="app-container">
         @include('header')
         @include('cart')
-            <div class="blog">
+        <div class="blog-container">
+        <div class="blog">
             <h1>Blog</h1>
 
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur omnis aut aperiam eveniet! Nostrum excepturi placeat libero, nam enim nulla modi dolor non eius esse in obcaecati iusto totam.
@@ -58,6 +59,7 @@
                     @endforeach
                 </div>
             </div>
+        </div>
 
         <!-- pagination -->
         <div class="pagination">

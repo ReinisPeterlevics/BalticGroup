@@ -6,16 +6,15 @@ h1 {
     text-align: center;
 }
 
-.blog-h3{
-    text-align: center;
-}
-
 
 body {
     background: url("../images/page-background.jpg");
 
 }
-
+.blog-container{
+    display: flex;
+    justify-content: center;
+}
 .blog {
     display:flex;
     flex-direction: column;
@@ -26,7 +25,7 @@ body {
     padding: 30px 40px;
     margin: 100px 20px;
     height: auto;
-
+    max-width: 1200px;
 }
 
 @media (max-width: 660px) {
