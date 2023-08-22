@@ -20,6 +20,8 @@
                     <div destination-photo>
                         <img class="destination-image" src="{{$location[0]->image}}" alt="destination">
                     </div>
+                    <form action="{{ route('cart.add', ['id' => $location[0]->location_id]) }}" method="post">
+                        @csrf
                     <div class="description">
                         <div class="description-header">
                             <h2>{{$location[0]->name}}</h2>
@@ -46,6 +48,7 @@
                         <a href="{{route('location')}}" class="back-button add-to-cart-button">Back</a>
                         <input class="add-to-cart-button" type="submit" name="add-to-cart" value="Add to Cart">
                     </div>
+                </form>
                 </div>
             </div>
             @include('footer')

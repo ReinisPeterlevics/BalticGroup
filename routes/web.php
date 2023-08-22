@@ -49,3 +49,13 @@ Route::get('/location/{id}',
 // Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/cart', function () {
+    return view('cart');
+})->name('cart');
+Route::post('/cart/add/{id}', 'App\Http\Controllers\CartController@addToCart')->name('cart.add');
+Route::get('/cart/displayCart', 'App\Http\Controllers\CartController@displayCart')->name('displayCart');
+Route::post('/cart/updateItemQuantity', 'App\Http\Controllers\CartController@showCart')->name('cart.updateItemQuantity');
+Route::get('/cart/deleteItem', 'App\Http\Controllers\CartController@showCart')->name('cart.deleteItem');
+
+
+
