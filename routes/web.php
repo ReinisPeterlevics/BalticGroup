@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/',
+    'App\Http\Controllers\HomeController@index'
+)->name('home');
 
 Route::get('/about', function () {
     return view('about');
@@ -37,6 +37,10 @@ Route::get('/checkout', function () {
 Route::get('/location-list',
     'App\Http\Controllers\LocationController@index'
 )->name('location');
+
+Route::post('/location-list',
+    'App\Http\Controllers\LocationController@index'
+)->name('search');
 
 Route::get('/location/random',
     'App\Http\Controllers\LocationController@random'
