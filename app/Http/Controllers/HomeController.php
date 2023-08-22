@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -11,10 +12,6 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     /**
      * Show the application dashboard.
@@ -23,6 +20,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $seasons = DB::table('seasons')->get();
+        $countries = DB::table('countries')->orderBy('name')->get();
+        $minPrice = DB::table('locations')->min('price');
+        $maxPrice = DB::table('locations')->max('price');
+        $maxSpots = DB::table('locations')->max('spots_left');
+        return view('home', ['seasons' => $seasons, 'countries' => $countries, 'minPrice' => $minPrice,'maxPrice' => $maxPrice,'maxSpots' => $maxSpots]);
     }
 }

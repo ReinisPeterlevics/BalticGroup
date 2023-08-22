@@ -16,7 +16,7 @@ class CreateLocationsTable extends Migration
         Schema::create('locations', function (Blueprint $table) {
             $table->id('location_id');
             $table->string('name');
-            $table->string('description');
+            $table->text('description');
             $table->unsignedBigInteger('country_id');
             $table->foreign('country_id')->references('country_id')->on('countries');
             $table->unsignedBigInteger('season_id');
