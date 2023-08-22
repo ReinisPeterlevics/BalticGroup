@@ -15,7 +15,8 @@ class CreatePaymentTypesTable extends Migration
     {
         Schema::create('payment_types', function (Blueprint $table) {
             $table->id('payment_type_id');
-            $table->enum('name', ['Card', 'Online Banking', 'PayPal', 'Google Pay', 'Apple Pay']);
+            $table->string('name', 100);
+            $table->timestamps();
         });
     }
 

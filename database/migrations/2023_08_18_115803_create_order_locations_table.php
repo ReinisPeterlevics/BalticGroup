@@ -15,10 +15,13 @@ class CreateOrderLocationsTable extends Migration
     {
         Schema::create('order_locations', function (Blueprint $table) {
             $table->id('order_location_id');
-            $table->foreignId('order_id')->constrained('orders');
-            $table->foreignId('location_id')->constrained('locations');
+            $table->unsignedBigInteger('order_id');
+            $table->foreign('order_id')->references('order_id')->on('orders');
+            $table->unsignedBigInteger('location_id');
+            $table->foreign('location_id')->references('location_id')->on('locations');
             $table->integer('person_count');
             $table->decimal('subtotal', 10, 2);
+            $table->timestamps();
         });
     }
 
