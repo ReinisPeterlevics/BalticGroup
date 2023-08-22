@@ -93,7 +93,7 @@
                         <div class="more-item">
                             <a href="{{route('about')}}">
                                 <div class="more-image">
-                                    <img src="images/home/team-photo.jpg" alt="team">
+                                    <img src="/images/home/team-photo.jpg" alt="team">
                                 </div>
                                 <h3 class="more-title">Learn more about us!</h3>
                             </a>
@@ -101,7 +101,7 @@
                         <div class="more-item">
                             <a href="{{route('blog')}}">
                                 <div class="more-image">
-                                    <img src="images/home/blog-photo.png" alt="blog">
+                                    <img src="/images/home/blog-photo.jpg" alt="blog">
                                 </div>
                                 <h3 class="more-title">Check out our blog!</h3>
                             </a>
