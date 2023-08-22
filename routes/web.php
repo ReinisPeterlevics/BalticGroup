@@ -45,3 +45,6 @@ Route::get('/cart', function () {
 // Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::post('/cart/add{location_id}', 'App\Http\Controllers\CartController@addToCart')->name('card.add');
+Route::get('/cart', 'App\Http\Controllers\CartController@showCart')->name('card.show');
