@@ -40,12 +40,12 @@
                             <p id="total-cost">Price in total: {{$location[0]->price}} EUR</p>
                         </div>
                         <div class="description-buttons">
-                            <a href="{{route('location')}}" class="back-button add-to-cart-button">Back</a>
+                            <a href="javascript:history.back()" class="back-button add-to-cart-button">Back</a>
                             <input class="add-to-cart-button" type="submit" name="add-to-cart" value="Add to Cart">
                         </div>
                     </div>
                     <div class="description-buttons-media">
-                        <a href="{{route('location')}}" class="back-button add-to-cart-button">Back</a>
+                        <a href="javascript:history.back()" class="back-button add-to-cart-button">Back</a>
                         <input class="add-to-cart-button" type="submit" name="add-to-cart" value="Add to Cart">
                     </div>
                 </form>

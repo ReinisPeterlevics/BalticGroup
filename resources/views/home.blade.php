@@ -23,16 +23,16 @@
                             <h2>What will be your next destination?</h2>
                         </div>
                         <p class="form-notes">And don't you worry, you don't need to fill out all fields, we will do our best to find you the perfect destination from whatever how little you provide!</p>
-                        <form class="search-form">
+                        <form class="search-form" action="{{ route('search') }}" method="GET">
                             <div class="search-row">
                                 <div class="input-group">
                                     <label for="season">At what season?</label>
-                                    <select name="season" id="season">
+                                    <select name="season" id="season" onkeydown="resetSelect(event, this.id)">
                                         <option value="" disabled selected hidden></option>
-                                        <option value="spring">Spring</option>
-                                        <option value="summer">Summer</option>
-                                        <option value="fall">Fall</option>
-                                        <option value="winter">Winter</option>
+                                        <!-- Data from DB -->
+                                        @foreach ($seasons as $season)
+                                            <option value="{{ $season->season_id }}">{{ $season->name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="input-group">
@@ -41,11 +41,11 @@
                                     <div class="date-picker">
                                         <div class="date-picker-item">
                                             <label for="date-from">From:</label>
-                                            <input type="date" name="date-from" id="date-from">
+                                            <input type="date" name="date-from">
                                         </div>
                                         <div class="date-picker-item">
                                             <label for="date-to">Till:</label>
-                                            <input type="date" name="date-to" id="date-to">
+                                            <input type="date" name="date-to">
                                         </div>
                                     </div>
                                 </div>
@@ -53,23 +53,12 @@
                             <div class="search-row">
                                 <div class="input-group">
                                     <label for="country">Where do you want to go?</label>
-                                    <select name="country" id="country">
+                                    <select name="country" id="country" onkeydown="resetSelect(event, this.id)">
                                         <option value="" disabled selected hidden></option>
-                                        <option value="usa">United States</option>
-                                        <option value="canada">Canada</option>
-                                    </select>
-                                </div>
-                                <div class="input-group">
-                                    <label for="activity">What do you want to do?</label>
-                                    <select name="activity" id="activity">
-                                        <option value="" disabled selected hidden></option>
-                                        <option value="hiking">Hiking</option>
-                                        <option value="skiing">Skiing</option>
-                                        <option value="swimming">Swimming</option>
-                                        <option value="fishing">Fishing</option>
-                                        <option value="climbing">Climbing</option>
-                                        <option value="running">Running</option>
-                                        <option value="cycling">Cycling</option>
+                                        <!-- Data from DB -->
+                                        @foreach ($countries as $country)
+                                            <option value="{{ $country->country_id }}">{{ $country->name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -77,14 +66,16 @@
                                 <div class="input-group">
                                     <label for="budget">How much do you want to spend?</label>
                                     <div class="range-picker">
-                                        <input type="range" id="budget" name="budget" min="200" max="5000" step="100" value="200" onchange="rangeInputHandler(this)">
-                                        <label for="budget" id="budgetLabel">200</label>
+                                        <!-- Min and current from DB and max from DB -->
+                                        <input type="range" id="budget" name="budget" min="{{ $minPrice }}" max="{{ $maxPrice }}" step="1" value="{{ $minPrice }}" onchange="rangeInputHandler(this)">
+                                        <label for="budget" id="budgetLabel">{{ $minPrice }}</label>
                                     </div>
                                 </div>
                                 <div class="input-group">
                                     <label for="persons">How many persons will be travelling?</label>
                                     <div class="range-picker">
-                                        <input type="range" id="persons" name="persons" min="1" max="50" step="1" value="1" onchange="rangeInputHandler(this)">
+                                        <!-- Min and current from DB and max from DB -->
+                                        <input type="range" id="persons" name="persons" min="1" max="{{ $maxSpots }}" step="1" value="1" onchange="rangeInputHandler(this)">
                                         <label for="persons" id="personsLabel">1</label>
                                     </div>
                                 </div>
@@ -93,7 +84,7 @@
                                 <div class="button-group">
                                     <button id="random" type="button" onclick="window.location='{{route("location-random")}}'">I am feeling lucky!</button>
                                     <button id="showAll" type="button" onclick="window.location='{{route("location")}}'">Just show me all you have!</button>
-                                    <button id="search" type="button">Search</button>
+                                    <button id="search" type="submit">Search</button>
                                 </div>
                             </div>
                         </form>
