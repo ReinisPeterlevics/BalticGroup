@@ -17,7 +17,7 @@
 <div class="checkout-container">
     <div class="checkout-content">
         <h1 class="checkout-title">Checkout</h1>
-        <form class="checkout-form" method="get" action="{{ route('checkout') }}">
+        <form class="checkout-form" method="post" action="{{ route('save-order')}}">
             @csrf
         <div class="checkout-form-content">
         <div class="checkout-form-container">
@@ -26,13 +26,13 @@
                 <div class="input-row">
                     <div class="input-group">
                         <label for="fullname">Full name</label>
-                        <input class="checkout-input" type="text" name="name" value="{{$user->name }}" disabled>
+                        <input class="checkout-input" type="text" name="full-name" value="{{$user->name}}">
                     </div>
                 </div>
                 <div class="input-row">
                 <div class="input-group">
                     <label for="email">Email</label>
-                    <input class="checkout-input"  type="email" name="email" value="{{$user->email }}" diabled>
+                    <input class="checkout-input"  type="email" name="email" value="{{$user->email}}">
                 </div>
                 </div>
                 <div class="input-row">

@@ -3,8 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
-use App\Http\Controllers\OrderController;
-use App\Http\Controllers\HomeController;
+// use App\Http\Controllers\OrderController;
+// use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,11 +63,10 @@ Route::get('/location', 'App\Http\Controllers\LocationController@show')->name('l
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/checkout', [OrderController::class, 'fillUserData'])->name('checkout');
-
-Route::post('/checkout', [OrderController::class, 'placeOrder'])->name('place-order');
+Route::get('/checkout', [App\Http\Controllers\OrderController::class, 'fillUserData'])->name('checkout');
+Route::post('/checkout', [App\Http\Controllers\OrderController::class, 'saveOrder'])->name('save-order');
 
 
 // <?php

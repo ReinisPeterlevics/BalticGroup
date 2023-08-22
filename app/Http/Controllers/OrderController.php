@@ -25,7 +25,7 @@ class OrderController extends Controller
         $data = $request->all();
 
         $newOrder = [
-            'customer_full_name' => $data['name'],
+            'customer_full_name' => $data['full-name'],
             'customer_email' => $data['email'],
             'customer_phone_number' => $data['phone-number'],
             'payment_type_id' => $data['payment-type-id'],
