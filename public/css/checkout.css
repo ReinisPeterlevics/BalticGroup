@@ -19,15 +19,17 @@
     padding: 50px 40px;
     margin: 100px 20px;
 }
-h1{
+.checkout-title{
     display: flex;
     justify-content: center;
     border-bottom: 1px solid var(--color-salmon);
     width: 100%;
-    margin-bottom: 20px;
+    padding-bottom:20px;
+    margin:0px;
 }
-.checkout-form-container{
+.accordion, .checkout-form-container{
     display: flex;
+    flex-direction: column;
 }
 .checkout-form-content{
     display: flex;
@@ -83,15 +85,14 @@ textarea:focus{
 .checkout-button:focus{
     background-color: var(--color-salmon-dark);
 }
-.checkout-form, .input-group-full-name{
+.billing-form, .input-group-full-name{
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width:100%;
 }
 .input-row{
-    display:flex;
-    gap:30px;
-    align-items: center;
+    padding:5px 0px;
 }
 .checkout-input, label {
     display:block;
@@ -99,7 +100,6 @@ textarea:focus{
 }
 .input-group{
     display: flex;
-    flex:1;
     flex-direction: column;
     gap: 5px;
 }
@@ -128,6 +128,7 @@ textarea{
 .checkout-table td {
     border: 1px solid var(--color-baby-blue-dark);
     text-align: center;
+    padding:5px;
 }
 .checkout-table th {
 
@@ -140,13 +141,8 @@ textarea{
 .checkout-table tr:last-child td:last-child {
     text-align: center;
 }
-th{
+::placeholder, th{
     font-size: 14px;
-}
-
-.accordion {
-    display: flex;
-    flex-direction: column;
 }
 .accordion-item {
     border: 1px solid #ddd;
@@ -203,7 +199,6 @@ option[value=""][disabled] {
     height:20px;
     width:auto;
 }
-
 @media(min-width:661px) and (max-width:991px){
 .checkout-form-content{
         flex-direction: column;
@@ -214,6 +209,7 @@ option[value=""][disabled] {
         border-radius: 0px;
         margin:0px;
         width:100%;
+        padding: 50px 0px;
     }
     .checkout-form-content{
         flex-direction: column;

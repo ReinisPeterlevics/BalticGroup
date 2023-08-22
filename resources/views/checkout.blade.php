@@ -16,32 +16,35 @@
 @include('cart')
 <div class="checkout-container">
     <div class="checkout-content">
-        <h1>Checkout</h1><div class="checkout-form-content">
+        <h1 class="checkout-title">Checkout</h1>
+        <form class="checkout-form" method="get" action="{{ route('checkout') }}">
+            @csrf
+        <div class="checkout-form-content">
         <div class="checkout-form-container">
-            <form class="checkout-form" method="post" action="{{route('checkout')}}">
+            <form class="billing-form" method="get">
                 <h2>Billing details</h2>
                 <div class="input-row">
                     <div class="input-group">
                         <label for="fullname">Full name</label>
-                        <input class="checkout-input" type="text" name="firstname" id="firstname" value="{{$user->name }}">
+                        <input class="checkout-input" type="text" name="name" value="{{$user->name }}" disabled>
                     </div>
                 </div>
                 <div class="input-row">
                 <div class="input-group">
                     <label for="email">Email</label>
-                    <input class="checkout-input"  type="email" name="email" pattern=".+@globex\.com" id="email"  value="{{$user->email }}">
+                    <input class="checkout-input"  type="email" name="email" value="{{$user->email }}" diabled>
                 </div>
                 </div>
                 <div class="input-row">
                 <div class="input-group">
                     <label for="phone">Phone number</label>
-                    <input class="checkout-input"  type="tel" name="phone" id="phone">
+                    <input class="checkout-input"  type="tel" name="phone-number">
                 </div>
                 </div>
                 <div class="input-row">
                 <div class="input-group">
                     <label for="notes">Order notes(optional)</label>
-                    <textarea name="notes" id="notes" placeholder="Notes about your order..."></textarea>
+                    <textarea name="notes" placeholder="Notes about your order..."></textarea>
                 </div>
                 </div>
             </form>
@@ -84,9 +87,9 @@
                 <div class="payment-container">
                     <h2>Payment Method</h2>
                 <div class="accordion">
-                    <div class="accordion-item">
-                        <button class="accordion-header">
-                            <div>Card</div>
+                    <div class="accordion-item" data-payment-method="1">
+                        <button type="button" class="accordion-header">
+                            <div class="payment-name">Card</div>
                                 <div class="payment-logo-container">
                                     <img class="payment-logo" src="/images/mastercard.png" alt="mastercard-logo">
                                     <img class="payment-logo" src="/images/visa.png" alt="visa-logo">
@@ -142,47 +145,49 @@
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item">
-                        <button class="accordion-header">
-                        <div>PayPal</div>
+                    <div class="accordion-item"  data-payment-method="2">
+                        <button type="button"  class="accordion-header">
+                        <div class="payment-name">PayPal</div>
                                 <div class="payment-logo-container">
                                     <img class="payment-logo" src="/images/paypal.png" alt="paypal-logo">
                                 </div>
                         </button>
                         <div class="accordion-content">
-                        Content for Section 2.
+                        Coming soon...
                         </div>
                     </div>
-                    <div class="accordion-item">
-                        <button class="accordion-header">
-                        <div>Google Pay</div>
+                    <div class="accordion-item"  data-payment-method="3">
+                        <button  type="button" class="accordion-header">
+                        <div class="payment-name">Google Pay</div>
                                 <div class="payment-logo-container">
                                     <img class="payment-logo" src="/images/googlepay.png" alt="googlepay-logo">
                                 </div>
                         </button>
                         <div class="accordion-content">
-                        Content for Section 2.
+                        Coming soon...
                         </div>
                     </div>
-                    <div class="accordion-item">
-                        <button class="accordion-header">
-                        <div>Apple Pay</div>
+                    <div class="accordion-item"  data-payment-method="4">
+                        <button type="button"  class="accordion-header">
+                        <div class="payment-name">Apple Pay</div>
                                 <div class="payment-logo-container">
                                     <img class="payment-logo" src="/images/applepay.png" alt="applepay-logo">
                                 </div>
                         </button>
                         <div class="accordion-content">
-                        Content for Section 2.
+                        Coming soon...
                         </div>
                     </div>
                     </div>
                 </div>
                 </div>
                 <div class="checkout-footer">
+                    <input type="hidden" name="payment-type-id" value="" id="payment-type">
             <button type="submit" class="checkout-button">Place order</button></div>
         </div>
             </div>
         </div>
+            </form>
         </div>
 </div>
 @include('footer')

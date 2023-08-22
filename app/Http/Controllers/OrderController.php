@@ -18,7 +18,6 @@ class OrderController extends Controller
         return view('checkout' , [
             'user' => $user
         ]);
-
     }
 
     public function saveOrder(Request $request){
