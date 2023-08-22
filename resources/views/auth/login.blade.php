@@ -27,6 +27,11 @@
                             <label for="chk" aria-hidden="true">Sign up</label>
                             <input type="text" name="name" placeholder="User name" required="">
                             <input type="email" name="email" placeholder="Email" required="">
+                            @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
                             <input type="password" name="password" placeholder="Password" required="">
                             <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             <button type="submit">Sign up</button>

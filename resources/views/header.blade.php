@@ -7,6 +7,10 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#"><img src="/images/book4.png" alt="Travel Booking"></a>
                     </li>
+
+                    @auth
+
+
                     <li class="nav-item dropdown">
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('logout') }}"
@@ -20,6 +24,7 @@
                             </form>
                         </div>
                     </li>
+                    @endauth
                 </ul>
             </div>
         </div>
