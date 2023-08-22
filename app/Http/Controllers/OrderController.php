@@ -12,16 +12,14 @@ class OrderController extends Controller
     {
         $this->middleware('auth');
     }
-
     public function  index(){
         $user = auth()->user();
         return view('checkout' , [
             'user' => $user
         ]);
-
     }
 
-    public function sttore(Request $request){
+    public function store(Request $request){
 
         // $validatedData = $request->validate([
         //     'first_name' => 'required|string',
@@ -56,6 +54,6 @@ class OrderController extends Controller
         // $newOrderLocationRow->save();
 
 
-        return response()->json(['message' => 'Order Done Successfully']);
+        // return response()->json(['message' => 'Order Done Successfully']);
     }
 }
