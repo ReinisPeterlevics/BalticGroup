@@ -93,7 +93,7 @@ textarea:focus{
     gap:30px;
     align-items: center;
 }
-input, label {
+.checkout-input, label {
     display:block;
     flex:1;
 }

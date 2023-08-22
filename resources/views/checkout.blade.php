@@ -23,19 +23,19 @@
                 <div class="input-row">
                     <div class="input-group">
                         <label for="fullname">Full name</label>
-                        <input type="text" name="firstname" id="firstname" value="{{$user->name }}">
+                        <input class="checkout-input" type="text" name="firstname" id="firstname" value="{{$user->name }}">
                     </div>
                 </div>
                 <div class="input-row">
                 <div class="input-group">
                     <label for="email">Email</label>
-                    <input type="email" name="email" pattern=".+@globex\.com" id="email"  value="{{$user->email }}">
+                    <input class="checkout-input"  type="email" name="email" pattern=".+@globex\.com" id="email"  value="{{$user->email }}">
                 </div>
                 </div>
                 <div class="input-row">
                 <div class="input-group">
                     <label for="phone">Phone number</label>
-                    <input type="tel" name="phone" id="phone">
+                    <input class="checkout-input"  type="tel" name="phone" id="phone">
                 </div>
                 </div>
                 <div class="input-row">
