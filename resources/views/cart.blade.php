@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cart</title>
-    <link rel="stylesheet" href="/css/app.css">
-    <link rel="stylesheet" href="/css/cart.css">
-    <link rel="stylesheet" href="/css/location-description.css">
-    <script src="js/home.js"></script>
-</head>
-<body>
+<div id="cart" class="cart-overlay">
     <div class="cart-wrapper">
         <div class="cart-container">
             <div class="cart-header">
@@ -18,6 +7,7 @@
                     <button type="button" onclick="hideCart()" class="close-button">&times</button>
                 </div>
             </div>
+            @if($locations)
             <ul class="cart-items">
                 @foreach($locations as $location)
                     <li class="cart-item" id="LOCATION_ID_HERE">
@@ -47,6 +37,7 @@
                     <button><a href="#">Checkout</a></button>
                 </div>
             </div>
+            @endif
         </div>
     </div>
 </div>
