@@ -113,6 +113,7 @@ input, label {
 textarea{
     box-sizing: border-box;
     width:100%;
+    min-height: 60px;
 }
 .checkout-table-container{
     border-radius: 15px;
@@ -161,6 +162,10 @@ th{
     justify-content: space-between;
     align-items: center;
     width:100%;
+    background-color: var(--color-aquamarine-light);
+}
+.accordion-header:hover {
+    background-color: var(--color-aquamarine-dark);
 }
 .accordion-content {
     display: none;
