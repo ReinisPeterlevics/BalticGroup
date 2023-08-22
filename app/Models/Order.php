@@ -16,8 +16,7 @@ class Order extends Model
     protected $primaryKey = 'order_id';
 
     protected $fillable = [
-        'customer_first_name',
-        'customer_last_name',
+        'customer_full_name',
         'customer_email',
         'customer_phone_number',
         'payment_type_id',

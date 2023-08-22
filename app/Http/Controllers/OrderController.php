@@ -13,7 +13,7 @@ class OrderController extends Controller
         $this->middleware('auth');
     }
 
-    public function  index(){
+    public function fillUserData(Request $request){
         $user = auth()->user();
         return view('checkout' , [
             'user' => $user
@@ -21,41 +21,31 @@ class OrderController extends Controller
 
     }
 
-    public function sttore(Request $request){
+    public function saveOrder(Request $request){
 
-        // $validatedData = $request->validate([
-        //     'first_name' => 'required|string',
-        //     'last_name' => 'required|string',
-        //     'email' => 'required|email',
-        //     'phone_number' => 'required|string',
-        //     'payment_type_id' => 'required|integer',
-        //     'total_cost' => 'required|numeric',
-        //     'notes' => 'nullable|string',
-        //     'tour_id' => 'required|integer',
-        //     'person_count' => 'required|integer',
-        //     'subtotal' => 'required|numeric',
-        // ]);
+        $data = $request->all();
 
-        // $newOrderRow = new Order();
-        // $newOrderRow->customer_first_name = $request->first_name;
-        // $newOrderRow->customer_last_name = $request->last_name;
-        // $newOrderRow->customer_email = $request->email;
-        // $newOrderRow->customer_phone_number = $request->phone_number;
-        // $newOrderRow->payment_type_id = $request->payment_type_id;
-        // $newOrderRow->total_cost = $request->total_cost;
-        // $newOrderRow->notes = $request->notes;
+        $newOrder = [
+            'customer_full_name' => $data['name'],
+            'customer_email' => $data['email'],
+            'customer_phone_number' => $data['phone-number'],
+            'payment_type_id' => $data['payment-type-id'],
+            'total_cost' => $data['total-cost'],
+            'notes' => $data['notes'],
+        ];
 
-        // $newOrderRow->save();
+        $order = Order::create($newOrder);
 
-        // $newOrderLocationRow = new OrderLocation();
-        // $newOrderLocationRow->order_id = $newOrderRow->order_id;
-        // $newOrderLocationRow->location_id = $newOrderRow->location_id;
-        // $newOrderLocationRow->person_count = $newOrderRow->person_count;
-        // $newOrderLocationRow->subtotal = $newOrderRow->subtotal;
+        $newOrderLocation = [
+            'order_id' => $order->order_id,
+            'location_id' => $data['location-id'],
+            'person_count' => $data['person-count'],
+            'starp-cost' => $data['starp-cost'],
+        ];
 
-        // $newOrderLocationRow->save();
+        OrderLocation::create($newOrderLocation);
 
-
+        return redirect()->route('home')->with('success', 'Order Done Successfully');
         return response()->json(['message' => 'Order Done Successfully']);
     }
 }

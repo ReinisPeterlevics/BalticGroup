@@ -15,7 +15,6 @@ class PaymentTypesSeeder extends Seeder
     {
         $payment_types = [
             ['name' => 'Card'],
-            ['name' => 'Online Banking'],
             ['name' => 'PayPal'],
             ['name' => 'Google Pay'],
             ['name' => 'Apple Pay']
