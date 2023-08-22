@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/app.css" rel="stylesheet" >
-    <link href="css/checkout.css" rel="stylesheet" >
+    <link href="/css/app.css" rel="stylesheet" >
+    <link href="/css/checkout.css" rel="stylesheet" >
+    <link href="/css/cart.css" rel="stylesheet">
+    <script src="/js/cart.js"></script>
     <title>Magebit Travel - Checkout</title>
 </head>
 <body>
 @include('header')
+@include('cart')
 <div class="checkout-container">
     <div class="checkout-content">
         <h1>Checkout</h1><div class="checkout-form-content">

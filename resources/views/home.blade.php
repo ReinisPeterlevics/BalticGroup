@@ -4,15 +4,18 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Magebit Travel</title>
-        <link href="css/app.css" rel="stylesheet" >
-        <link href="css/home.css" rel="stylesheet">
-        <link href="css/location-description.css" rel="stylesheet">
-        <script src="js/home.js"></script>
+        <link href="/css/app.css" rel="stylesheet" >
+        <link href="/css/home.css" rel="stylesheet">
+        <link href="/css/location-description.css" rel="stylesheet">
+        <link href="/css/cart.css" rel="stylesheet">
+        <script src="/js/home.js"></script>
+        <script src="/js/cart.js"></script>
     </head>
     <body>
     <div class="app">
         <div class="app-container">
             @include('header')
+            @include('cart')
             <div class="row content">
                 <div class="container">
                     <div class="search">
@@ -20,7 +23,7 @@
                             <h2>What will be your next destination?</h2>
                         </div>
                         <p class="form-notes">And don't you worry, you don't need to fill out all fields, we will do our best to find you the perfect destination from whatever how little you provide!</p>
-                        <form class="search-form" >
+                        <form class="search-form">
                             <div class="search-row">
                                 <div class="input-group">
                                     <label for="season">At what season?</label>
