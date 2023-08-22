@@ -4,11 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Magebit Travel - About</title>
-        <link href="css/app.css" rel="stylesheet" >
-        <link href="css/about.css" rel="stylesheet" >
+        <link href="/css/app.css" rel="stylesheet" >
+        <link href="/css/about.css" rel="stylesheet" >
+        <link href="/css/cart.css" rel="stylesheet">
+        <script src="/js/cart.js"></script>
     </head>
     <body>
         @include('header')
+        @include('cart')
         <div class="about-page-container">
             <div class="about-page-content">
             <div class="about-us-container">

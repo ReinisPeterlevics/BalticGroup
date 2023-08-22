@@ -6,12 +6,15 @@
         <title>Magebit Travel - {{$location[0]->name}}</title>
         <link href="{{asset('/css/app.css')}}" rel="stylesheet" >
         <link href="{{asset('/css/location-description.css')}}" rel="stylesheet" >
+        <link href="{{asset('/css/cart.css')}}" rel="stylesheet">
         <script src="{{asset('/js/location-description.js')}}"></script>
+        <script src="{{asset('/js/cart.js')}}"></script>
 </head>
 <body>
     <div class="app">
         <div class="app-container">
             @include('header')
+            @include('cart')
             <div class="row content">
                 <div class="description-container">
                     <div destination-photo>
