@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="css/location-description.css">
-    <title>Travel app</title>
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/location-description.css">
+    <link href="/css/cart.css" rel="stylesheet">
+    <script src="/js/cart.js"></script>
+    <title>Magebit Travel - Login</title>
 </head>
 <body>
     @include('header')
-
+    @include('cart')
     <div class="app">
         <div class="app-container">
             <div class="wrapper">
