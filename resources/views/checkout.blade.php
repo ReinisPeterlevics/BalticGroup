@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/app.css" rel="stylesheet" >
     <link href="css/checkout.css" rel="stylesheet" >
+    <script src="js/checkout.js"></script>
     <title>Checkout</title>
 </head>
 <body>
@@ -24,26 +25,6 @@
                         <label for="lastname">Last name</label>
                         <input type="text" name="lastname" id="lastname">
                     </div>
-                </div>
-                <div class="input-row">
-                <div class="input-group">
-                    <label for="country">Country/Region</label>
-                    <input type="text" name="country" id="country">
-                </div>
-                <div class="input-group">
-                    <label for="city">Town/City</label>
-                    <input type="text" name="city" id="city">
-                </div>
-                </div>
-                <div class="input-row">
-                <div class="input-group">
-                    <label for="address">Address</label>
-                    <input type="text" name="address" id="address" placeholder="House number and street name">
-                </div>
-                <div class="input-group">
-                    <label for="postcode">Postcode/ZIP</label>
-                    <input type="text" name="postcode" id="postcode">
-                </div>
                 </div>
                 <div class="input-row">
                 <div class="input-group">
@@ -97,6 +78,103 @@
                 </tr>
             </tfoot>
         </table>
+                </div>
+                <div class="payment-container">
+                    <h2>Payment Method</h2>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <div>Card</div>
+                                <div class="payment-logo-container">
+                                    <img class="payment-logo" src="/images/mastercard.png" alt="mastercard-logo">
+                                    <img class="payment-logo" src="/images/visa.png" alt="visa-logo">
+                                </div>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="accordion-row">
+                                <div class="input-group">
+                                <input type="text" name="card-number" id="card-number" placeholder="Card number">
+                                </div>
+                            </div>
+                            <div class="accordion-row">
+                                <div class="select-group">
+                                <select name="month" placeholder="Month">
+                                    <option value="" disabled selected>Month</option>
+                                    <option value="january">January</option>
+                                    <option value="february">February</option>
+                                    <option value="march">March</option>
+                                    <option value="april">April</option>
+                                    <option value="may">May</option>
+                                    <option value="june">June</option>
+                                    <option value="july">July</option>
+                                    <option value="august">August</option>
+                                    <option value="september">September</option>
+                                    <option value="october">October</option>
+                                    <option value="november">November</option>
+                                    <option value="december">December</option>
+                                </select>
+                                </div>
+                                <div class="seperator">/</div>
+                                <div class="select-group">
+                                <select name="Year">
+                                    <option value="" disabled selected>Year</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2024">2024</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="accordion-row">
+                            <div class="input-group">
+                                <input class="cvc-input" type="text" name="card-cvc" id="card-cvc" placeholder="CVC">
+                            </div>
+                            <div class="input-group">
+                                <p class="cvc-info">3 or 4 digits usually found on the signature strip</p>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                        <div>PayPal</div>
+                                <div class="payment-logo-container">
+                                    <img class="payment-logo" src="/images/paypal.png" alt="paypal-logo">
+                                </div>
+                        </button>
+                        <div class="accordion-content">
+                        Content for Section 2.
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                        <div>Google Pay</div>
+                                <div class="payment-logo-container">
+                                    <img class="payment-logo" src="/images/googlepay.png" alt="googlepay-logo">
+                                </div>
+                        </button>
+                        <div class="accordion-content">
+                        Content for Section 2.
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                        <div>Apple Pay</div>
+                                <div class="payment-logo-container">
+                                    <img class="payment-logo" src="/images/applepay.png" alt="applepay-logo">
+                                </div>
+                        </button>
+                        <div class="accordion-content">
+                        Content for Section 2.
+                        </div>
+                    </div>
+                    </div>
+                </div>
                 </div>
                 <div class="checkout-footer">
             <button type="submit" class="checkout-button">Place order</button></div>
