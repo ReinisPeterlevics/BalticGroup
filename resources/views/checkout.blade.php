@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/app.css" rel="stylesheet" >
     <link href="css/checkout.css" rel="stylesheet" >
+    <link href="css/cart.css" rel="stylesheet" >
+    <link href="css/location.css" rel="stylesheet" >
     <script src="js/checkout.js"></script>
+    <script src="js/cart.js"></script>
     <title>Checkout</title>
 </head>
 <body>
@@ -15,7 +18,7 @@
     <div class="checkout-content">
         <h1>Checkout</h1><div class="checkout-form-content">
         <div class="checkout-form-container">
-            <form method="post" action="{{route('checkout')}}">
+            <form class="checkout-form" method="post" action="{{route('checkout')}}">
                 <h2>Billing details</h2>
                 <div class="input-row">
                     <div class="input-group">
