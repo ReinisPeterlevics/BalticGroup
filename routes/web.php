@@ -41,3 +41,5 @@ Route::get('/location', 'App\Http\Controllers\LocationController@show')->name('l
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/checkout', [App\Http\Controllers\OrderController::class, 'index'])->name('checkout');

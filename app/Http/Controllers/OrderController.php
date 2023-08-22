@@ -10,4 +10,14 @@ class OrderController extends Controller
     {
         $this->middleware('auth');
     }
+
+
+    public function  index(){
+        $user = auth()->user();
+        return view('checkout' , [
+            'user' => $user
+        ]);
+
+    }
+
 }

@@ -14,18 +14,18 @@
     <div class="checkout-content">
         <h1>Checkout</h1><div class="checkout-form-content">
         <div class="checkout-form-container">
-            <form >
+            <form method="post" action="{{route('checkout')}}">
                 <h2>Billing details</h2>
                 <div class="input-row">
                     <div class="input-group">
                         <label for="fullname">Full name</label>
-                        <input type="text" name="firstname" id="firstname">
+                        <input type="text" name="firstname" id="firstname" value="{{$user->name }}">
                     </div>
                 </div>
                 <div class="input-row">
                 <div class="input-group">
                     <label for="email">Email</label>
-                    <input type="email" name="email" pattern=".+@globex\.com" id="email">
+                    <input type="email" name="email" pattern=".+@globex\.com" id="email"  value="{{$user->email }}">
                 </div>
                 </div>
                 <div class="input-row">
