@@ -22,6 +22,7 @@ class Order extends Model
         'customer_phone_number',
         'payment_type_id',
         'total_cost',
+        'notes',
     ];
 
     // public function user():BelongsTo{
