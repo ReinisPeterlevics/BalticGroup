@@ -65,15 +65,18 @@ header {
 .nav-item {
     display: flex;
 }
-.nav-link {
+.nav-link-login, .nav-link-logout, .nav-link-cart {
     color: white;
     text-decoration: none;
-    margin-right: 20px;
+    margin-right: 30px;
     border-bottom: 2px solid transparent;
     transition: 0.3s;
     padding-left: 6px;
 }
-.nav-link:hover {
+.nav-link-login, .nav-link-logout {
+    margin-right: 10px;
+}
+.nav-link-cart:hover {
     border-bottom: 2px solid var(--color-salmon);
     color: white;
 }
@@ -109,7 +112,6 @@ header {
     padding-top: 1rem;
     object-fit: contain;
     padding-bottom: 0.5rem;
-
 }
 .logoF {
     height: 50%;
@@ -193,9 +195,29 @@ header {
         padding-left: 15px;
         width: 85%;
     }
+    .nav-link-login, .nav-link-logout, .nav-link-cart {
+        margin-right: 10px;
+    }
+    .nav-link-login, .nav-link-logout {
+        margin-right: 0;
+    }
 }
 @media (max-width: 475px) {
     .footer-image{
         display: none;
     }
+    .logoH {
+        min-width: 130px;
+        height: auto;
+    }
+    .cart-img, .login-img, .logout-img {
+        width: 80%;
+        min-width: 35px;
+        height: auto;
+    }
+    .login-img, .logout-img {
+        min-width: 25px;
+    }
+
+
 }
