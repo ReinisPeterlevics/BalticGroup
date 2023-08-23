@@ -6,12 +6,15 @@
         <title>Magebit Travel - {{$location[0]->name}}</title>
         <link href="{{asset('/css/app.css')}}" rel="stylesheet" >
         <link href="{{asset('/css/location-description.css')}}" rel="stylesheet" >
+        <link href="{{asset('/css/cart.css')}}" rel="stylesheet">
         <script src="{{asset('/js/location-description.js')}}"></script>
+        <script src="{{asset('/js/cart.js')}}"></script>
 </head>
 <body>
     <div class="app">
         <div class="app-container">
             @include('header')
+            @include('cart')
             <div class="row content">
                 <div class="description-container">
                     <div destination-photo>
@@ -37,12 +40,12 @@
                             <p id="total-cost">Price in total: {{$location[0]->price}} EUR</p>
                         </div>
                         <div class="description-buttons">
-                            <a href="{{route('location')}}" class="back-button add-to-cart-button">Back</a>
+                            <a href="javascript:history.back()" class="back-button add-to-cart-button">Back</a>
                             <input class="add-to-cart-button" type="submit" name="add-to-cart" value="Add to Cart">
                         </div>
                     </div>
                     <div class="description-buttons-media">
-                        <a href="{{route('location')}}" class="back-button add-to-cart-button">Back</a>
+                        <a href="javascript:history.back()" class="back-button add-to-cart-button">Back</a>
                         <input class="add-to-cart-button" type="submit" name="add-to-cart" value="Add to Cart">
                     </div>
                 </form>

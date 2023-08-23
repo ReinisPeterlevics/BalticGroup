@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/blog.css">
-    <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="css/location-description.css">
+    <link rel="stylesheet" href="/css/blog.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/location-description.css">
+    <link href="/css/cart.css" rel="stylesheet">
+    <script src="/js/cart.js"></script>
     <title>Magebit Travel - Blog</title>
 </head>
 <body>
@@ -14,6 +16,7 @@
     <div class="app">
         <div class="app-container">
         @include('header')
+        @include('cart')
             <div class="blog">
             <h1>Blog</h1>
 
