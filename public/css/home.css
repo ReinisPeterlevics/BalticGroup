@@ -118,9 +118,8 @@ select:focus{
     text-align: center;
     margin-top: 0;
     margin-bottom: 20px;
-    background-color: var(--color-salmon-transparent);
-    border-radius: 4px;
-    padding: 10px;
+    border-bottom: 1px solid var(--color-aquamarine);
+    padding: 10px 0 5px 0;
 }
 .more-info{
     display: flex;
@@ -214,6 +213,7 @@ select:focus{
         width: 100%;
         background-color: var(--color-baby-blue);
         padding-bottom: 30px;
+        overflow: hidden;
         box-shadow: none;
     }
     .more-image{
@@ -228,7 +228,11 @@ select:focus{
         width: 100%;
         background-color: var(--color-salmon);
         padding: 10px 0 10px 0;
+        max-width: 660px;
         margin: 0;
+    }
+    .more-item:hover h3{
+        transform: none;
     }
     .visible-desktop{
         display: none;

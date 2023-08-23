@@ -87,6 +87,12 @@ body {
 .more-button:hover {
     background-color: var(--color-salmon-dark);
 }
+.back-to-search {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 2rem;
+}
 @media (max-width: 660px) {
     .row{
         width: 100%;
