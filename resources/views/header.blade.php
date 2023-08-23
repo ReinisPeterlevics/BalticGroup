@@ -7,7 +7,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#" onclick="showCart()"><img src="/images/book4.png" alt="Travel Booking"></a>
                     </li>
-
                     @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">

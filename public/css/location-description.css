@@ -1,11 +1,6 @@
 html{
     height: 100%;
 }
-.app {
-    display: flex;
-    flex-flow: column;
-    height: 100%;
-}
 .app .row.header {
     flex: 0 1 auto;
 }
