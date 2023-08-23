@@ -6,16 +6,15 @@ h1 {
     text-align: center;
 }
 
-h3 {
-    text-align: center;
-}
-
 
 body {
     background: url("../images/page-background.jpg");
 
 }
-
+.blog-container{
+    display: flex;
+    justify-content: center;
+}
 .blog {
     display:flex;
     flex-direction: column;
@@ -26,7 +25,7 @@ body {
     padding: 30px 40px;
     margin: 100px 20px;
     height: auto;
-
+    max-width: 1200px;
 }
 
 @media (max-width: 660px) {
@@ -59,10 +58,11 @@ body {
 }
 
   /* Original styles for the columns */
-.column {
+.blog-column {
     flex: 0 0 calc(33.33% - 20px); /* Adjust margins and width as needed */
     margin: 10px;
     padding: 20px;
+    min-width: 300px;
     box-sizing: border-box; /* Include padding in the width */
     background-color: #f2f2f2;
 
