@@ -98,7 +98,7 @@
                         </div>
                     </div>
                     <div class="description-buttons-media">
-                        <input class="back-button add-to-cart-button" type="button" name="back" value="Back" onclick="window.location.href='javascript:history.back()'">
+                        <a href="{{route('location')}}" class="back-button add-to-cart-button">Back</a>
                         <input class="add-to-cart-button" type="submit" name="add-to-cart" value="Add to Cart">
                     </div>
                 </form>

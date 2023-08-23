@@ -48,7 +48,6 @@ class OrderController extends Controller
                     'locationName' => $locationName,
                     'locationPrice' => $locationPrice,
                     'locationSubPrice' => $locationSubPrice,
-                    // 'totalPrice' => $totalPrice,
                 ];
             }
 
@@ -97,7 +96,7 @@ class OrderController extends Controller
         // session(['ourCart' => []]);
         // session(['processedOrders' => []]);
         // session(['totalPrice' => 0]);
-        //return redirect()->route('home')->with('success', 'Order Done Successfully');
+        return redirect()->route('home')->with('success', 'Order Done Successfully');
         //return response()->json(['message' => 'Order Done Successfully']);
     }
 }

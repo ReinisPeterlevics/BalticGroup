@@ -39,15 +39,8 @@
                     </div>
                 </div>
             </div>
-</div>
-</div>
-
-
-
-
-
-
-
+        </div>
+    </div>
     @include('footer')
 </body>
 </html>
