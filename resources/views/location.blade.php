@@ -22,7 +22,7 @@
                         <div class="card">
                             <a href="{{route('location-description', ['id' => $location->location_id])}}">
                                 <div class="card-img-top">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg">
+                                    <img src="{{$location->image}}" alt="destination">
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title">{{$location->name}}</h5>
@@ -34,6 +34,9 @@
                         </div>
                     </div>
                     @endforeach
+                </div>
+                <div class="back-to-search">
+                    <input class="back-button add-to-cart-button" type="button" name="back" value="Back" onclick="window.location.href='javascript:history.back()'">
                 </div>
             </div>
         @include('footer')

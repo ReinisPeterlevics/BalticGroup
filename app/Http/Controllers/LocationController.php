@@ -16,10 +16,10 @@ class LocationController extends Controller
                 $searchMap['locations.season_id'] = ['operator' => '=', "value" => $searchArr['season']];
             }
             if($searchArr['date-from']){
-                $searchMap['locations.start_date'] = ['operator' => '>=', "value" => $searchArr['date-from']];
+                $searchMap['locations.departure_date'] = ['operator' => '>=', "value" => $searchArr['date-from']];
             }
             if($searchArr['date-to']){
-                $searchMap['locations.end_date'] = ['operator' => '<=', "value" => $searchArr['date-to']];
+                $searchMap['locations.return_date'] = ['operator' => '<=', "value" => $searchArr['date-to']];
             }
             if(isset($searchArr['country'])){
                 $searchMap['locations.country_id'] = ['operator' => '=', "value" => $searchArr['country']];
@@ -42,6 +42,7 @@ class LocationController extends Controller
                             }
                         }
                     }, 'and')
+                    ->orderBy('locations.departure_date', 'desc')
                     ->get();
         return view('location', ['locations' => $locations]);
     }
