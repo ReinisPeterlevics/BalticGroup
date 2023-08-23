@@ -33,10 +33,12 @@ class CartController extends Controller
     }
 
     public function displayCart(Request $request) {
+        // session()->forget('ourCart');
         $cart = session()->get('ourCart');
         $locations = [];
         $totalPrice = 0;
 
+        //try if statement, if cart is empty
         foreach($cart as $cartItem) {
             $locationId = $cartItem['location_id'];
             $quantity = $cartItem['quantity'];
@@ -55,7 +57,6 @@ class CartController extends Controller
 
         return view('cart', compact('locations', 'totalPrice'));
     }
-
 
     public function deleteItem(Request $request, $id) {
 

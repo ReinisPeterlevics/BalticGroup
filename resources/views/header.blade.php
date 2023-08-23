@@ -5,7 +5,7 @@
             <div class="navbar-collapse">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('displayCart')}}"><img src="/images/book4.png" alt="Travel Booking"></a>
+                        <a class="nav-link" href="#" onclick="showCart()" id="cart-icon"><img src="/images/book4.png" alt="Travel Booking"></a>
                     </li>
                 </ul>
             </div>
