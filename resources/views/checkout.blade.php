@@ -21,24 +21,24 @@
             @csrf
         <div class="checkout-form-content">
         <div class="checkout-form-container">
-            <form class="billing-form" method="get">
+            <div class="billing-form">
                 <h2>Billing details</h2>
                 <div class="input-row">
                     <div class="input-group">
                         <label for="fullname">Full name</label>
-                        <input class="checkout-input" type="text" name="full-name" value="{{$user->name}}">
+                        <input class="checkout-input diabled" type="text" value="{{$user->name}}" disabled>
                     </div>
                 </div>
                 <div class="input-row">
                 <div class="input-group">
                     <label for="email">Email</label>
-                    <input class="checkout-input"  type="email" name="email" value="{{$user->email}}">
+                    <input class="checkout-input disabled"  type="email" value="{{$user->email}}" disabled>
                 </div>
                 </div>
                 <div class="input-row">
                 <div class="input-group">
                     <label for="phone">Phone number</label>
-                    <input class="checkout-input"  type="tel" name="phone-number">
+                    <input class="checkout-input" pattern="[0-9]{8}"  type="tel" name="phone-number" required>
                 </div>
                 </div>
                 <div class="input-row">
@@ -47,7 +47,7 @@
                     <textarea name="notes" placeholder="Notes about your order..."></textarea>
                 </div>
                 </div>
-            </form>
+            </div>
         </div>
         <div class="checkout-cart-container">
             <h2>Your order</h2>

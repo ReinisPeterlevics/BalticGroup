@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", function() {
         const accordionItem = this.parentElement;
         const paymentMethod = accordionItem.dataset.paymentMethod;
         paymentInput.value = paymentMethod;
-        console.log(paymentMethod);
-        console.log(paymentInput);
+        //console.log(paymentMethod);
+        //console.log(paymentInput);
         if (accordionItem.classList.contains("open")) {
         accordionItem.classList.remove("open");
         } else {
