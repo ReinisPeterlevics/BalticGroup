@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\BookController;
 
 // use App\Http\Controllers\OrderController;
 // use App\Http\Controllers\HomeController;
@@ -63,6 +64,15 @@ Route::get('/location/random',
 Route::get('/location/{id}',
     'App\Http\Controllers\LocationController@show'
 )->name('location-description');
+
+
+// Route:: get('/search', function () {
+//     return view('search');
+// });
+
+Route::get('/searchMagebit', 'App\Http\Controllers\BookController@search') ->name('searchMagebit');
+
+
 
 // Auth::routes();
 
