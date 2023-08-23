@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\BookController;
 
 // use App\Http\Controllers\OrderController;
 // use App\Http\Controllers\HomeController;
@@ -25,9 +27,11 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
-Route::get('/blog', function () {
-    return view('blog');
-})->name('blog');
+Route::get('/blog', [BlogController::class, 'index'])->name('blog');
+
+Route::get('/blog-detail', function () {
+    return view('blog-detail');
+})->name('blog-detail');
 
 Route::get('/login1', function () {
     return view('login1');
@@ -60,6 +64,15 @@ Route::get('/location/random',
 Route::get('/location/{id}',
     'App\Http\Controllers\LocationController@show'
 )->name('location-description');
+
+
+// Route:: get('/search', function () {
+//     return view('search');
+// });
+
+Route::get('/searchMagebit', 'App\Http\Controllers\BookController@search') ->name('searchMagebit');
+
+
 
 // Auth::routes();
 
