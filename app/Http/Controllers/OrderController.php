@@ -19,7 +19,9 @@ class OrderController extends Controller
         $cart = session('ourCart');
 
         if(empty($cart)){
-            return redirect('home');
+
+            //Session::flash('emptyCartMessage', 'Your cart is empty.');
+            return redirect()->route('home');
         }
 
         $user = auth()->user();
