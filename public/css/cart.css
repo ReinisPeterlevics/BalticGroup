@@ -197,6 +197,10 @@
 .cart-summary-title {
     margin-bottom: 10px;
 }
+.empty-cart{
+    padding-top: 25px;
+    padding-bottom: 50px;
+}
 @media(max-width:660px) {
     .cart-header h1, .cart-summary h2 {
         font-size: 20px;
