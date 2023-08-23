@@ -98,12 +98,12 @@
                         <div class="accordion-content">
                             <div class="accordion-row">
                                 <div class="input-group">
-                                <input type="text" name="card-number" id="card-number" placeholder="Card number">
+                                <input type="text" name="card-number" id="card-number" placeholder="Card number" required>
                                 </div>
                             </div>
                             <div class="accordion-row">
                                 <div class="select-group">
-                                <select name="month" placeholder="Month">
+                                <select name="month" required>
                                     <option value="" disabled selected>Month</option>
                                     <option value="january">January</option>
                                     <option value="february">February</option>
@@ -121,7 +121,7 @@
                                 </div>
                                 <div class="seperator">/</div>
                                 <div class="select-group">
-                                <select name="Year">
+                                <select name="Year" required>
                                     <option value="" disabled selected>Year</option>
                                     <option value="2023">2023</option>
                                     <option value="2024">2024</option>
@@ -137,7 +137,7 @@
                             </div>
                             <div class="accordion-row">
                             <div class="input-group">
-                                <input class="cvc-input" type="text" name="card-cvc" id="card-cvc" placeholder="CVC">
+                                <input class="cvc-input" type="text" name="card-cvc" id="card-cvc" placeholder="CVC" required>
                             </div>
                             <div class="input-group">
                                 <p class="cvc-info">3 or 4 digits usually found on the signature strip</p>
