@@ -69,9 +69,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/checkout', [App\Http\Controllers\OrderController::class, 'fillUserData'])->name('checkout');
+Route::get('/checkout', [App\Http\Controllers\OrderController::class, 'fillData'])->name('fill-data');
 Route::post('/checkout', [App\Http\Controllers\OrderController::class, 'saveOrder'])->name('save-order');
-
 
 // <?php
 

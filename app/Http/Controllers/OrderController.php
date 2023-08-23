@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use App\Models\OrderLocation;
+use App\Models\Location;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -13,46 +14,88 @@ class OrderController extends Controller
         $this->middleware('auth');
     }
 
-    public function fillUserData(Request $request){
-        // $user = auth()->user();
-        // return view('checkout' , [    Was filling data, but didn'i send data further away
-        //     'user' => $user
-        // ]);
+    public function fillData( )
+    {
+        $cart = session('ourCart');
+
+        if(empty($cart)){
+            return redirect('home');
+        }
 
         $user = auth()->user();
-
         session(['user_data' => $user]);
-        return view('checkout', [ 'user' => $user ]);
 
+        $processedOrders = [];
+        $totalPrice = 0;
+
+        foreach ($cart as $cartItem) {
+            $locationId = $cartItem['location_id'];
+            $quantity = $cartItem['quantity'];
+
+            $location = Location::find($locationId);
+
+            if ($location) {
+                $locationName = $location->name;
+                $locationPrice = $location->price;
+                $locationSubPrice = $locationPrice * $quantity;
+                $totalPrice += $locationSubPrice;
+
+                $processedOrders[] = [
+                    'locationId' => $locationId,
+                    'quantity' => $quantity,
+                    'locationName' => $locationName,
+                    'locationPrice' => $locationPrice,
+                    'locationSubPrice' => $locationSubPrice,
+                    // 'totalPrice' => $totalPrice,
+                ];
+            }
+
+        }
+
+        session(['processedOrders' => $processedOrders, 'totalPrice' => $totalPrice]);
+
+        return view('checkout', ['processedOrders' => $processedOrders, 'totalPrice' => $totalPrice, 'user' => $user]);
 
     }
 
-    public function saveOrder(Request $request){
+    public function saveOrder(Request $request)
+    {
         $user = session('user_data');
+        $processedOrders = session('processedOrders');
+        $totalPrice = session('totalPrice');
 
         $data = $request->all();
-        var_dump($user);
+
         $newOrder = [
             'customer_full_name' => $user['name'],
             'customer_email' => $user['email'],
             'customer_phone_number' => $data['phone-number'],
             'payment_type_id' => $data['payment-type-id'],
-            //'total_cost' => $data['total-cost'],
+            'total_cost' => $totalPrice,
             'notes' => $data['notes'],
         ];
 
-    //     $order = Order::create($newOrder);
+        //$order = Order::create($newOrder);
 
-    //     $newOrderLocation = [
-    //         //'order_id' => $order->order_id,
-    //         //'location_id' => $data['location-id'],
-    //         //'person_count' => $data['person-count'],
-    //         //'starp-cost' => $data['starp-cost'],
-    //     ];
+        foreach ($processedOrders as $procOrder) {
+            $locationID = $procOrder['locationId'];
+            $quanTity = $procOrder['quantity'];
+            $locationSubprice = $procOrder['locationSubPrice'];
 
-    //     OrderLocation::create($newOrderLocation);
+            $newOrderLocation = [
+                //'order_id' => $order->order_id,
+                'location_id' => $locationID,
+                'person_count' => $quanTity,
+                'starp_cost' => $locationSubprice
+            ];
 
-    //     return redirect()->route('home')->with('success', 'Order Done Successfully');
-    return response()->json(['message' => 'Order Done Successfully']);
+            //OrderLocation::create($newOrderLocation);
+        }
+
+        // session(['ourCart' => []]);
+        // session(['processedOrders' => []]);
+        // session(['totalPrice' => 0]);
+        //return redirect()->route('home')->with('success', 'Order Done Successfully');
+        //return response()->json(['message' => 'Order Done Successfully']);
     }
 }

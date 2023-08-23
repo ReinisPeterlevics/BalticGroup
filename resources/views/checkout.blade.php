@@ -63,23 +63,19 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach($processedOrders as $order)
                 <tr>
-                    <td class="item-name">Diving in Maldives</td>
-                    <td class="item-price">$1500</td>
-                    <td class="quantity">2</td>
-                    <td class="total-item-price">$3000</td>
+                    <td class="item-name">{{$order['locationName']}}</td>
+                    <td class="item-price">{{$order['locationPrice']}}</td>
+                    <td class="quantity">{{$order['quantity']}}</td>
+                    <td class="total-item-price">{{$order['locationSubPrice']}}</td>
                 </tr>
-                <tr>
-                    <td class="item-name">Hiking in Alps</td>
-                    <td class="item-price">$100</td>
-                    <td class="quantity">1</td>
-                    <td class="total-item-price">$3000</td>
-                </tr>
+                @endforeach
             </tbody>
             <tfoot>
                 <tr>
                     <td colspan="3" class="price">Total price:</td>
-                    <td class="total-price">$4000</td>
+                    <td class="total-price">{{$totalPrice}}</td>
                 </tr>
             </tfoot>
         </table>
