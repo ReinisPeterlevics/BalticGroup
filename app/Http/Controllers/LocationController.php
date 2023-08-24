@@ -46,6 +46,7 @@ class LocationController extends Controller
                     ->get();
         return view('location', ['locations' => $locations]);
     }
+
     public function show($id){
         $location = DB::table('locations')
                     ->join('seasons', 'locations.season_id', '=','seasons.season_id')

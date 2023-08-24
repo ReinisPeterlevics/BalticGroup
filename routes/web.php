@@ -21,6 +21,8 @@ use App\Http\Controllers\BookController;
 
 Auth::routes();
 
+Auth::routes();
+
 Route::get('/',
     'App\Http\Controllers\HomeController@index'
 )->name('home');
@@ -38,7 +40,13 @@ Route::get('/blog-detail', function () {
 // Route::get('/login1', function () {
 //     return view('login1');
 // })->name('login1');
+// Route::get('/login1', function () {
+//     return view('login1');
+// })->name('login1');
 
+// Route::get('/login', function () {
+//     return view('login');
+// })->name('login');
 // Route::get('/login', function () {
 //     return view('login');
 // })->name('login');
@@ -71,7 +79,7 @@ Route::get('/searchMagebit', 'App\Http\Controllers\BookController@search') ->nam
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/checkout', [App\Http\Controllers\OrderController::class, 'fillUserData'])->name('checkout');
+Route::get('/checkout', [App\Http\Controllers\OrderController::class, 'fillData'])->name('fill-data');
 Route::post('/checkout', [App\Http\Controllers\OrderController::class, 'saveOrder'])->name('save-order');
 
 Route::post('/cart/add/{id}', 'App\Http\Controllers\CartController@addToCart')->name('cart.add');

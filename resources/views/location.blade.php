@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Magebit Travel - Locations</title>
-        <link href="/css/app.css" rel="stylesheet" >
-        <link href="/css/location.css" rel="stylesheet" >
-        <link href="/css/location-description.css" rel="stylesheet" >
-        <link href="/css/cart.css" rel="stylesheet">
-        <script src="/js/cart.js"></script>
-    </head>
-    <body>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Magebit Travel - Locations</title>
+    <link href="/css/app.css" rel="stylesheet">
+    <link href="/css/location.css" rel="stylesheet">
+    <link href="/css/location-description.css" rel="stylesheet">
+    <link href="/css/cart.css" rel="stylesheet">
+    <script src="/js/cart.js"></script>
+</head>
+
+<body>
     <div class="app">
         <div class="app-container">
-        @include('header')
-        @include('cart')
+            @include('header')
+            @include('cart')
             <div class="row content">
                 <div class="row">
                     @foreach($locations as $location)
@@ -39,10 +41,9 @@
                     <input class="back-button add-to-cart-button" type="button" name="back" value="Back" onclick="window.location.href='javascript:history.back()'">
                 </div>
             </div>
-        @include('footer')
+            @include('footer')
         </div>
     </div>
 </body>
+
 </html>
-
-
