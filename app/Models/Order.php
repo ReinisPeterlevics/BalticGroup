@@ -25,10 +25,6 @@ class Order extends Model
         'notes',
     ];
 
-    // public function user():BelongsTo{
-    //     return $this->belongsTo(User::class);
-    // }
-
     public function payment_type():BelongsTo{
         return $this->belongsTo(PaymentType::class);
     }

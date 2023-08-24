@@ -19,7 +19,6 @@ class Activity extends Model
         'description',
         'duration',
         'image',
-
     ];
 
     public function location(): HasMany{

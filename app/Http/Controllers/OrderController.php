@@ -9,18 +9,19 @@ use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
+    //mandatory login to checkout
     public function __construct()
     {
         $this->middleware('auth');
     }
 
-    public function fillData( )
+    //fills in the user data and order/cart data on display
+    public function fillData()
     {
         $cart = session('ourCart');
 
-        if(empty($cart)){
+        if (empty($cart)) {
 
-            //Session::flash('emptyCartMessage', 'Your cart is empty.');
             return redirect()->route('home');
         }
 
@@ -50,17 +51,16 @@ class OrderController extends Controller
                     'locationSubPrice' => $locationSubPrice,
                 ];
             }
-
         }
 
         session(['processedOrders' => $processedOrders, 'totalPrice' => $totalPrice]);
 
         return view('checkout', ['processedOrders' => $processedOrders, 'totalPrice' => $totalPrice, 'user' => $user]);
-
     }
 
     public function saveOrder(Request $request)
     {
+        //saves order to the database in order, order_location tables
         $user = session('user_data');
         $processedOrders = session('processedOrders');
         $totalPrice = session('totalPrice');

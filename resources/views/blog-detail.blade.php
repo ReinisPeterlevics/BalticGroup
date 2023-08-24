@@ -13,12 +13,12 @@
 
 
 <div>
-@include('layouts.header')
+@include('header')
 
 
     <h3>HELLOO BROO</h3>
 
-@include('layouts.footer')
+@include('footer')
 </div>
 
 
