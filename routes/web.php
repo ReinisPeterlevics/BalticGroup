@@ -36,20 +36,6 @@ Route::get('/blog-detail', function () {
     return view('blog-detail');
 })->name('blog-detail');
 
-// Route::get('/login1', function () {
-//     return view('login1');
-// })->name('login1');
-// Route::get('/login1', function () {
-//     return view('login1');
-// })->name('login1');
-
-// Route::get('/login', function () {
-//     return view('login');
-// })->name('login');
-// Route::get('/login', function () {
-//     return view('login');
-// })->name('login');
-
 Route::get('/register', function () {
     return view('register');
 })->name('register');
@@ -74,14 +60,17 @@ Route::get('/location/{id}',
     'App\Http\Controllers\LocationController@show'
 )->name('location-description');
 
+Route::get('/home',
+    [App\Http\Controllers\HomeController::class, 'index']
+)->name('home');
 
-// Route:: get('/search', function () {
-//     return view('search');
-// });
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/checkout',
+    [App\Http\Controllers\OrderController::class, 'fillData']
+)->name('fill-data');
 
-Route::get('/checkout', [App\Http\Controllers\OrderController::class, 'fillData'])->name('fill-data');
-Route::post('/checkout', [App\Http\Controllers\OrderController::class, 'saveOrder'])->name('save-order');
+Route::post('/checkout',
+    [App\Http\Controllers\OrderController::class, 'saveOrder']
+)->name('save-order');
 
 Route::post('/add-to-cart/{id}',
     'App\Http\Controllers\CartController@add'

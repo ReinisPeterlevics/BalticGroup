@@ -23,6 +23,7 @@
             </script>
         @endif
             <div class="row content">
+                @if(!$locations->isEmpty())
                 <div class="row">
                     @foreach($locations as $location)
                     <div class="loc">
@@ -42,8 +43,11 @@
                     </div>
                     @endforeach
                 </div>
+                @else
+                    <p class="empty-search">Nothing found. Try to broaden the search!</p>
+                @endif
                 <div class="back-to-search">
-                    <input class="back-button add-to-cart-button" type="button" name="back" value="Back" onclick="window.location.href='javascript:history.back()'">
+                    <input class="back-button add-to-cart-button" type="button" name="back" value="Back" onclick="window.location='{{route("home")}}'">
                 </div>
             </div>
             @include('footer')

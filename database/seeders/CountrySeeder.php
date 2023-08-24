@@ -14,6 +14,33 @@ class CountrySeeder extends Seeder
      */
     public function run()
     {
-        Country::factory()->count(20)->create();
+        $countries = [
+            ['name' => 'Latvia'],
+            ['name' => 'Lithuania'],
+            ['name' => 'Estonia'],
+            ['name' => 'Bulgaria'],
+            ['name' => 'Slovakia'],
+            ['name' => 'Slovenia'],
+            ['name' => 'Croatia'],
+            ['name' => 'Serbia'],
+            ['name' => 'USA'],
+            ['name' => 'Iceland'],
+            ['name' => 'UK'],
+            ['name' => 'Canada'],
+            ['name' => 'Germany'],
+            ['name' => 'Ireland'],
+            ['name' => 'Italy'],
+            ['name' => 'India'],
+            ['name' => 'Singapore'],
+            ['name' => 'Australia'],
+            ['name' => 'Japan'],
+            ['name' => 'Brazil']
+        ];
+
+        foreach ($countries as $country) {
+            \App\Models\Country::create([
+                "name"=>$country["name"],
+            ]);
+        }
     }
 }

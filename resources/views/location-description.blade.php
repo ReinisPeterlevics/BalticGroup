@@ -106,13 +106,13 @@ $addToCart = App\Helpers\CartHelper::getCartItems();
                                 <p id="total-cost-p">Price in total: 0 €</p>
                             </div>
                             <div class="description-buttons">
-                                <input class="back-button add-to-cart-button" type="button" name="back" value="Back" onclick="window.location.href='javascript:history.back()'">
+                                <input class="back-button add-to-cart-button" type="button" name="back" value="Back" onclick="window.location='{{route("location")}}'">
                                 <input class="add-to-cart-button" type="submit" id="primary-add-to-cart" name="add-to-cart" value="Add to Cart">
                             </div>
                         </div>
                     </form>
                     <div class="description-buttons-media">
-                        <input class="back-button add-to-cart-button" type="button" name="back" value="Back" onclick="window.location.href='javascript:history.back()'">
+                        <input class="back-button add-to-cart-button" type="button" name="back" value="Back" onclick="window.location='{{route("location")}}'">
                         <input class="add-to-cart-button" type="button" id="secondary-add-to-cart" name="add-to-cart" value="Add to Cart" onclick="document.getElementById('primary-add-to-cart').click()">
                     </div>
                     </form>
