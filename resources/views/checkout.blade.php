@@ -9,7 +9,6 @@
     <link href="css/cart.css" rel="stylesheet">
     <link href="css/location.css" rel="stylesheet">
     <link href="css/confirmed.css" rel="stylesheet">
-    <link href="css/location-description.css" rel="stylesheet">
     <script src="js/checkout.js"></script>
     <script src="js/cart.js"></script>
     <script src="js/confirmed.js"></script>
@@ -104,7 +103,7 @@
                                                 <div class="accordion-content">
                                                     <div class="accordion-row">
                                                         <div class="input-group">
-                                                            <input type="text" name="card-number" id="card-number" placeholder="Card number" required>
+                                                            <input type="text" name="card-number" id="card-number"  pattern="[0-9]{16}"  title="Enter a valid 16-digit card number"   placeholder="Card number" required>
                                                         </div>
                                                     </div>
                                                     <div class="accordion-row">
@@ -143,7 +142,7 @@
                                                     </div>
                                                     <div class="accordion-row">
                                                         <div class="input-group">
-                                                            <input class="cvc-input" type="text" name="card-cvc" id="card-cvc" placeholder="CVC" required>
+                                                            <input class="cvc-input" type="text" name="card-cvc" id="card-cvc"  pattern="[0-9]{3,4}" title="Enter a valid 3 or 4-digit CVC code" placeholder="CVC" required>
                                                         </div>
                                                         <div class="input-group">
                                                             <p class="cvc-info">3 or 4 digits usually found on the signature strip</p>
