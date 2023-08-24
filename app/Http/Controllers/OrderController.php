@@ -15,7 +15,7 @@ class OrderController extends Controller
         $this->middleware('auth');
     }
 
-    //fills in the user data and order/cart data on display
+    //fills in the user data and cart data in html
     public function fillData()
     {
         $cart = session('ourCart');
@@ -58,9 +58,9 @@ class OrderController extends Controller
         return view('checkout', ['processedOrders' => $processedOrders, 'totalPrice' => $totalPrice, 'user' => $user]);
     }
 
+    //saves order-booking to the database in order, order_location tables and empties cart
     public function saveOrder(Request $request)
     {
-        //saves order to the database in order, order_location tables
         $user = session('user_data');
         $processedOrders = session('processedOrders');
         $totalPrice = session('totalPrice');
