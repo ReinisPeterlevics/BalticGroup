@@ -23,16 +23,17 @@
     padding: 50px 40px;
     width:-webkit-fill-available;
 }
-h1, h2{
+.about-h1, .about-h2{
     text-align: center;
     border-bottom: 1px solid var(--color-salmon);
     width:100%;
     color: var(--color-text-black-dark);
+    padding-bottom: 20px;
 }
-h3, p{
+.about-h3, .about-p{
     color: var(--color-text-black);
 }
-p{
+.about-p{
     text-align: center;
 }
 .about-us-container, .why-book-container{
@@ -40,13 +41,7 @@ p{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 80%;
-}
-.why-book-container{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    width:80%;
+    width: 80%;
 }
 .small-why-container{
     width: 200px;
@@ -78,27 +73,6 @@ p{
     75% {
         transform: translateX(-1px);
     }
-}
-.our-team-container{
-    display:flex;
-    flex-direction: column;
-    width:80%;
-}
-.our-team-boxes, .recomendation-card-container, .why-book-boxes{
-    width:100%;
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top:40px;
-}
-.small-team-container{
-    width:150px;
-    height:auto;
-}
-.small-team-container>h3{
-    text-align: center;
-    font-size: 18px;
-    margin: 0;
 }
 .small-team-container>p{
     text-align: center;
@@ -144,14 +118,31 @@ animation-play-state: paused;
 .recomendation-link>img:hover{
     transform: scale(1.1);
 }
-h1,h2{
-    padding-bottom: 20px;
+.our-team-container{
+    display:flex;
+    flex-direction: column;
+    width:80%;
+}
+.our-team-boxes, .recomendation-card-container, .why-book-boxes{
+    width:100%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top:40px;
+}
+.small-team-container{
+    width:150px;
+    height:auto;
+}
+.small-team-container>h3{
+    text-align: center;
+    font-size: 18px;
+    margin: 0;
 }
 @media (max-width: 660px) {
     .why-book-boxes, .our-team-boxes, .recomendation-card-container {
         flex-direction: column;
         align-items: center;
-
     }
     .about-page-content{
         margin: 0;
