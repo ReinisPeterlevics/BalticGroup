@@ -8,6 +8,8 @@ use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+// USER FUNCTIONS DISABLED FOR NOW AND DATABASE WONT BE USED INSTEAD COOKIES WILL BE USED
+
 class CartHelper
 {
     public static function getCartItemsCount(): int
@@ -78,8 +80,6 @@ class CartHelper
     {
         $cartItems = self::getCartItems();
         $ids = Arr::pluck($cartItems, 'location_id');
-
-        // dd($cartItems);
 
         $locations = DB::table('locations')
             ->join('seasons', 'locations.season_id', '=', 'seasons.season_id')

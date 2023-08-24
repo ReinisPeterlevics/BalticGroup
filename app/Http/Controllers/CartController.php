@@ -10,6 +10,8 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Redirect;
 
+// USER FUNCTIONS DISABLED FOR NOW AND DATABASE WONT BE USED INSTEAD COOKIES WILL BE USED
+
 class CartController extends Controller
 {
 

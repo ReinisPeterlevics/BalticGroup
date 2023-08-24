@@ -93,6 +93,15 @@ body {
     width: 100%;
     margin-bottom: 2rem;
 }
+.empty-search{
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 30px;
+    color: var(--color-aquamarine-dark);
+    margin: 0 30px;
+}
 @media (max-width: 660px) {
     .row{
         width: 100%;

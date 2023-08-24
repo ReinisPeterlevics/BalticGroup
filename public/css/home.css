@@ -60,6 +60,12 @@
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
 }
+#country option {
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+            line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
 .input-group input:hover,
 select:hover{
     border: 1px solid var(--color-salmon);
