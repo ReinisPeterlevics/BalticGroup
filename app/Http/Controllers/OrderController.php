@@ -100,7 +100,8 @@ class OrderController extends Controller
             OrderLocation::create($newOrderLocation);
         }
 
-        session(['cart_items' => []]);
+        // session(['cart_items' => []]);
+        setcookie('cart_items', '');
         session(['processedOrders' => []]);
         session(['totalPrice' => 0]);
         session()->flash('orderPlaced', true);
