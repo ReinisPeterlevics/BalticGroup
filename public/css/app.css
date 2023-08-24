@@ -34,13 +34,14 @@ body {
     --color-gray: rgb(133, 133, 133);
     --color-gray-transparent: rgb(133, 133, 133, 0.8);
 }
-
 .app {
     display: flex;
     flex-flow: column;
     height: 100%;
 }
-
+.app-container {
+    display: contents;
+}
 /* header */
 header {
     background-color: var(--color-aquamarine);

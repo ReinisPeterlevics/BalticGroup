@@ -10,9 +10,6 @@ html{
 .app .row.footer {
     flex: 0 1 auto;
 }
-.app-container {
-    display: contents;
-}
 .description-container {
     display: grid;
     background-image: linear-gradient(var(--color-baby-blue-light), var(--color-baby-blue));
@@ -40,11 +37,6 @@ html{
     align-items: flex-start;
     justify-content: center;
     gap: 25px
-    /* background-color: white;
-    border: none;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden; */
 }
 .destination-photo {
     display: flex;
