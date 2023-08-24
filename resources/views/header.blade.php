@@ -23,7 +23,7 @@
                     <li class="nav-item">
                         <div class="cart-icon">
                             <a class="nav-link" href="#" onclick="showCart()"><img src="/images/book4.png" alt="Travel Booking"></a>
-                            <span class="cart-badge">{{ \App\Helpers\CartHelper::getCartItemsCount() }}</span>
+                            <span class="cart-badge" onclick="showCart()">{{\App\Helpers\CartHelper::getCartItemsCount()}}</span>
                         </div>
 
                     </li>
