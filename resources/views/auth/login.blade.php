@@ -11,15 +11,14 @@
 </head>
 <body>
 @extends('layouts.app')
-
-
 @section('content')
-
 <div class="app">
     <div class="app-container">
 
     <!-- error validations -->
-    @if ($errors->any())
+        <div class="wrapper">
+            <div class="main">
+            @if ($errors->any())
         <div class="alert alert-danger" style="position:absolute">
             <ul>
                 @foreach ($errors->all() as $error)
@@ -28,9 +27,6 @@
             </ul>
         </div>
     @endif
-
-        <div class="wrapper">
-            <div class="main">
                 <input type="checkbox" id="chk" aria-hidden="true">
 
                 <div class="signup">
@@ -59,4 +55,3 @@
     </div>
 </div>
 @endsection
-

@@ -28,6 +28,7 @@ body{
 .wrapper {
     display: flex;
     justify-content: center;
+    align-items: center;
 
 }
 .main{
@@ -91,6 +92,44 @@ button{
 button:hover{
 	background: #6d44b8;
 }
+
+.alert {
+    position: fixed;
+    top: 30px; /* Adjust the top position for mid-top placement */
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    max-width: 90%;
+    background-color: #fc6b61;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+}
+
+.alert ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.alert ul li {
+    margin-bottom: 5px;
+}
+
+  /* Media Query for smaller screens */
+@media screen and (max-width: 768px) {
+.alert {
+    top: 10px; /* Adjust the top position for mid-top placement */
+    right: 5px;
+    left: unset; /* Remove left positioning for smaller screens */
+    transform: unset; /* Remove transform for smaller screens */
+    width: 90%;
+    max-width: none;
+    padding: 8px;
+    }
+}
+
 .login{
 	height: 460px;
 	background: #eee;
@@ -112,4 +151,3 @@ button:hover{
 #chk:checked ~ .signup label{
 	transform: scale(.6);
 }
-
