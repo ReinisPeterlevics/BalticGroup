@@ -1,6 +1,10 @@
 html{
     height: 100%;
 }
+form{
+    display: inherit;
+    margin-top: inherit;
+}
 .app {
     display: flex;
     flex-flow: column;

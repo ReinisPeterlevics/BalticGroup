@@ -1,3 +1,8 @@
+<?php
+
+$cartItems = App\Helpers\CartHelper::getLocationsAndCartItems();
+
+?>
 <div id="cart" class="cart-overlay">
     <div class="cart-wrapper">
         <div class="cart-container">
@@ -7,39 +12,46 @@
                     <button type="button" onclick="hideCart()" class="close-button">&times</button>
                 </div>
             </div>
+            @if($cartItems)
             <ul class="cart-items">
-                <!-- For each goes here -->
-                <li class="cart-item" id="LOCATION_ID_HERE" value="600">
-                    <!-- Location image here -->
-                    <img src="images/paragliding.jpg" alt="mountains" class="cart-item-image">
+                @foreach($cartItems as $item)
+                <li class="cart-item" id="{{$item['location_id']}}" value="{{$item['price']}}">
+                    <img src="{{$item['image']}}" alt="mountains" class="cart-item-image">
                     <div class="cart-item-info">
                         <div class="cart-item-details">
-                            <h3 class="cart-item-title">LOCATION_TITLE_HERE</h3>
-                            <p class="cart-item-country">LOCATION_COUNTRY_HERE</p>
+                            <h3 class="cart-item-title">{{$item['name']}}</h3>
+                            <p class="cart-item-country">{{$item['countryname']}}</p>
                         </div>
                         <div class="cart-item-quantity">
                             <!-- Location price here -->
-                            <p class="cart-item-price">$600</p>
+                            <p class="cart-item-price">{{$item['price']}} €</p>
                             <div class="buttons">
-                                <button class="minus-button" onclick="minusCountHandler('LOCATION_ID_HERE')">-</button>
-                                <!-- Start value the one that user selected and max read from the table -->
-                                <input type="number" id="LOCATION_ID_HERE-count" class="cart-item-count" value="1" min="1" max="10">
-                                <button class="plus-button" onclick="plusCountHandler('LOCATION_ID_HERE')">+</button>
+                                <form method="POST" action="{{ route('update-cart-quantity', ['id'=>$item['location_id']]) }}">
+                                    @csrf
+                                    <button class="minus-button" type="submit" onclick="minusCountHandler(`{{$item['location_id']}}`)">-</button>
+                                    <!-- Start value the one that user selected and max read from the table -->
+                                    <input type="number" id="{{$item['location_id']}}-count" name="{{$item['location_id']}}-count" class="cart-item-count" value="{{$item['quantity']}}" min="0" max="{{$item['spots_left']}}">
+                                    <button class="plus-button" type="submit" onclick="plusCountHandler(`{{$item['location_id']}}`)">+</button>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </li>
-                <!-- For each ends here -->
+                @endforeach
             </ul>
             <div class="cart-summary">
                 <div class="cart-summary-title">
                     <!-- Total cost -->
-                    <h2 id="total-cost">Total: $1700</h2>
+                    <h2 id="total-cost">Total: 1700 €</h2>
                 </div>
                 <div class="checkout-button">
+                    <!-- To the checkout! -->
                     <button><a href="#">Checkout</a></button>
                 </div>
             </div>
+            @else
+            <p class="empty-cart">Your cart is empty!</p>
+            @endif
         </div>
     </div>
 </div>

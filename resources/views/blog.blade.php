@@ -17,6 +17,11 @@
         <div class="app-container">
         @include('header')
         @include('cart')
+        @if(!empty(Session::get('cartIsVisible')) && Session::get('cartIsVisible') == true)
+            <script>
+                showCart();
+            </script>
+        @endif
         <div class="blog-container">
         <div class="blog">
             <h1>Blog</h1>

@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\BlogController;
-use App\Http\Controllers\BookController;
 
 // use App\Http\Controllers\OrderController;
 // use App\Http\Controllers\HomeController;
@@ -19,6 +18,8 @@ use App\Http\Controllers\BookController;
 |
 */
 
+Auth::routes();
+
 Route::get('/',
     'App\Http\Controllers\HomeController@index'
 )->name('home');
@@ -27,7 +28,9 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
-Route::get('/blog', [BlogController::class, 'index'])->name('blog');
+Route::get('/blog',
+    [BlogController::class, 'index']
+)->name('blog');
 
 Route::get('/blog-detail', function () {
     return view('blog-detail');
@@ -65,70 +68,22 @@ Route::get('/location/{id}',
     'App\Http\Controllers\LocationController@show'
 )->name('location-description');
 
+Route::get('/home',
+    [App\Http\Controllers\HomeController::class, 'index']
+)->name('home');
 
-// Route:: get('/search', function () {
-//     return view('search');
-// });
+Route::get('/checkout',
+    [App\Http\Controllers\OrderController::class, 'fillUserData']
+)->name('checkout');
 
-Route::get('/searchMagebit', 'App\Http\Controllers\BookController@search') ->name('searchMagebit');
+Route::post('/checkout',
+    [App\Http\Controllers\OrderController::class, 'saveOrder']
+)->name('save-order');
 
+Route::post('/add-to-cart/{id}',
+    'App\Http\Controllers\CartController@add'
+)->name('add-to-cart');
 
-
-// Auth::routes();
-
-Route::get('/location', 'App\Http\Controllers\LocationController@show')->name('location-description');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::get('/checkout', [App\Http\Controllers\OrderController::class, 'fillUserData'])->name('checkout');
-Route::post('/checkout', [App\Http\Controllers\OrderController::class, 'saveOrder'])->name('save-order');
-
-
-// <?php
-
-// use Illuminate\Support\Facades\Route;
-// use Illuminate\Support\Facades\Auth;
-
-// /*
-// |--------------------------------------------------------------------------
-// | Web Routes
-// |--------------------------------------------------------------------------
-// |
-// | Here is where you can register web routes for your application. These
-// | routes are loaded by the RouteServiceProvider within a group which
-// | contains the "web" middleware group. Now create something great!
-// |
-// */
-
-// Route::get('/', function () {
-//     return view('home');
-// })->name('home');
-
-// Route::get('/about', function () {
-//     return view('about');
-// })->name('about');
-
-// Route::get('/blog', function () {
-//     return view('blog');
-//     })->name('blog');
-
-// Route::get('/login', function () {
-//     return view('login');
-// })->name('login');
-
-// Route::get('/checkout', function () {
-//     return view('checkout');
-// })->name('checkout');
-
-// Route::get('/location-list', 'App\Http\Controllers\LocationController@index')->name('location');
-
-// Route::get('/location', 'App\Http\Controllers\LocationController@show')->name('location-description');
-
-// Auth::routes();
-
-// // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-// // Route::get('/checkout', [App\Http\Controllers\OrderController::class, 'index'])->name('checkout');
-
+Route::post('/update-cart-quantity/{id}',
+    'App\Http\Controllers\CartController@updateQuantity'
+)->name('update-cart-quantity');

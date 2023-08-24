@@ -12,6 +12,11 @@
     <body>
         @include('header')
         @include('cart')
+        @if(!empty(Session::get('cartIsVisible')) && Session::get('cartIsVisible') == true)
+            <script>
+                showCart();
+            </script>
+        @endif
         <div class="about-page-container">
             <div class="about-page-content">
             <div class="about-us-container">

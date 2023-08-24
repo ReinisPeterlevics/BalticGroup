@@ -16,6 +16,11 @@
         <div class="app-container">
             @include('header')
             @include('cart')
+            @if(!empty(Session::get('cartIsVisible')) && Session::get('cartIsVisible') == true)
+                <script>
+                    showCart();
+                </script>
+            @endif
             <div class="row content">
                 <div class="container">
                     <div class="search">
@@ -64,11 +69,11 @@
                             </div>
                             <div class="search-row">
                                 <div class="input-group">
-                                    <label for="budget">How much do you want to spend?</label>
+                                    <label for="budget">How much do you want to spend? (€)</label>
                                     <div class="range-picker">
                                         <!-- Min and current from DB and max from DB -->
-                                        <input type="range" id="budget" name="budget" min="{{ $minPrice }}" max="{{ $maxPrice }}" step="1" value="{{ $minPrice }}" onchange="rangeInputHandler(this)">
-                                        <label for="budget" id="budgetLabel">{{ $minPrice }}</label>
+                                        <input type="range" id="budget" name="budget" min="{{ $minPrice }}" max="{{ $maxPrice }}" step="1" value="{{ $maxPrice }}" onchange="rangeInputHandler(this)">
+                                        <label for="budget" id="budgetLabel">{{ $maxPrice }}</label>
                                     </div>
                                 </div>
                                 <div class="input-group">

@@ -14,6 +14,11 @@
 <body>
 @include('header')
 @include('cart')
+@if(!empty(Session::get('cartIsVisible')) && Session::get('cartIsVisible') == true)
+    <script>
+        showCart();
+    </script>
+@endif
 <div class="checkout-container">
     <div class="checkout-content">
         <h1 class="checkout-title">Checkout</h1>
