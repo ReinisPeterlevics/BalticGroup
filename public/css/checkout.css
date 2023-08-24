@@ -81,7 +81,7 @@ textarea:focus{
     display: flex;
     flex-direction: column;
     gap: 20px;
-    width:100%;
+    width:auto;
 }
 .input-row{
     padding:5px 0px;
@@ -94,8 +94,6 @@ textarea:focus{
     display: flex;
     flex-direction: column;
     gap: 5px;
-}
-.card-input{
     width:100%;
 }
 .checkout-footer{

@@ -77,16 +77,16 @@
                                                 @foreach($processedOrders as $order)
                                                 <tr>
                                                     <td class="item-name">{{$order['locationName']}}</td>
-                                                    <td class="item-price">${{$order['locationPrice']}}</td>
+                                                    <td class="item-price">{{$order['locationPrice']}}€</td>
                                                     <td class="quantity">{{$order['quantity']}}</td>
-                                                    <td class="total-item-price">${{$order['locationSubPrice']}}</td>
+                                                    <td class="total-item-price">{{$order['locationSubPrice']}}€</td>
                                                 </tr>
                                                 @endforeach
                                             </tbody>
                                             <tfoot>
                                                 <tr>
                                                     <td colspan="3" class="price">Total:</td>
-                                                    <td class="total-price">${{$totalPrice}}</td>
+                                                    <td class="total-price">{{$totalPrice}}€</td>
                                                 </tr>
                                             </tfoot>
                                         </table>
@@ -103,9 +103,14 @@
                                                     </div>
                                                 </button>
                                                 <div class="accordion-content">
+                                                <div class="accordion-row">
+                                                        <div class="input-group">
+                                                            <input class="card-input" type="text" name="card-holder"  title="Enter a valid name and surname"   placeholder="Holder of the card" required>
+                                                        </div>
+                                                    </div>
                                                     <div class="accordion-row">
                                                         <div class="input-group">
-                                                            <input class="card-input" type="text" name="card-number" id="card-number"  pattern="[0-9]{16}"  title="Enter a valid 16-digit card number"   placeholder="Card number" required>
+                                                            <input class="card-input" type="text" name="card-number" pattern="[0-9]{16}"  title="Enter a valid 16-digit card number"   placeholder="Card number" required>
                                                         </div>
                                                     </div>
                                                     <div class="accordion-row">
