@@ -12,7 +12,6 @@
 </head>
 <body>
 
-
     <div class="app">
         <div class="app-container">
         @include('header')
@@ -26,7 +25,6 @@
             aut ipsam, sequi modi magni obcaecati. Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, sunt Lorem ipsum dolor sit amet.
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis eos eius, earum reiciendis reprehenderit consectetur rem rerum fugiat labore temporibus?
         </p>
-
 
         <!-- content from db by 3 column -->
                 <div class="row">
@@ -61,7 +59,7 @@
             </div>
         </div>
 
-        <!-- pagination -->
+        <!-- pages shows based on how many content have on db| per page 3 -->
         <div class="pagination">
             @for ($i=0; $i < $blogs->lastPage(); $i++)
             <a href="{{ request()->fullUrlWithQuery(['page' => $i+1]) }}"><button class="page-button">{{ $i+1 }}</button></a>
@@ -71,7 +69,6 @@
             @include('footer')
         </div>
     </div>
-
 
 </body>
 </html>

@@ -13,6 +13,18 @@ body{
     width:fit-content;
 }
 
+.email-error {
+    color: red;
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    display: none;
+
+}
+
 .wrapper {
     display: flex;
     justify-content: center;
@@ -100,10 +112,4 @@ button:hover{
 #chk:checked ~ .signup label{
 	transform: scale(.6);
 }
-
-
-
-
-
-
 

@@ -38,13 +38,4 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
-
-
-    public function login(Request $request) {
-
-        if ($this->attemptLogin($request)) {
-            $user = $this->guard()->user();
-            return view('checkout', ['user' => $user]);
-        }
-    }
 }
