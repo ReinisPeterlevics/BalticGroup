@@ -10,45 +10,50 @@ use Illuminate\Support\Facades\DB;
 
 class CartHelper
 {
-    public static function getCartItemsCount(): int{
+    public static function getCartItemsCount(): int
+    {
         $user = \request()->user();
         if ($user) {
             return Cart::where('user_id', $user->id)->sum('quantity');
         } else {
             return array_reduce(
                 self::getCookieCartItems(),
-                fn($carry, $item) => $carry + $item['quantity'],
+                fn ($carry, $item) => $carry + $item['quantity'],
                 0
             );
         }
     }
 
-    public static function getCartItems(){
+    public static function getCartItems()
+    {
         $request = \request();
         $user = $request->user();
         if ($user) {
             return Cart::where('user_id', $user->id)->get()->map(
-                fn($item) => ['location_id' => $item->location_id, 'quantity' => $item->quantity]
+                fn ($item) => ['location_id' => $item->location_id, 'quantity' => $item->quantity]
             );
         } else {
             return self::getCookieCartItems();
         }
     }
 
-    public static function getCookieCartItems(){
+    public static function getCookieCartItems()
+    {
         $request = \request();
         return json_decode($request->cookie('cart_items', '[]'), true);
     }
 
-    public static function getCountFromItems($cartItems){
+    public static function getCountFromItems($cartItems)
+    {
         return array_reduce(
             $cartItems,
-            fn($carry, $item) => $carry + $item['quantity'],
+            fn ($carry, $item) => $carry + $item['quantity'],
             0
         );
     }
 
-    public static function moveCartItemsIntoDb(){
+    public static function moveCartItemsIntoDb()
+    {
         $request = \request();
         $cartItems = self::getCookieCartItems();
         $dbCartItems = Cart::where(['user_id' => $request->user()->id])->get()->keyBy('location_id');
@@ -69,24 +74,26 @@ class CartHelper
         }
     }
 
-    public static function getLocationsAndCartItems(){
+    public static function getLocationsAndCartItems()
+    {
         $cartItems = self::getCartItems();
         $ids = Arr::pluck($cartItems, 'location_id');
 
+        // dd($cartItems);
+
         $locations = DB::table('locations')
-                    ->join('seasons', 'locations.season_id', '=','seasons.season_id')
-                    ->join('countries', 'locations.country_id', '=', 'countries.country_id')
-                    ->select('seasons.name as seasonname', 'countries.name as countryname', 'locations.*')
-                    ->whereIn('location_id', $ids)->get()->toArray();
+            ->join('seasons', 'locations.season_id', '=', 'seasons.season_id')
+            ->join('countries', 'locations.country_id', '=', 'countries.country_id')
+            ->select('seasons.name as seasonname', 'countries.name as countryname', 'locations.*')
+            ->whereIn('location_id', $ids)->get()->toArray();
 
         $locations = json_decode(json_encode($locations), true);
 
-        foreach($locations as &$location) {
+        foreach ($locations as &$location) {
             $location['user_id'] = $cartItems[$location['location_id']]['user_id'];
             $location['quantity'] = $cartItems[$location['location_id']]['quantity'];
         }
 
         return $locations;
     }
-
 }

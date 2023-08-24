@@ -83,3 +83,7 @@ Route::post('/checkout',
 Route::post('/add-to-cart/{id}',
     'App\Http\Controllers\CartController@add'
 )->name('add-to-cart');
+
+Route::post('/update-cart-quantity/{id}',
+    'App\Http\Controllers\CartController@updateQuantity'
+)->name('update-cart-quantity');

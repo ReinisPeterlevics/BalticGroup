@@ -10,19 +10,22 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Redirect;
 
-class CartController extends Controller{
+class CartController extends Controller
+{
 
-    public function index(){
-        list($locations, $cartItems) = CartHelper::getLocationsAndCartItems();
-        $total = 0;
-        foreach ($locations as $location) {
-            $total += $location->price * $cartItems[$location->location_id]['quantity'];
-        }
+    // public function index()
+    // {
+    //     list($locations, $cartItems) = CartHelper::getLocationsAndCartItems();
+    //     $total = 0;
+    //     foreach ($locations as $location) {
+    //         $total += $location->price * $cartItems[$location->location_id]['quantity'];
+    //     }
 
-        return view('cart.index', compact('cartItems', 'products', 'total'));
-    }
+    //     return view('cart.index', compact('cartItems', 'products', 'total'));
+    // }
 
-    public function add(Request $request, $id){
+    public function add(Request $request, $id)
+    {
         $quantity = $request->post('persons', 1);
         $user = $request->user();
         if ($user) {
@@ -41,7 +44,7 @@ class CartController extends Controller{
                 Cart::create($data);
             }
 
-            return Redirect::back()->with('message','Added to cart!');
+            return Redirect::back()->with('message', 'Added to cart!');
         } else {
             $cartItems = json_decode($request->cookie('cart_items', '[]'), true);
             $productFound = false;
@@ -60,55 +63,71 @@ class CartController extends Controller{
                 ];
             }
             Cookie::queue('cart_items', json_encode($cartItems), 60 * 24 * 30);
-            return Redirect::back()->with('message','Added to cart!');
+
+            return Redirect::back()->with('message', 'Added to cart!');
         }
     }
 
-    public function remove(Request $request, Location $location){
+    // public function remove(Request $request, $id)
+    // {
+    //     $user = $request->user();
+    //     if ($user) {
+    //         $cartItem = Cart::query()->where(['user_id' => $user->id, 'location_id' => $id])->first();
+    //         if ($cartItem) {
+    //             $cartItem->delete();
+    //         }
+
+    //         return response([
+    //             'count' => CartHelper::getCartItemsCount(),
+    //         ]);
+    //     } else {
+    //         $cartItems = json_decode($request->cookie('cart_items', '[]'), true);
+    //         foreach ($cartItems as $i => &$item) {
+    //             if ($item['location_id'] === $id) {
+    //                 array_splice($cartItems, $i, 1);
+    //                 break;
+    //             }
+    //         }
+    //         Cookie::queue('cart_items', json_encode($cartItems), 60 * 24 * 30);
+
+    //         return response(['count' => CartHelper::getCountFromItems($cartItems)]);
+    //     }
+    // }
+
+    public function updateQuantity(Request $request, $id)
+    {
+        $parameter = $id . '-count';
+        $quantity = (int)$request->$parameter;
         $user = $request->user();
         if ($user) {
-            $cartItem = Cart::query()->where(['user_id' => $user->id, 'location_id' => $location->location_id])->first();
-            if ($cartItem) {
-                $cartItem->delete();
+            // Check quantity change
+            if ($quantity == 0) {
+                // If quantity is 0, remove the item from the cart
+                $cartItem = Cart::query()->where(['user_id' => $user->id, 'location_id' => $id])->first();
+                if ($cartItem) { $cartItem->delete(); }
+            } else {
+                // If quantity is not 0, update the item in the cart
+                Cart::where(['user_id' => $request->user()->id, 'location_id' => $id])->update(['quantity' => $quantity]);
             }
-
-            return response([
-                'count' => CartHelper::getCartItemsCount(),
-            ]);
         } else {
-            $cartItems = json_decode($request->cookie('cart_items', '[]'), true);
-            foreach ($cartItems as $i => &$item) {
-                if ($item['location_id'] === $location->location_id) {
-                    array_splice($cartItems, $i, 1);
-                    break;
+            // Check quantity change
+            if ($quantity == 0) {
+                // If quantity is 0, remove the item from the cart
+                $cartItems = json_decode($request->cookie('cart_items', '[]'), true);
+                unset($cartItems[$id]);
+                Cookie::queue('cart_items', json_encode($cartItems), 60 * 24 * 30);
+            } else {
+                // If quantity is not 0, update the item in the cart
+                $cartItems = json_decode($request->cookie('cart_items', '[]'), true);
+                foreach ($cartItems as &$item) {
+                    if ($item['location_id'] === $id) {
+                        $item['quantity'] = $quantity;
+                        break;
+                    }
                 }
+                Cookie::queue('cart_items', json_encode($cartItems), 60 * 24 * 30);
             }
-            Cookie::queue('cart_items', json_encode($cartItems), 60 * 24 * 30);
-
-            return response(['count' => CartHelper::getCountFromItems($cartItems)]);
         }
-    }
-
-    public function updateQuantity(Request $request, Location $location){
-        $quantity = (int)$request->post('quantity');
-        $user = $request->user();
-        if ($user) {
-            Cart::where(['user_id' => $request->user()->id, 'location_id' => $location->location_id])->update(['quantity' => $quantity]);
-
-            return response([
-                'count' => CartHelper::getCartItemsCount(),
-            ]);
-        } else {
-            $cartItems = json_decode($request->cookie('cart_items', '[]'), true);
-            foreach ($cartItems as &$item) {
-                if ($item['location_id'] === $location->location_id) {
-                    $item['quantity'] = $quantity;
-                    break;
-                }
-            }
-            Cookie::queue('cart_items', json_encode($cartItems), 60 * 24 * 30);
-
-            return response(['count' => CartHelper::getCountFromItems($cartItems)]);
-        }
+        return Redirect::back()->with('cartIsVisible', true);
     }
 }

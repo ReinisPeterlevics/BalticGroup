@@ -1,6 +1,6 @@
 <?php
 
-$addToCart = App\Helpers\CartHelper::getCartItems()
+$addToCart = App\Helpers\CartHelper::getCartItems();
 
 ?>
 
@@ -21,6 +21,11 @@ $addToCart = App\Helpers\CartHelper::getCartItems()
         <div class="app-container">
             @include('header')
             @include('cart')
+            @if(!empty(Session::get('cartIsVisible')) && Session::get('cartIsVisible') == true)
+                <script>
+                    showCart();
+                </script>
+            @endif
             <div class="row content">
                 <div class="description-container">
                     <div class="destination-photo">
@@ -78,7 +83,7 @@ $addToCart = App\Helpers\CartHelper::getCartItems()
                                         <p>Price per person</p>
                                     </div>
                                     <div class="description-item-body">
-                                        <p>{{$location[0]->price}} EUR</p>
+                                        <p>{{$location[0]->price}} €</p>
                                     </div>
                                 </div>
                                 <div class="description-item">
@@ -96,17 +101,17 @@ $addToCart = App\Helpers\CartHelper::getCartItems()
                                 <input type="number" id="person-cost" name="person-cost" value="{{$location[0]->price}}" hidden>
                             </div>
                             <div class="total-cost">
-                                <p id="total-cost-p">Price in total: 0 EUR</p>
+                                <p id="total-cost-p">Price in total: 0 €</p>
                             </div>
                             <div class="description-buttons">
                                 <input class="back-button add-to-cart-button" type="button" name="back" value="Back" onclick="window.location.href='javascript:history.back()'">
-                                <input class="add-to-cart-button" type="submit" name="add-to-cart" value="Add to Cart">
+                                <input class="add-to-cart-button" type="submit" id="primary-add-to-cart" name="add-to-cart" value="Add to Cart">
                             </div>
                         </div>
                     </form>
                     <div class="description-buttons-media">
                         <input class="back-button add-to-cart-button" type="button" name="back" value="Back" onclick="window.location.href='javascript:history.back()'">
-                        <input class="add-to-cart-button" type="submit" name="add-to-cart" value="Add to Cart">
+                        <input class="add-to-cart-button" type="button" id="secondary-add-to-cart" name="add-to-cart" value="Add to Cart" onclick="document.getElementById('primary-add-to-cart').click()">
                     </div>
                 </div>
             </div>
