@@ -20,7 +20,12 @@
         <div class="app-container">
             @include('header')
             @include('cart')
-            <div class="checkout-container">
+            @if(!empty(Session::get('cartIsVisible')) && Session::get('cartIsVisible') == true)
+    <script>
+        showCart();
+    </script>
+@endif
+<div class="checkout-container">
                 <div class="checkout-content">
                     <h1 class="checkout-title">Checkout</h1>
                     <form class="checkout-form" method="post" action="{{ route('save-order')}}">

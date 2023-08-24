@@ -14,7 +14,12 @@
         <div class="app-container">
             @include('header')
             @include('cart')
-            <div class="about-page-container">
+            @if(!empty(Session::get('cartIsVisible')) && Session::get('cartIsVisible') == true)
+            <script>
+                showCart();
+            </script>
+        @endif
+        <div class="about-page-container">
                 <div class="about-page-content">
                     <div class="about-us-container">
                         <h1 class="about-h1">About Us</h1>

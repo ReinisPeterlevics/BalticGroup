@@ -6,19 +6,10 @@ use App\Models\Order;
 use App\Models\OrderLocation;
 use App\Models\Location;
 use Illuminate\Http\Request;
+use App\Helpers\CartHelper;
 
 class OrderController extends Controller
 {
-    public function storeDummyCartDataInSession() {
-            $dummyCartData = [
-                17 => [  "location_id" => "17","quantity" => "29",],
-                10 => [         "location_id" => "10",             "quantity" => "18",         ],
-                21 => [                         "location_id" => "21",             "quantity" => "2",         ],
-                8 => [                      "location_id" => "8",             "quantity" => "9",         ],     ];
-                // Store the dummy cart data in the session
-
-                session(['ourCCart' => $dummyCartData]);
-    }
 
     //mandatory login to checkout
     public function __construct()
@@ -29,8 +20,8 @@ class OrderController extends Controller
     //fills in the user data and cart data in html
     public function fillData()
     {
-        $this->storeDummyCartDataInSession();
-        $cart = session('ourCCart');
+
+        $cart = CartHelper::getCartItems();
 
         if (empty($cart)) {
 
@@ -92,7 +83,7 @@ class OrderController extends Controller
             'notes' => $data['notes'],
         ];
 
-        $order = Order::create($newOrder);
+        $order = \App\Models\Order::create($newOrder);
 
         foreach ($processedOrders as $procOrder) {
             $locationID = $procOrder['locationId'];

@@ -6,5 +6,5 @@ function rangeInputHandler() {
     let totalCost = personCount * personCost;
     // Set the value of the range input labels
     document.getElementById("person-label").innerHTML = personCount;
-    document.getElementById("total-cost-p").innerHTML = "Price in total: " + totalCost + "EUR";
+    document.getElementById("total-cost-p").innerHTML = "Price in total: " + totalCost + " €";
 }

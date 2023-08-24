@@ -15,8 +15,13 @@
 <body>
     <div class="app">
         <div class="app-container">
-            @include('header')
-            @include('cart')
+        @include('header')
+        @include('cart')
+        @if(!empty(Session::get('cartIsVisible')) && Session::get('cartIsVisible') == true)
+            <script>
+                showCart();
+            </script>
+        @endif
             <div class="row content">
                 <div class="row">
                     @foreach($locations as $location)
@@ -29,7 +34,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">{{$location->name}}</h5>
                                     <p class="card-subtitle">{{$location->countryname}} in {{$location->seasonname}}</p>
-                                    <p class="sub">{{$location->hotel}}</p>
+                                    <p class="sub">For {{$location->price}} € per person</p>
                                     <p class="card-text">{{$location->description}}</p>
                                 </div>
                             </a>

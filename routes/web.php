@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\BlogController;
-use App\Http\Controllers\BookController;
 
 // use App\Http\Controllers\OrderController;
 // use App\Http\Controllers\HomeController;
@@ -21,8 +20,6 @@ use App\Http\Controllers\BookController;
 
 Auth::routes();
 
-Auth::routes();
-
 Route::get('/',
     'App\Http\Controllers\HomeController@index'
 )->name('home');
@@ -31,7 +28,9 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
-Route::get('/blog', [BlogController::class, 'index'])->name('blog');
+Route::get('/blog',
+    [BlogController::class, 'index']
+)->name('blog');
 
 Route::get('/blog-detail', function () {
     return view('blog-detail');
@@ -75,14 +74,19 @@ Route::get('/location/{id}',
     'App\Http\Controllers\LocationController@show'
 )->name('location-description');
 
-Route::get('/searchMagebit', 'App\Http\Controllers\BookController@search') ->name('searchMagebit');
 
+// Route:: get('/search', function () {
+//     return view('search');
+// });
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/checkout', [App\Http\Controllers\OrderController::class, 'fillData'])->name('fill-data');
 Route::post('/checkout', [App\Http\Controllers\OrderController::class, 'saveOrder'])->name('save-order');
 
-Route::post('/cart/add/{id}', 'App\Http\Controllers\CartController@addToCart')->name('cart.add');
-Route::get('/cart/displayCart', 'App\Http\Controllers\CartController@displayCart')->name('displayCart');
-Route::post('/cart/updateItemQuantity', 'App\Http\Controllers\CartController@showCart')->name('cart.updateItemQuantity');
-Route::get('/cart/deleteItem', 'App\Http\Controllers\CartController@showCart')->name('cart.deleteItem');
+Route::post('/add-to-cart/{id}',
+    'App\Http\Controllers\CartController@add'
+)->name('add-to-cart');
+
+Route::post('/update-cart-quantity/{id}',
+    'App\Http\Controllers\CartController@updateQuantity'
+)->name('update-cart-quantity');
