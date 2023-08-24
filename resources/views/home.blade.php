@@ -8,11 +8,12 @@
         <link href="/css/home.css" rel="stylesheet">
         <link href="/css/location-description.css" rel="stylesheet">
         <link href="/css/cart.css" rel="stylesheet">
+        <link href="/css/confirmed.css" rel="stylesheet">
         <script src="/js/home.js"></script>
         <script src="/js/cart.js"></script>
     </head>
     <body>
-    <div class="app">
+    <div class="app closePopupButton" id="app">
         <div class="app-container">
             @include('header')
             @include('cart')
@@ -116,5 +117,9 @@
                 @include('footer')
             </div>
         </div>
+        @if(session()->has('orderPlaced'))
+        @include('confirmed')
+        <script src="/js/confirmed.js"></script>
+        @endif
     </body>
 </html>

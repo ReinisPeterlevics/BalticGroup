@@ -46,7 +46,7 @@ $cartItems = App\Helpers\CartHelper::getLocationsAndCartItems();
                 </div>
                 <div class="checkout-button">
                     <!-- To the checkout! -->
-                    <button><a href="#">Checkout</a></button>
+                    <button><a href="{{route('fill-data')}}">Checkout</a></button>
                 </div>
             </div>
             @else

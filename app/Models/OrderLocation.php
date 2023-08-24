@@ -16,7 +16,7 @@ class OrderLocation extends Model
         'order_id',
         'location_id',
         'person_count',
-        'starp_cost',
+        'subtotal',
     ];
 
     public function order():BelongsTo{

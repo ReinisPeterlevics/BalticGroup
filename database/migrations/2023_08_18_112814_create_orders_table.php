@@ -21,7 +21,7 @@ class CreateOrdersTable extends Migration
             $table->unsignedBigInteger('payment_type_id');
             $table->foreign('payment_type_id')->references('payment_type_id')->on('payment_types');
             $table->decimal('total_cost', 10, 2);
-            $table->text('notes');
+            $table->text('notes')->nullable();
             $table->timestamps();
         });
     }

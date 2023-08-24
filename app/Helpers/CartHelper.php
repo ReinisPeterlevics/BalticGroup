@@ -13,28 +13,28 @@ class CartHelper
     public static function getCartItemsCount(): int
     {
         $user = \request()->user();
-        if ($user) {
-            return Cart::where('user_id', $user->id)->sum('quantity');
-        } else {
+        // if ($user) {
+        //     return Cart::where('user_id', $user->id)->sum('quantity');
+        // } else {
             return array_reduce(
                 self::getCookieCartItems(),
                 fn ($carry, $item) => $carry + $item['quantity'],
                 0
             );
-        }
+        // }
     }
 
     public static function getCartItems()
     {
         $request = \request();
         $user = $request->user();
-        if ($user) {
-            return Cart::where('user_id', $user->id)->get()->map(
-                fn ($item) => ['location_id' => $item->location_id, 'quantity' => $item->quantity]
-            );
-        } else {
+        // if ($user) {
+        //     return Cart::where('user_id', $user->id)->get()->map(
+        //         fn ($item) => ['location_id' => $item->location_id, 'quantity' => $item->quantity]
+        //     );
+        // } else {
             return self::getCookieCartItems();
-        }
+        // }
     }
 
     public static function getCookieCartItems()

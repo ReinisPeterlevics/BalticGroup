@@ -28,24 +28,24 @@ class CartController extends Controller
     {
         $quantity = $request->post('persons', 1);
         $user = $request->user();
-        if ($user) {
+        // if ($user) {
 
-            $cartItem = Cart::where(['user_id' => $user->id, 'location_id' => $id])->first();
+        //     $cartItem = Cart::where(['user_id' => $user->id, 'location_id' => $id])->first();
 
-            if ($cartItem) {
-                $cartItem->quantity += $quantity;
-                $cartItem->update();
-            } else {
-                $data = [
-                    'user_id' => $request->user()->id,
-                    'location_id' => $id,
-                    'quantity' => $quantity,
-                ];
-                Cart::create($data);
-            }
+        //     if ($cartItem) {
+        //         $cartItem->quantity += $quantity;
+        //         $cartItem->update();
+        //     } else {
+        //         $data = [
+        //             'user_id' => $request->user()->id,
+        //             'location_id' => $id,
+        //             'quantity' => $quantity,
+        //         ];
+        //         Cart::create($data);
+        //     }
 
-            return Redirect::back()->with('message', 'Added to cart!');
-        } else {
+        //     return Redirect::back()->with('message', 'Added to cart!');
+        // } else {
             $cartItems = json_decode($request->cookie('cart_items', '[]'), true);
             $productFound = false;
             foreach ($cartItems as &$item) {
@@ -65,7 +65,7 @@ class CartController extends Controller
             Cookie::queue('cart_items', json_encode($cartItems), 60 * 24 * 30);
 
             return Redirect::back()->with('message', 'Added to cart!');
-        }
+        // }
     }
 
     // public function remove(Request $request, $id)
@@ -99,17 +99,17 @@ class CartController extends Controller
         $parameter = $id . '-count';
         $quantity = (int)$request->$parameter;
         $user = $request->user();
-        if ($user) {
-            // Check quantity change
-            if ($quantity == 0) {
-                // If quantity is 0, remove the item from the cart
-                $cartItem = Cart::query()->where(['user_id' => $user->id, 'location_id' => $id])->first();
-                if ($cartItem) { $cartItem->delete(); }
-            } else {
-                // If quantity is not 0, update the item in the cart
-                Cart::where(['user_id' => $request->user()->id, 'location_id' => $id])->update(['quantity' => $quantity]);
-            }
-        } else {
+        // if ($user) {
+        //     // Check quantity change
+        //     if ($quantity == 0) {
+        //         // If quantity is 0, remove the item from the cart
+        //         $cartItem = Cart::query()->where(['user_id' => $user->id, 'location_id' => $id])->first();
+        //         if ($cartItem) { $cartItem->delete(); }
+        //     } else {
+        //         // If quantity is not 0, update the item in the cart
+        //         Cart::where(['user_id' => $request->user()->id, 'location_id' => $id])->update(['quantity' => $quantity]);
+        //     }
+        // } else {
             // Check quantity change
             if ($quantity == 0) {
                 // If quantity is 0, remove the item from the cart
@@ -127,7 +127,7 @@ class CartController extends Controller
                 }
                 Cookie::queue('cart_items', json_encode($cartItems), 60 * 24 * 30);
             }
-        }
+        // }
         return Redirect::back()->with('cartIsVisible', true);
     }
 }

@@ -1,29 +1,29 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url("https://fonts.googleapis.com/css?family=Roboto");
 
-html{
-    font-family: 'Roboto', sans-serif;
+html {
+    font-family: "Roboto", sans-serif;
 }
-body{
+body {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-color: #E7F2F8;
+    background-color: #e7f2f8;
 
-    --color-baby-blue: #E7F2F8;
+    --color-baby-blue: #e7f2f8;
     --color-baby-blue-transparent: rgba(231, 242, 248, 0.8);
     --color-baby-blue-light: #f3f8fa;
     --color-baby-blue-dark: #cce0eb;
 
-    --color-aquamarine: #74BDCB;
+    --color-aquamarine: #74bdcb;
     --color-aquamarine-light: #8dc8d4;
     --color-aquamarine-dark: #59a8b8;
 
-    --color-salmon: #FFA384;
+    --color-salmon: #ffa384;
     --color-salmon-transparent: rgba(255, 163, 132, 0.8);
     --color-salmon-light: #fdb39a;
     --color-salmon-dark: #ff8f6a;
 
-    --color-freesia: #EFE7BC;
+    --color-freesia: #efe7bc;
     --color-freesia-light: #faf4d3;
     --color-freesia-dark: #e7dda1;
 
@@ -34,7 +34,14 @@ body{
     --color-gray: rgb(133, 133, 133);
     --color-gray-transparent: rgb(133, 133, 133, 0.8);
 }
-
+.app {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+.app-container {
+    display: contents;
+}
 /* header */
 header {
     background-color: var(--color-aquamarine);
@@ -50,7 +57,6 @@ header {
     color: white;
     text-decoration: none;
     font-size: 1.5rem;
-
 }
 .navbar-collapse {
     display: flex;
@@ -109,7 +115,6 @@ header {
     padding-top: 1rem;
     object-fit: contain;
     padding-bottom: 0.5rem;
-
 }
 .logoF {
     height: 50%;
@@ -120,12 +125,12 @@ header {
 }
 
 /*  */
-.range-picker{
+.range-picker {
     display: flex;
     align-items: center;
     width: 100%;
 }
-.range-picker input{
+.range-picker input {
     flex: 1;
     padding: 0;
     border: none !important;
@@ -139,7 +144,7 @@ header {
     -webkit-transition: 0.2s;
     transition: 0.2s;
 }
-.range-picker input:hover{
+.range-picker input:hover {
     opacity: 1;
 }
 .range-picker input::-webkit-slider-thumb {
@@ -158,7 +163,7 @@ header {
     background: var(--color-salmon);
     cursor: pointer;
 }
-.range-picker label{
+.range-picker label {
     margin: 5px;
     background-color: var(--color-baby-blue-dark);
     border-radius: 4px;
@@ -176,26 +181,26 @@ header {
     .footer > * {
         flex: 1 1 auto;
     }
-    .footer div:last-child{
+    .footer div:last-child {
         min-width: 105px;
     }
-    .navbar-brand{
+    .navbar-brand {
         text-align: left;
         margin-left: 15px;
     }
-    .navbar-collapse{
+    .navbar-collapse {
         margin-right: 0;
     }
-    .footer{
+    .footer {
         font-size: smaller;
     }
-    .logoF{
+    .logoF {
         padding-left: 15px;
         width: 85%;
     }
 }
 @media (max-width: 475px) {
-    .footer-image{
+    .footer-image {
         display: none;
     }
 }

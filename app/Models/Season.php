@@ -18,7 +18,7 @@ class Season extends Model
         'name',
     ];
 
-    public function location(): HasMany{
-        return $this->hasMany(Location::class);
+    public function location_activity(): HasMany{
+        return $this->hasMany(LocationActivity::class);
     }
 }
