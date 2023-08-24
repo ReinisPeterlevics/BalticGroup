@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var closePopupButton = document.getElementById('closePopupButton');
 
-const popup = document.getElementById('orderPlacedPopup');
+    const closePopupButton = document.getElementById('closePopupButton');
+    const popup = document.getElementById('orderPlacedPopup');
 
     // Show the popup
     popup.style.display = 'block';
@@ -10,6 +10,7 @@ const popup = document.getElementById('orderPlacedPopup');
     closePopupButton.addEventListener('click', function() {
         orderPlacedPopup.style.display = 'none';
     });
+
     // Close the popup when the window is clicked
     window.addEventListener('click', (event) => {
         if (event.target === popup) {
