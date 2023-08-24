@@ -20,11 +20,8 @@ class OrderController extends Controller
         // ]);
 
         $user = auth()->user();
-
         session(['user_data' => $user]);
         return view('checkout', [ 'user' => $user ]);
-
-
     }
 
     public function saveOrder(Request $request){

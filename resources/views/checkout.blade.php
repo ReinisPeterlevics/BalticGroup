@@ -12,7 +12,7 @@
     <script src="js/checkout.js"></script>
     <script src="js/cart.js"></script>
     <script src="js/confirmed.js"></script>
-    <title>Checkout</title>
+    <title>Magebit Travel</title>
 </head>
 <body>
     <div class="app">
