@@ -9,6 +9,17 @@ use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
+    public function storeDummyCartDataInSession() {
+            $dummyCartData = [
+                17 => [  "location_id" => "17","quantity" => "29",],
+                10 => [         "location_id" => "10",             "quantity" => "18",         ],
+                21 => [                         "location_id" => "21",             "quantity" => "2",         ],
+                8 => [                      "location_id" => "8",             "quantity" => "9",         ],     ];
+                // Store the dummy cart data in the session
+
+                session(['ourCCart' => $dummyCartData]);
+    }
+
     //mandatory login to checkout
     public function __construct()
     {
@@ -18,7 +29,8 @@ class OrderController extends Controller
     //fills in the user data and cart data in html
     public function fillData()
     {
-        $cart = session('ourCart');
+        $this->storeDummyCartDataInSession();
+        $cart = session('ourCCart');
 
         if (empty($cart)) {
 
@@ -31,26 +43,29 @@ class OrderController extends Controller
         $processedOrders = [];
         $totalPrice = 0;
 
-        foreach ($cart as $cartItem) {
-            $locationId = $cartItem['location_id'];
-            $quantity = $cartItem['quantity'];
+        foreach($cart as $cartData){
 
-            $location = Location::find($locationId);
+                    $locationId = $cartData['location_id'];
+                    $quantity = $cartData['quantity'];
 
-            if ($location) {
-                $locationName = $location->name;
-                $locationPrice = $location->price;
-                $locationSubPrice = $locationPrice * $quantity;
-                $totalPrice += $locationSubPrice;
 
-                $processedOrders[] = [
-                    'locationId' => $locationId,
-                    'quantity' => $quantity,
-                    'locationName' => $locationName,
-                    'locationPrice' => $locationPrice,
-                    'locationSubPrice' => $locationSubPrice,
-                ];
-            }
+                    $location = Location::find($locationId);
+
+                    if ($location) {
+                        $locationName = $location->name;
+                        $locationPrice = $location->price;
+                        $locationSubPrice = $locationPrice * $quantity;
+                        $totalPrice += $locationSubPrice;
+
+                        $processedOrders[] = [
+                            'locationId' => $locationId,
+                            'quantity' => $quantity,
+                            'locationName' => $locationName,
+                            'locationPrice' => $locationPrice,
+                            'locationSubPrice' => $locationSubPrice,
+                        ];
+                    }
+
         }
 
         session(['processedOrders' => $processedOrders, 'totalPrice' => $totalPrice]);
@@ -61,6 +76,7 @@ class OrderController extends Controller
     //saves order-booking to the database in order, order_location tables and empties cart
     public function saveOrder(Request $request)
     {
+        $this->fillData();
         $user = session('user_data');
         $processedOrders = session('processedOrders');
         $totalPrice = session('totalPrice');
@@ -76,7 +92,7 @@ class OrderController extends Controller
             'notes' => $data['notes'],
         ];
 
-        //$order = Order::create($newOrder);
+        $order = Order::create($newOrder);
 
         foreach ($processedOrders as $procOrder) {
             $locationID = $procOrder['locationId'];
@@ -84,19 +100,22 @@ class OrderController extends Controller
             $locationSubprice = $procOrder['locationSubPrice'];
 
             $newOrderLocation = [
-                //'order_id' => $order->order_id,
+                'order_id' => $order->order_id,
                 'location_id' => $locationID,
                 'person_count' => $quanTity,
-                'starp_cost' => $locationSubprice
+                'subtotal' => $locationSubprice
             ];
 
-            //OrderLocation::create($newOrderLocation);
+            OrderLocation::create($newOrderLocation);
         }
 
-        // session(['ourCart' => []]);
-        // session(['processedOrders' => []]);
-        // session(['totalPrice' => 0]);
-        return redirect()->route('home')->with('success', 'Order Done Successfully');
+        session(['ourCart' => []]);
+        session(['processedOrders' => []]);
+        session(['totalPrice' => 0]);
+        session()->flash('orderPlaced', true);
+
+        return redirect()->route('home');
+
         //return response()->json(['message' => 'Order Done Successfully']);
     }
 }

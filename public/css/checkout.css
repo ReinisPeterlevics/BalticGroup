@@ -95,6 +95,9 @@ textarea:focus{
     flex-direction: column;
     gap: 5px;
 }
+.card-input{
+    width:100%;
+}
 .checkout-footer{
     width:100%;
     display: flex;

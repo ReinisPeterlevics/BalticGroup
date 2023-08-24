@@ -12,7 +12,6 @@
     <link href="css/confirmed.css" rel="stylesheet">
     <script src="js/checkout.js"></script>
     <script src="js/cart.js"></script>
-    <script src="js/confirmed.js"></script>
     <title>Magebit Travel</title>
 </head>
 
@@ -50,43 +49,39 @@
                                     </div>
                                     <div class="input-row">
                                         <div class="input-group">
-                                            <label for="notes">Order notes(optional)</label>
-                                            <textarea name="notes" placeholder="Notes about your order..."></textarea>
+                                            <label for="notes">Additional information(optional)</label>
+                                            <textarea name="notes" placeholder="Add comments..."></textarea>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="checkout-cart-container">
-                                <h2>Your order</h2>
+                                <h2>Your booking details</h2>
                                 <div class="checkout-cart">
                                     <div class="checkout-table-container">
                                         <table class="checkout-table">
                                             <thead>
                                                 <tr>
-                                                    <th>Name</th>
-                                                    <th>Item Price</th>
+                                                    <th>Tour name</th>
+                                                    <th>Tour price</th>
                                                     <th>Quantity</th>
                                                     <th>Price</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @foreach($processedOrders as $order)
                                                 <tr>
-                                                    <td class="item-name">Diving in Maldives</td>
-                                                    <td class="item-price">$1500</td>
-                                                    <td class="quantity">2</td>
-                                                    <td class="total-item-price">$3000</td>
+                                                    <td class="item-name">{{$order['locationName']}}</td>
+                                                    <td class="item-price">${{$order['locationPrice']}}</td>
+                                                    <td class="quantity">{{$order['quantity']}}</td>
+                                                    <td class="total-item-price">${{$order['locationSubPrice']}}</td>
                                                 </tr>
-                                                <tr>
-                                                    <td class="item-name">Hiking in Alps</td>
-                                                    <td class="item-price">$100</td>
-                                                    <td class="quantity">1</td>
-                                                    <td class="total-item-price">$3000</td>
-                                                </tr>
+                                                @endforeach
                                             </tbody>
                                             <tfoot>
                                                 <tr>
-                                                    <td colspan="3" class="price">Total price:</td>
-                                                    <td class="total-price">$4000</td>
+                                                    <td colspan="3" class="price">Total:</td>
+                                                    <td class="total-price">${{$totalPrice}}</td>
                                                 </tr>
                                             </tfoot>
                                         </table>
@@ -105,7 +100,7 @@
                                                 <div class="accordion-content">
                                                     <div class="accordion-row">
                                                         <div class="input-group">
-                                                            <input type="text" name="card-number" id="card-number"  pattern="[0-9]{16}"  title="Enter a valid 16-digit card number"   placeholder="Card number" required>
+                                                            <input class="card-input" type="text" name="card-number" id="card-number"  pattern="[0-9]{16}"  title="Enter a valid 16-digit card number"   placeholder="Card number" required>
                                                         </div>
                                                     </div>
                                                     <div class="accordion-row">
