@@ -24,7 +24,7 @@ $cartItems = App\Helpers\CartHelper::getLocationsAndCartItems();
                         </div>
                         <div class="cart-item-quantity">
                             <!-- Location price here -->
-                            <p class="cart-item-price">{{$item['price']}} €</p>
+                            <p class="cart-item-price">{{$item['price']}} € per person</p>
                             <div class="buttons">
                                 <form method="POST" action="{{ route('update-cart-quantity', ['id'=>$item['location_id']]) }}">
                                     @csrf
