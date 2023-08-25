@@ -23,6 +23,7 @@ class CreateLocationsTable extends Migration
             $table->foreign('season_id')->references('season_id')->on('seasons');
             $table->string('hotel');
             $table->string('image');
+            $table->string('small_image');
             $table->date('start_date');
             $table->date('end_date');
             $table->integer('duration');

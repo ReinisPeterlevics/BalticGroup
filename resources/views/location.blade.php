@@ -30,7 +30,7 @@
                         <div class="card">
                             <a href="{{route('location-description', ['id' => $location->location_id])}}">
                                 <div class="card-img-top">
-                                    <img src="{{$location->image}}" alt="destination">
+                                    <img src="{{$location->small_image}}" alt="destination">
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title">{{$location->name}}</h5>
