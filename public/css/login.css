@@ -79,7 +79,7 @@ button{
 	justify-content: center;
 	display: block;
 	color: #fff;
-	background: #3b648a;
+	background: var(--color-aquamarine);
 	font-size: 1em;
 	font-weight: bold;
 	margin-top: 20px;
@@ -90,7 +90,7 @@ button{
 	cursor: pointer;
 }
 button:hover{
-	background: #6d44b8;
+	background: var(--color-aquamarine-dark);
 }
 
 .alert {
@@ -138,7 +138,7 @@ button:hover{
 	transition: .8s ease-in-out;
 }
 .login label{
-	color: #573b8a;
+	color: var(--color-aquamarine);
 	transform: scale(.6);
 }
 
