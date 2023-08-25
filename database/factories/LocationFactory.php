@@ -20,8 +20,9 @@ class LocationFactory extends Factory
         $returnDate = $this->faker->dateTimeBetween($endDate, $endDate->format('Y-m-d').'+3 days');
         $duration = $returnDate->diff($departureDate)->format('%a');
         $season = $this->faker->numberBetween(1, 4);
-        $image = '/images/locations/'.$season.'-'.$this->faker->numberBetween(1, 4).'.jpg';
-        $smallImage = '/images/locations/'.$season.'-'.$this->faker->numberBetween(1, 4).'-small.jpg';
+        $imageName = $season.'-'.$this->faker->numberBetween(1, 4);
+        $image = '/images/locations/'.$imageName.'.jpg';
+        $smallImage = '/images/locations/'.$imageName.'-small.jpg';
         return [
             'name' => $this->faker->text(25),
             'description' => $this->faker->text(400),
