@@ -16,7 +16,7 @@ $cartItems = App\Helpers\CartHelper::getLocationsAndCartItems();
             <ul class="cart-items">
                 @foreach($cartItems as $item)
                 <li class="cart-item" id="{{$item['location_id']}}" value="{{$item['price']}}">
-                    <img src="{{$item['image']}}" alt="mountains" class="cart-item-image">
+                    <img src="{{$item['small_image']}}" alt="mountains" class="cart-item-image">
                     <div class="cart-item-info">
                         <div class="cart-item-details">
                             <h3 class="cart-item-title">{{$item['name']}}</h3>

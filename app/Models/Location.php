@@ -22,6 +22,7 @@ class Location extends Model
         'season_id',
         'hotel',
         'image',
+        'small_image',
         'start_date',
         'end_date',
         'duration',

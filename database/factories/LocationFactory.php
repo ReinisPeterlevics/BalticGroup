@@ -21,6 +21,7 @@ class LocationFactory extends Factory
         $duration = $returnDate->diff($departureDate)->format('%a');
         $season = $this->faker->numberBetween(1, 4);
         $image = '/images/locations/'.$season.'-'.$this->faker->numberBetween(1, 4).'.jpg';
+        $smallImage = '/images/locations/'.$season.'-'.$this->faker->numberBetween(1, 4).'-small.jpg';
         return [
             'name' => $this->faker->text(25),
             'description' => $this->faker->text(400),
@@ -28,6 +29,7 @@ class LocationFactory extends Factory
             'season_id' => $season,
             'hotel' => $this->faker->text(30),
             'image' => $image,
+            'small_image' => $smallImage,
             'start_date' => $startDate,
             'end_date' => $endDate,
             'duration' => $duration,
