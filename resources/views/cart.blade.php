@@ -30,7 +30,7 @@ $cartItems = App\Helpers\CartHelper::getLocationsAndCartItems();
                                     @csrf
                                     <button class="minus-button" type="submit" onclick="minusCountHandler(`{{$item['location_id']}}`)">-</button>
                                     <!-- Start value the one that user selected and max read from the table -->
-                                    <input type="number" id="{{$item['location_id']}}-count" name="{{$item['location_id']}}-count" class="cart-item-count" value="{{$item['quantity']}}" min="0" max="{{$item['spots_left']}}">
+                                    <input type="number" id="{{$item['location_id']}}-count" name="{{$item['location_id']}}-count" class="cart-item-count" value="{{$item['quantity']}}" min="0" max="{{$item['spots_left']}}" readonly>
                                     <button class="plus-button" type="submit" onclick="plusCountHandler(`{{$item['location_id']}}`)">+</button>
                                 </form>
                             </div>
