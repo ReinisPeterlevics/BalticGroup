@@ -6,7 +6,6 @@ h1 {
     text-align: center;
 }
 
-
 body {
     background: url("../images/page-background.jpg");
 
@@ -86,6 +85,41 @@ body {
 .page-button:hover {
     background-color: #ddd;
 }
+
+.detail-container{
+    display: flex;
+    justify-content: center;
+}
+.detail {
+    display:flex;
+    gap: 20px;
+    background-image: linear-gradient(rgba(231,242,248, 0.8), rgba(231,242,248, 1));
+    border-radius: 15px;
+    padding: 30px 40px;
+    margin: 100px 20px;
+    height: auto;
+    max-width: 1200px;
+}
+
+.detail-image img{
+    width: 400px;
+    height: 100%;
+}
+
+.detail-text {
+    margin-top: 0.3rem;
+    color: var(--color-text-black-dark);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+@media (max-width: 660px) {
+    .detail {
+        height: fit-content;
+        margin: 0;
+        border-radius: 0;
+        gap: 0;
+    }
 
 .img-responsive {
     width: 100%;
