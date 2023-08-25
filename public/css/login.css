@@ -13,9 +13,22 @@ body{
     width:fit-content;
 }
 
+.email-error {
+    color: red;
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    display: none;
+
+}
+
 .wrapper {
     display: flex;
     justify-content: center;
+    align-items: center;
 
 }
 .main{
@@ -42,8 +55,7 @@ label{
 	font-size: 2.3em;
 	justify-content: center;
 	display: flex;
-	margin-top: 60px;
-    margin-bottom: 30px;
+	margin: 60px;
 	font-weight: bold;
 	cursor: pointer;
 	transition: .5s ease-in-out;
@@ -60,7 +72,6 @@ input{
 	outline: none;
 	border-radius: 5px;
 }
-
 button{
 	width: 60%;
 	height: 40px;
@@ -68,7 +79,7 @@ button{
 	justify-content: center;
 	display: block;
 	color: #fff;
-	background: var(--color-aquamarine);
+	background: #3b648a;
 	font-size: 1em;
 	font-weight: bold;
 	margin-top: 20px;
@@ -79,8 +90,46 @@ button{
 	cursor: pointer;
 }
 button:hover{
-	background: var(--color-aquamarine-dark);
+	background: #6d44b8;
 }
+
+.alert {
+    position: fixed;
+    top: 30px; /* Adjust the top position for mid-top placement */
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    max-width: 90%;
+    background-color: #fc6b61;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+}
+
+.alert ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.alert ul li {
+    margin-bottom: 5px;
+}
+
+  /* Media Query for smaller screens */
+@media screen and (max-width: 768px) {
+.alert {
+    top: 10px; /* Adjust the top position for mid-top placement */
+    right: 5px;
+    left: unset; /* Remove left positioning for smaller screens */
+    transform: unset; /* Remove transform for smaller screens */
+    width: 90%;
+    max-width: none;
+    padding: 8px;
+    }
+}
+
 .login{
 	height: 460px;
 	background: #eee;
@@ -89,7 +138,7 @@ button:hover{
 	transition: .8s ease-in-out;
 }
 .login label{
-	color: var(--color-aquamarine);
+	color: #573b8a;
 	transform: scale(.6);
 }
 
@@ -102,10 +151,3 @@ button:hover{
 #chk:checked ~ .signup label{
 	transform: scale(.6);
 }
-
-
-
-
-
-
-

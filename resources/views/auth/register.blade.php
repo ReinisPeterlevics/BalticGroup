@@ -22,19 +22,29 @@
                     <input type="checkbox" id="chk" aria-hidden="true">
 
                     <div class="signup">
-                        <form method="POST" action="{{ route('register') }}">
+                        <form id="registerForm" method="POST" action="{{ route('register') }}">
                             @csrf
                             <label for="chk" aria-hidden="true">Sign up</label>
-                            <input type="text" name="name" placeholder="User name" required="">
-                            <input type="email" name="email" placeholder="Email" required="">
-                            @error('email')
+                            <input type="text" name="register_name" placeholder="User name" required="">
+                            @error('register_name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                             @enderror
-                            <input type="password" name="password" placeholder="Password" required="">
-                            <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            <button type="submit">Sign up</button>
+                            <input type="email" name="register_email" placeholder="Email" required="">
+                            @error('register_email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
+                            <input type="password" name="register_password" placeholder="Password" required="">
+                            @error('register_password')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                            @enderror
+                            <input id="password-confirm" type="password" class="form-control" name="register_password_confirmation" required>
+                            <button for="registerForm" type="submit">Sign up</button>
                         </form>
                     </div>
 
