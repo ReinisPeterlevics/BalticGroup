@@ -36,10 +36,6 @@ Route::get('/blog-detail', function () {
     return view('blog-detail');
 })->name('blog-detail');
 
-Route::get('/register', function () {
-    return view('register');
-})->name('register');
-
 Route::get('/checkout', function () {
     return view('checkout');
 })->name('checkout');
